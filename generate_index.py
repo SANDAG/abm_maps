@@ -14,9 +14,12 @@ def generate_index(dir_path):
     # Skip if the directory is empty
     if not files:
         return
+
+    # Get the name of the directory for the heading
+    dir_name = os.path.basename(dir_path)
     
     # Create index.html file
-    index_content = '<html><body><h1>Directory Listing</h1><ul>'
+    index_content = f'<html><body><h1>Index of {dir_name}</h1><ul>'
     
     for file in files:
         file_path = os.path.join(dir_path, file)
