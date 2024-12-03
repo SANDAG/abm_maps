@@ -20,6 +20,10 @@ def generate_index(dir_path):
     
     for file in files:
         file_path = os.path.join(dir_path, file)
+
+        # Skip index.html from the listing
+        if file == 'index.html':
+            continue
         
         # Only include files (not directories) in the listing
         if os.path.isfile(file_path):
