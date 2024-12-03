@@ -1,24 +1,46 @@
 import os
 
-# Define the root directory (your GitHub Pages root folder)
-root_dir = './'
+# Define the base directory (e.g., your repository root)
+base_dir = "./"
 
-# Walk through all directories and subdirectories
-for root, dirs, files in os.walk(root_dir):
-    # Skip the root directory itself to avoid creating index.html at the root
-    if root == root_dir:
-        continue
+# Function to generate index.html for a given folder
+def generate_index(dir_path):
+    # Avoid generating index in .github folder
+    if ".github" in dir_path:
+        return
     
-    # Check if the directory contains files
-    if files:
-        # Define the index.html file path for the folder
-        index_file_path = os.path.join(root, 'index.html')
+    files = os.listdir(dir_path)
+    
+    # Skip if the directory is empty
+    if not files:
+        return
+    
+    # Create index.html file
+    index_content = '<html><body><h1>Directory Listing</h1><ul>'
+    
+    for file in files:
+        file_path = os.path.join(dir_path, file)
         
-        # Open the index.html file for writing
-        with open(index_file_path, 'w') as f:
-            f.write(f"<html><body><h1>Files in {root}</h1><ul>\n")
-            for file in files:
-                # Create a link for each file in the directory
-                file_url = os.path.join(root.replace(root_dir, ''), file).replace(os.sep, '/')
-                f.write(f'<li><a href="{file_url}">{file}</a></li>\n')
-            f.write("</ul></body></html>\n")
+        # Only include files (not directories) in the listing
+        if os.path.isfile(file_path):
+            file_url = file_path.replace(base_dir, "").replace(os.sep, "/")
+            index_content += f'<li><a href="{file_url}">{file}</a></li>'
+    
+    index_content += '</ul></body></html>'
+    
+    # Write the generated content to index.html in the folder
+    with open(os.path.join(dir_path, 'index.html'), 'w') as index_file:
+        index_file.write(index_content)
+
+# Function to walk through directories and generate index files
+def walk_directory(directory):
+    # Iterate through the subdirectories and generate index files
+    for dirpath, dirnames, filenames in os.walk(directory):
+        # Avoid the .github folder and other unwanted folders
+        if ".github" in dirpath:
+            continue
+
+        generate_index(dirpath)
+
+# Call the function to walk the directory structure and generate index.html files
+walk_directory(base_dir)
