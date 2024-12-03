@@ -7,10 +7,6 @@ exclude_folders = ['.github', '.git']
 
 # Function to generate index.html for a given folder
 def generate_index(dir_path):
-    # Avoid generating index in any excluded folders
-    if any(excluded in dir_path for excluded in exclude_folders):
-        return
-    
     files = os.listdir(dir_path)
     
     # Skip if the directory is empty
@@ -50,7 +46,7 @@ def walk_directory(directory):
     # Iterate through the subdirectories and generate index files
     for dirpath, dirnames, filenames in os.walk(directory):
         # Avoid the .github folder and other unwanted folders
-        if ".github" in dirpath:
+        if dirpath in exclude_folders:
             continue
 
         generate_index(dirpath)
