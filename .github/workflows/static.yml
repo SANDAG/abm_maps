@@ -31,8 +31,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          python-version: '3.x'
+      - name: Run script to generate index files
+        run: python generate_index.py
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Update directory listings"
+          git push
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
