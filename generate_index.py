@@ -23,7 +23,7 @@ def generate_index(dir_path):
         
         # Only include files (not directories) in the listing
         if os.path.isfile(file_path):
-            file_url = file_path.replace(base_dir, "").replace(os.sep, "/")
+            file_url = file
             index_content += f'<li><a href="{file_url}">{file}</a></li>'
         elif os.path.isdir(file_path) and os.path.basename(file_path) != ".github":
             # Add directories, but avoid creating links for excluded directories like `.github`
