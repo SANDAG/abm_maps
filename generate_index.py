@@ -3,10 +3,12 @@ import os
 # Define the base directory (e.g., your repository root)
 base_dir = "./"
 
+exclude_folders = ['.github', '.git']
+
 # Function to generate index.html for a given folder
 def generate_index(dir_path):
-    # Avoid generating index in .github folder
-    if ".github" in dir_path:
+    # Avoid generating index in any excluded folders
+    if any(excluded in dir_path for excluded in exclude_folders):
         return
     
     files = os.listdir(dir_path)
