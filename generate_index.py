@@ -25,6 +25,10 @@ def generate_index(dir_path):
         if os.path.isfile(file_path):
             file_url = file_path.replace(base_dir, "").replace(os.sep, "/")
             index_content += f'<li><a href="{file_url}">{file}</a></li>'
+        elif os.path.isdir(file_path) and os.path.basename(file_path) != ".github":
+            # Add directories, but avoid creating links for excluded directories like `.github`
+            dir_url = file_path.replace(base_dir, "").replace(os.sep, "/")
+            index_content += f'<li><a href="{dir_url}/">{file}/</a></li>'
     
     index_content += '</ul></body></html>'
     
