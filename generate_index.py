@@ -19,9 +19,17 @@ def generate_index(dir_path):
 
     # Get the name of the directory for the heading
     dir_name = os.path.basename(dir_path)
+
+    # Create index.html file with a heading and a "Go to Parent Directory" link
+    index_content = f'<html><body>'
+
+    # Add a link to go to the parent directory
+    parent_dir_url = os.path.dirname(dir_path).replace(base_dir, "").replace(os.sep, "/")
+    if parent_dir_url != "":
+        index_content += f'<p><a href="../">.. (Parent Directory)</a></p>'
     
-    # Create index.html file
-    index_content = f'<html><body><h1>Index of {dir_name}</h1><ul>'
+    # Add the heading for the current directory
+    index_content += f'<h1>Index of {dir_name}</h1><ul>'
     
     for file in files:
         file_path = os.path.join(dir_path, file)
@@ -31,7 +39,7 @@ def generate_index(dir_path):
             continue
         
         # Only include files (not directories) in the listing
-        if os.path.isfile(file_path):
+        if os.path.isfile(file_path) and file.endswith('.html'):
             file_url = file
             index_content += f'<li><a href="{file_url}">{file}</a></li>'
         elif os.path.isdir(file_path) and os.path.basename(file_path) != ".github":
