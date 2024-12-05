@@ -29,7 +29,7 @@ def generate_index(dir_path):
         index_content += f'<p><a href="../">.. (Parent Directory)</a></p>'
     
     if dir_path != base_dir:
-        index_content += '<p>In the below maps, if an MGRA shape is in red, it is a destination; otherwise, it is the origin.</p>'
+        index_content += '<p>Destination MGRA in red; MGRA or TAZ w access in blue.</p>'
     # Add the heading for the current directory
     index_content += f'<h1>Index of {dir_name}</h1><ul>'
     
