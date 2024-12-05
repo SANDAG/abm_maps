@@ -11,7 +11,7 @@ def generate_index(dir_path):
     if any(excluded in dir_path for excluded in exclude_folders):
         return
         
-    files = os.listdir(dir_path)
+    files = sorted(os.listdir(dir_path))
     
     # Skip if the directory is empty
     if not files:
