@@ -12,10 +12,6 @@ def generate_index(dir_path):
         return
         
     files = sorted(os.listdir(dir_path))
-    
-    # Skip if the directory is empty
-    if not files:
-        return
 
     # Get the name of the directory for the heading
     dir_name = os.path.basename(dir_path)
