@@ -46,7 +46,7 @@ def generate_index(dir_path):
             has_content = True
         elif os.path.isdir(file_path) and os.path.basename(file_path) != ".github":
             # Add directories, but avoid creating links for excluded directories like `.github`
-            dir_url = file_path.replace(base_dir, "").replace(os.sep, "/")
+            dir_url = os.path.basename(file_path)  # Get the directory name directly
             index_content += f'<li><a href="{dir_url}/">{file}/</a></li>'
             has_content = True
     # If no valid files or directories were found, still create the index file with a message
