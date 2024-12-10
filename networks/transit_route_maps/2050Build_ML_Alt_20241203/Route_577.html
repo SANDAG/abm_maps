@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_53b42c2bdff73c238be10618b23eb0ca {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_53b42c2bdff73c238be10618b23eb0ca" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_53b42c2bdff73c238be10618b23eb0ca = L.map(
+                "map_53b42c2bdff73c238be10618b23eb0ca",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_199e49719a2adf7dbb4da4d38af9f12f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_199e49719a2adf7dbb4da4d38af9f12f.addTo(map_53b42c2bdff73c238be10618b23eb0ca);
+        
+    
+        function geo_json_c886212f8ab67a5f572321740f28e879_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_c886212f8ab67a5f572321740f28e879_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_c886212f8ab67a5f572321740f28e879_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_c886212f8ab67a5f572321740f28e879_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_c886212f8ab67a5f572321740f28e879_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_c886212f8ab67a5f572321740f28e879.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_c886212f8ab67a5f572321740f28e879_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_c886212f8ab67a5f572321740f28e879 = L.geoJson(null, {
+                onEachFeature: geo_json_c886212f8ab67a5f572321740f28e879_onEachFeature,
+            
+                style: geo_json_c886212f8ab67a5f572321740f28e879_styler,
+                pointToLayer: geo_json_c886212f8ab67a5f572321740f28e879_pointToLayer,
+        });
+
+        function geo_json_c886212f8ab67a5f572321740f28e879_add (data) {
+            geo_json_c886212f8ab67a5f572321740f28e879
+                .addData(data);
+        }
+            geo_json_c886212f8ab67a5f572321740f28e879_add({"bbox": [-117.19872308864436, 32.71556121582044, -117.16198806438044, 32.73149699912589], "features": [{"bbox": [-117.19872308864436, 32.71556121582044, -117.16198806438044, 32.73149699912589], "geometry": {"coordinates": [[[-117.19872308864436, 32.73149699912589, 0.0], [-117.19869384845391, 32.73089529753029, 0.0], [-117.19870674508257, 32.730885028464456, 0.0], [-117.1986701353572, 32.73020285141802, 0.0], [-117.19866726859227, 32.72993654219928, 0.0], [-117.19864288807467, 32.729865600060336, 0.0], [-117.19862789433043, 32.72982196901744, 0.0], [-117.19861362422212, 32.72978044699978, 0.0], [-117.19859395426039, 32.72972321392429, 0.0], [-117.19858502455807, 32.72969722847855, 0.0], [-117.19831625603702, 32.72949975240865, 0.0], [-117.19803103551338, 32.72943543031504, 0.0], [-117.19784138843598, 32.729386867928845, 0.0], [-117.19752562316816, 32.729306009627244, 0.0], [-117.19675368500079, 32.72933859782955, 0.0], [-117.19530443896726, 32.729283198115716, 0.0], [-117.19513491604975, 32.72927328754719, 0.0], [-117.19508949665207, 32.72927063183574, 0.0], [-117.19409077985178, 32.729212236830264, 0.0], [-117.19309660226308, 32.7291401340085, 0.0], [-117.19303137304226, 32.72912194315152, 0.0], [-117.19246772392755, 32.729105950026, 0.0], [-117.19023359020652, 32.729042532536305, 0.0], [-117.18923870435532, 32.729014278421985, 0.0], [-117.1879274888874, 32.7289575399402, 0.0], [-117.18759089716887, 32.72894297290097, 0.0], [-117.18691590066922, 32.72891375696113, 0.0], [-117.18579974154487, 32.728836750691926, 0.0], [-117.1852787087769, 32.72876539234633, 0.0], [-117.18437836722215, 32.728535747789444, 0.0], [-117.18409513535074, 32.72846350358395, 0.0], [-117.1817524347642, 32.727709162524064, 0.0], [-117.18114317562316, 32.72759612625736, 0.0], [-117.18027879408669, 32.72749545623783, 0.0], [-117.17922809241455, 32.72761056799703, 0.0], [-117.17838760412506, 32.727623490319566, 0.0], [-117.17789674674795, 32.72763103511232, 0.0], [-117.17726075650195, 32.72760365973723, 0.0], [-117.17653770282553, 32.72749118202309, 0.0], [-117.17606640939022, 32.727355371265546, 0.0], [-117.17555682581661, 32.7271340920742, 0.0], [-117.17496937482038, 32.72677404478072, 0.0], [-117.17448445623835, 32.72642367118687, 0.0], [-117.1739827753223, 32.72586975633281, 0.0], [-117.17358329572974, 32.725293910375385, 0.0], [-117.17344660909924, 32.72512727362119, 0.0], [-117.17325459616032, 32.725065726967635, 0.0], [-117.17256833250495, 32.72484575522925, 0.0], [-117.17169265717833, 32.724565063336776, 0.0], [-117.17160655014703, 32.72453746145035, 0.0], [-117.17132264107275, 32.723160243463845, 0.0], [-117.17106707996943, 32.7219205057383, 0.0], [-117.17107670490276, 32.71995584695942, 0.0], [-117.17107710694971, 32.71987397294592, 0.0], [-117.17108225171667, 32.71882383368038, 0.0], [-117.17108237025259, 32.718799450578615, 0.0], [-117.1710831652249, 32.71863728157582, 0.0], [-117.17109474256252, 32.71781124134214, 0.0], [-117.17110737773717, 32.71690965876316, 0.0], [-117.17111237797351, 32.716753452243694, 0.0], [-117.17114046695173, 32.71587596875752, 0.0], [-117.17113932095882, 32.71576631190576, 0.0], [-117.17113232379722, 32.715712136078345, 0.0], [-117.1711251710753, 32.71565675127408, 0.0], [-117.17109765052392, 32.715649471446916, 0.0], [-117.17095237856765, 32.715611041953295, 0.0], [-117.17045237176315, 32.715610421882836, 0.0], [-117.17035251803249, 32.71561029778628, 0.0], [-117.17001017062157, 32.715620368949146, 0.0], [-117.16990435488407, 32.715623481131516, 0.0], [-117.16988103174529, 32.71562416727941, 0.0], [-117.16955133642698, 32.71563386416299, 0.0], [-117.16916691501261, 32.715715337332995, 0.0], [-117.16882555522989, 32.71556121582044, 0.0], [-117.16827933206096, 32.71556654098286, 0.0], [-117.16769347739259, 32.71557224969747, 0.0], [-117.16736106844476, 32.71557548731017, 0.0], [-117.1664909632761, 32.71558395802751, 0.0], [-117.16476843397845, 32.71560071022661, 0.0], [-117.1647144401448, 32.71560123513088, 0.0], [-117.16382404731482, 32.715609884384975, 0.0], [-117.16290021106029, 32.7156188523095, 0.0], [-117.16213682995871, 32.715626257020986, 0.0], [-117.16198806438044, 32.71570266612457, 0.0]]], "type": "MultiLineString"}, "id": "123", "properties": {"Configuration": 3, "Direction": 2, "ETL_Route_ID": 20, "Mode": "5: Light Rail", "Operator": "SD Trolley", "Route": 577, "RouteID": 577203, "Start": "Lindbergh Field", "Stop": "Downtown"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_c886212f8ab67a5f572321740f28e879.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_c886212f8ab67a5f572321740f28e879.addTo(map_53b42c2bdff73c238be10618b23eb0ca);
+        
+    
+        function geo_json_6f9dc9efada4a7e6dfaf81887ae87549_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_6f9dc9efada4a7e6dfaf81887ae87549_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_6f9dc9efada4a7e6dfaf81887ae87549_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_6f9dc9efada4a7e6dfaf81887ae87549_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_6f9dc9efada4a7e6dfaf81887ae87549_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_6f9dc9efada4a7e6dfaf81887ae87549.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_6f9dc9efada4a7e6dfaf81887ae87549_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_6f9dc9efada4a7e6dfaf81887ae87549 = L.geoJson(null, {
+                onEachFeature: geo_json_6f9dc9efada4a7e6dfaf81887ae87549_onEachFeature,
+            
+                style: geo_json_6f9dc9efada4a7e6dfaf81887ae87549_styler,
+                pointToLayer: geo_json_6f9dc9efada4a7e6dfaf81887ae87549_pointToLayer,
+        });
+
+        function geo_json_6f9dc9efada4a7e6dfaf81887ae87549_add (data) {
+            geo_json_6f9dc9efada4a7e6dfaf81887ae87549
+                .addData(data);
+        }
+            geo_json_6f9dc9efada4a7e6dfaf81887ae87549_add({"bbox": [-117.19872308864436, 32.71570266612457, -117.16198806438044, 32.73149699912589], "features": [{"bbox": [-117.19872308864436, 32.73149699912589, -117.19872308864436, 32.73149699912589], "geometry": {"coordinates": [-117.19872308864436, 32.73149699912589, 0.0], "type": "Point"}, "id": "327", "properties": {"ETL_Route_ID": 20, "HNODE": 16737, "STOPTYPE": "5: Light Rail", "StopName": "AIRPORT TRANSIT HUB    EAST/WEST TERMINAL", "YR": 2050}, "type": "Feature"}, {"bbox": [-117.19309660226308, 32.7291401340085, -117.19309660226308, 32.7291401340085], "geometry": {"coordinates": [-117.19309660226308, 32.7291401340085, 0.0], "type": "Point"}, "id": "328", "properties": {"ETL_Route_ID": 20, "HNODE": 33344, "STOPTYPE": "5: Light Rail", "StopName": "RENTAL CAR ENTRANCE    NORTH HARBOR", "YR": 2099}, "type": "Feature"}, {"bbox": [-117.17344660909924, 32.72512727362119, -117.17344660909924, 32.72512727362119], "geometry": {"coordinates": [-117.17344660909924, 32.72512727362119, 0.0], "type": "Point"}, "id": "329", "properties": {"ETL_Route_ID": 20, "HNODE": 17043, "STOPTYPE": "5: Light Rail", "StopName": "HAWTHORN    NORTH HARBOR", "YR": 2035}, "type": "Feature"}, {"bbox": [-117.16916691501261, 32.715715337332995, -117.16916691501261, 32.715715337332995], "geometry": {"coordinates": [-117.16916691501261, 32.715715337332995], "type": "Point"}, "id": "330", "properties": {"ETL_Route_ID": 20, "HNODE": 17737, "STOPTYPE": "5: Light Rail", "StopName": "BROADWAY    KETTNER", "YR": 2035}, "type": "Feature"}, {"bbox": [-117.16198806438044, 32.71570266612457, -117.16198806438044, 32.71570266612457], "geometry": {"coordinates": [-117.16198806438044, 32.71570266612457], "type": "Point"}, "id": "331", "properties": {"ETL_Route_ID": 20, "HNODE": 17752, "STOPTYPE": "5: Light Rail", "StopName": "03RD    BROADWAY", "YR": 2035}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_6f9dc9efada4a7e6dfaf81887ae87549.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_6f9dc9efada4a7e6dfaf81887ae87549.addTo(map_53b42c2bdff73c238be10618b23eb0ca);
+        
+    
+        function geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983 = L.geoJson(null, {
+                onEachFeature: geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_onEachFeature,
+            
+                style: geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_styler,
+                pointToLayer: geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_pointToLayer,
+        });
+
+        function geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_add (data) {
+            geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983
+                .addData(data);
+        }
+            geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983_add({"bbox": [-117.19872308864436, 32.71556121582044, -117.16198806438044, 32.73149699912589], "features": [{"bbox": [-117.19872308864436, 32.71556121582044, -117.16198806438044, 32.73149699912589], "geometry": {"coordinates": [[[-117.16198806438044, 32.71570266612457, 0.0], [-117.16213682995871, 32.715626257020986, 0.0], [-117.16290021106029, 32.7156188523095, 0.0], [-117.16382404731482, 32.715609884384975, 0.0], [-117.1647144401448, 32.71560123513088, 0.0], [-117.16476843397845, 32.71560071022661, 0.0], [-117.1664909632761, 32.71558395802751, 0.0], [-117.16736106844476, 32.71557548731017, 0.0], [-117.16769347739259, 32.71557224969747, 0.0], [-117.16827933206096, 32.71556654098286, 0.0], [-117.16882555522989, 32.71556121582044, 0.0], [-117.16916691501261, 32.715715337332995, 0.0], [-117.16955133642698, 32.71563386416299, 0.0], [-117.16988103174529, 32.71562416727941, 0.0], [-117.16990435488407, 32.715623481131516, 0.0], [-117.17001017062157, 32.715620368949146, 0.0], [-117.17035251803249, 32.71561029778628, 0.0], [-117.17045237176315, 32.715610421882836, 0.0], [-117.17095237856765, 32.715611041953295, 0.0], [-117.17109765052392, 32.715649471446916, 0.0], [-117.1711251710753, 32.71565675127408, 0.0], [-117.17113232379722, 32.715712136078345, 0.0], [-117.17113932095882, 32.71576631190576, 0.0], [-117.17114046695173, 32.71587596875752, 0.0], [-117.17111237797351, 32.716753452243694, 0.0], [-117.17110737773717, 32.71690965876316, 0.0], [-117.17109474256252, 32.71781124134214, 0.0], [-117.1710831652249, 32.71863728157582, 0.0], [-117.17108237025259, 32.718799450578615, 0.0], [-117.17108225171667, 32.71882383368038, 0.0], [-117.17107710694971, 32.71987397294592, 0.0], [-117.17107670490276, 32.71995584695942, 0.0], [-117.17106707996943, 32.7219205057383, 0.0], [-117.17132264107275, 32.723160243463845, 0.0], [-117.17160655014703, 32.72453746145035, 0.0], [-117.17169265717833, 32.724565063336776, 0.0], [-117.17256833250495, 32.72484575522925, 0.0], [-117.17325459616032, 32.725065726967635, 0.0], [-117.17344660909924, 32.72512727362119, 0.0], [-117.17358329572974, 32.725293910375385, 0.0], [-117.1739827753223, 32.72586975633281, 0.0], [-117.17448445623835, 32.72642367118687, 0.0], [-117.17496937482038, 32.72677404478072, 0.0], [-117.17555682581661, 32.7271340920742, 0.0], [-117.17606640939022, 32.727355371265546, 0.0], [-117.17653770282553, 32.72749118202309, 0.0], [-117.17726075650195, 32.72760365973723, 0.0], [-117.17789674674795, 32.72763103511232, 0.0], [-117.17838760412506, 32.727623490319566, 0.0], [-117.17922809241455, 32.72761056799703, 0.0], [-117.18027879408669, 32.72749545623783, 0.0], [-117.18114317562316, 32.72759612625736, 0.0], [-117.1817524347642, 32.727709162524064, 0.0], [-117.18409513535074, 32.72846350358395, 0.0], [-117.18437836722215, 32.728535747789444, 0.0], [-117.1852787087769, 32.72876539234633, 0.0], [-117.18579974154487, 32.728836750691926, 0.0], [-117.18691590066922, 32.72891375696113, 0.0], [-117.18759089716887, 32.72894297290097, 0.0], [-117.1879274888874, 32.7289575399402, 0.0], [-117.18923870435532, 32.729014278421985, 0.0], [-117.19023359020652, 32.729042532536305, 0.0], [-117.19246772392755, 32.729105950026, 0.0], [-117.19303137304226, 32.72912194315152, 0.0], [-117.19309660226308, 32.7291401340085, 0.0], [-117.19409077985178, 32.729212236830264, 0.0], [-117.19508949665207, 32.72927063183574, 0.0], [-117.19513491604975, 32.72927328754719, 0.0], [-117.19530443896726, 32.729283198115716, 0.0], [-117.19675368500079, 32.72933859782955, 0.0], [-117.19752562316816, 32.729306009627244, 0.0], [-117.19784138843598, 32.729386867928845, 0.0], [-117.19803103551338, 32.72943543031504, 0.0], [-117.19831625603702, 32.72949975240865, 0.0], [-117.19858502455807, 32.72969722847855, 0.0], [-117.19859395426039, 32.72972321392429, 0.0], [-117.19861362422212, 32.72978044699978, 0.0], [-117.19862789433043, 32.72982196901744, 0.0], [-117.19864288807467, 32.729865600060336, 0.0], [-117.19866726859227, 32.72993654219928, 0.0], [-117.1986701353572, 32.73020285141802, 0.0], [-117.19870674508257, 32.730885028464456, 0.0], [-117.19869384845391, 32.73089529753029, 0.0], [-117.19872308864436, 32.73149699912589, 0.0]]], "type": "MultiLineString"}, "id": "208", "properties": {"Configuration": 3, "Direction": 1, "ETL_Route_ID": 19, "Mode": "5: Light Rail", "Operator": "SD Trolley", "Route": 577, "RouteID": 577103, "Start": "Downtown", "Stop": "Lindbergh Field"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983.addTo(map_53b42c2bdff73c238be10618b23eb0ca);
+        
+    
+        function geo_json_ee0e4c4da01ab3c223454f21bec64ddb_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_ee0e4c4da01ab3c223454f21bec64ddb_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_ee0e4c4da01ab3c223454f21bec64ddb_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_ee0e4c4da01ab3c223454f21bec64ddb_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_ee0e4c4da01ab3c223454f21bec64ddb_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_ee0e4c4da01ab3c223454f21bec64ddb.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_ee0e4c4da01ab3c223454f21bec64ddb_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_ee0e4c4da01ab3c223454f21bec64ddb = L.geoJson(null, {
+                onEachFeature: geo_json_ee0e4c4da01ab3c223454f21bec64ddb_onEachFeature,
+            
+                style: geo_json_ee0e4c4da01ab3c223454f21bec64ddb_styler,
+                pointToLayer: geo_json_ee0e4c4da01ab3c223454f21bec64ddb_pointToLayer,
+        });
+
+        function geo_json_ee0e4c4da01ab3c223454f21bec64ddb_add (data) {
+            geo_json_ee0e4c4da01ab3c223454f21bec64ddb
+                .addData(data);
+        }
+            geo_json_ee0e4c4da01ab3c223454f21bec64ddb_add({"bbox": [-117.19872308864436, 32.71570266612457, -117.16198806438044, 32.73149699912589], "features": [{"bbox": [-117.16198806438044, 32.71570266612457, -117.16198806438044, 32.71570266612457], "geometry": {"coordinates": [-117.16198806438044, 32.71570266612457], "type": "Point"}, "id": "322", "properties": {"ETL_Route_ID": 19, "HNODE": 17752, "STOPTYPE": "5: Light Rail", "StopName": "03RD    BROADWAY", "YR": 2035}, "type": "Feature"}, {"bbox": [-117.16916691501261, 32.715715337332995, -117.16916691501261, 32.715715337332995], "geometry": {"coordinates": [-117.16916691501261, 32.715715337332995], "type": "Point"}, "id": "323", "properties": {"ETL_Route_ID": 19, "HNODE": 17737, "STOPTYPE": "5: Light Rail", "StopName": "BROADWAY    KETTNER", "YR": 2035}, "type": "Feature"}, {"bbox": [-117.17344660909924, 32.72512727362119, -117.17344660909924, 32.72512727362119], "geometry": {"coordinates": [-117.17344660909924, 32.72512727362119, 0.0], "type": "Point"}, "id": "324", "properties": {"ETL_Route_ID": 19, "HNODE": 17043, "STOPTYPE": "5: Light Rail", "StopName": "HAWTHORN    NORTH HARBOR", "YR": 2035}, "type": "Feature"}, {"bbox": [-117.19309660226308, 32.7291401340085, -117.19309660226308, 32.7291401340085], "geometry": {"coordinates": [-117.19309660226308, 32.7291401340085, 0.0], "type": "Point"}, "id": "325", "properties": {"ETL_Route_ID": 19, "HNODE": 33344, "STOPTYPE": "5: Light Rail", "StopName": "RENTAL CAR ENTRANCE    NORTH HARBOR", "YR": 2099}, "type": "Feature"}, {"bbox": [-117.19872308864436, 32.73149699912589, -117.19872308864436, 32.73149699912589], "geometry": {"coordinates": [-117.19872308864436, 32.73149699912589, 0.0], "type": "Point"}, "id": "326", "properties": {"ETL_Route_ID": 19, "HNODE": 16737, "STOPTYPE": "5: Light Rail", "StopName": "AIRPORT TRANSIT HUB    EAST/WEST TERMINAL", "YR": 2050}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_ee0e4c4da01ab3c223454f21bec64ddb.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_ee0e4c4da01ab3c223454f21bec64ddb.addTo(map_53b42c2bdff73c238be10618b23eb0ca);
+        
+    
+            var layer_control_b57538bd3c595b8109ca1c3619c774b1_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_199e49719a2adf7dbb4da4d38af9f12f,
+                },
+                overlays :  {
+                    "Route 577 Dir. 2 Config. 3" : geo_json_c886212f8ab67a5f572321740f28e879,
+                    "Stops for Route 577 Dir. 2 Config. 3" : geo_json_6f9dc9efada4a7e6dfaf81887ae87549,
+                    "Route 577 Dir. 1 Config. 3" : geo_json_a56cb44778cfa9cdc9b75e2fcd3fc983,
+                    "Stops for Route 577 Dir. 1 Config. 3" : geo_json_ee0e4c4da01ab3c223454f21bec64ddb,
+                },
+            };
+            let layer_control_b57538bd3c595b8109ca1c3619c774b1 = L.control.layers(
+                layer_control_b57538bd3c595b8109ca1c3619c774b1_layers.base_layers,
+                layer_control_b57538bd3c595b8109ca1c3619c774b1_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_53b42c2bdff73c238be10618b23eb0ca);
+
+        
+    
+            map_53b42c2bdff73c238be10618b23eb0ca.fitBounds(
+                [[32.71556121582044, -117.19872308864436], [32.73149699912589, -117.16198806438044]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
