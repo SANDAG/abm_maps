@@ -32,6 +32,9 @@ def generate_index(dir_path):
         index_content += '<p>Destination MGRA in red; MGRA or TAZ w access in blue.</p>'
     # Add the heading for the current directory
     index_content += f'<h1>Index of {dir_name}</h1><ul>'
+
+    # Track if there are any valid files or directories to list
+    has_content = False
     
     for file in files:
         file_path = os.path.join(dir_path, file)
@@ -44,23 +47,31 @@ def generate_index(dir_path):
         if os.path.isfile(file_path) and file.endswith('.html'):
             file_url = file
             index_content += f'<li><a href="{file_url}">{file}</a></li>'
+            has_content = True
         elif os.path.isdir(file_path) and os.path.basename(file_path) != ".github":
             # Add directories, but avoid creating links for excluded directories like `.github`
             dir_url = file_path.replace(base_dir, "").replace(os.sep, "/")
             index_content += f'<li><a href="{dir_url}/">{file}/</a></li>'
+            has_content = True
+    # If no valid files or directories were found, still create the index file with a message
+    if not has_content:
+        index_content += '<li>No files or directories to display.</li>'
     
     index_content += '</ul></body></html>'
     
     # Write the generated content to index.html in the folder
-    with open(os.path.join(dir_path, 'index.html'), 'w') as index_file:
-        index_file.write(index_content)
+    try:
+        with open(os.path.join(dir_path, 'index.html'), 'w') as index_file:
+            index_file.write(index_content)
+    except Exception as e:
+        print(f"Error writing index.html in {dir_path}: {e}")
 
 # Function to walk through directories and generate index files
 def walk_directory(directory):
     # Iterate through the subdirectories and generate index files
     for dirpath, dirnames, filenames in os.walk(directory):
         # Avoid the .github folder and other unwanted folders
-        if ".github" in dirpath or ".git" in dirpath:
+        if any(excluded in dirpath for excluded in exclude_folders):
             continue
 
         generate_index(dirpath)
