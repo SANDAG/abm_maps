@@ -14,7 +14,7 @@ def generate_index(dir_path):
     files = sorted(os.listdir(dir_path))
 
     # Get the name of the directory for the heading
-    dir_name = os.path.basename(dir_path)
+    dir_name = os.path.dirname(dir_path).replace(base_dir, "")
 
     # Create index.html file with a heading and a "Go to Parent Directory" link
     index_content = f'<html><body>'
