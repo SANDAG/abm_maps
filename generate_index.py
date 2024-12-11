@@ -24,8 +24,9 @@ def generate_index(dir_path):
     if parent_dir_url != "":
         index_content += f'<p><a href="../">.. (Parent Directory)</a></p>'
     
-    if dir_path != base_dir:
-        index_content += '<p>Destination MGRA in red; MGRA or TAZ w access in blue.</p>'
+    if dir_path != base_dir and dir_path.split("_")[-1].isdigit():
+        if int(dir_path.split("_")[-1]) < 2000:
+            index_content += '<p>Destination MGRA in red; MGRA or TAZ w access in blue.</p>'
     # Add the heading for the current directory
     index_content += f'<h1>Index of {dir_name}</h1><ul>'
 
