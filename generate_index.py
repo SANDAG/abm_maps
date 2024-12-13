@@ -10,36 +10,39 @@ def generate_index(dir_path):
     # Avoid generating index in any excluded folders
     if any(excluded in dir_path for excluded in exclude_folders):
         return
-        
+
     files = sorted(os.listdir(dir_path))
 
     # Get the name of the directory for the heading
-    dir_name = os.path.dirname(dir_path).replace(base_dir, "")
+    dir_name = dir_path.replace(base_dir, "").replace(os.sep, "/")
 
     # Create index.html file with a heading and a "Go to Parent Directory" link
     index_content = f'<html><body>'
 
     # Add a link to go to the parent directory
-    parent_dir_url = os.path.dirname(dir_path).replace(base_dir, "").replace(os.sep, "/")
+    parent_dir_url = dir_path.replace(base_dir, "").replace(os.sep, "/")
     if parent_dir_url != "":
         index_content += f'<p><a href="../">.. (Parent Directory)</a></p>'
-    
+
     if dir_path != base_dir and dir_path.split("_")[-1].isdigit():
         if int(dir_path.split("_")[-1]) < 2000:
             index_content += '<p>Destination MGRA in red; MGRA or TAZ w access in blue.</p>'
     # Add the heading for the current directory
-    index_content += f'<h1>Index of {dir_name}</h1><ul>'
+    if parent_dir_url != "":
+        index_content += f'<h1>Index of {dir_name}</h1><ul>'
+    else:
+        index_content += "<h2>ABM Maps: You are the base directory.</h2>"
 
     # Track if there are any valid files or directories to list
     has_content = False
-    
+
     for file in files:
         file_path = os.path.join(dir_path, file)
 
         # Skip index.html from the listing
         if file == 'index.html':
             continue
-        
+
         # Only include files (not directories) in the listing
         if os.path.isfile(file_path) and file.endswith('.html'):
             file_url = file
@@ -53,9 +56,9 @@ def generate_index(dir_path):
     # If no valid files or directories were found, still create the index file with a message
     if not has_content:
         index_content += '<li>No files or directories to display.</li>'
-    
+
     index_content += '</ul></body></html>'
-    
+
     # Write the generated content to index.html in the folder
     try:
         with open(os.path.join(dir_path, 'index.html'), 'w') as index_file:
@@ -70,7 +73,6 @@ def walk_directory(directory):
         # Avoid the .github folder and other unwanted folders
         if any(excluded in dirpath for excluded in exclude_folders):
             continue
-
         generate_index(dirpath)
 
 # Call the function to walk the directory structure and generate index.html files
