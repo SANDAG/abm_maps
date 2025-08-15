@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_eb6d5c068e5b7769116639c2fad3c869 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_eb6d5c068e5b7769116639c2fad3c869" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_eb6d5c068e5b7769116639c2fad3c869 = L.map(
+                "map_eb6d5c068e5b7769116639c2fad3c869",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2679278b40280e8758cfad290fc38596 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_eb6d5c068e5b7769116639c2fad3c869);
+        
+    
+        function geo_json_da9f67cf188058a98650773aab370f73_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_da9f67cf188058a98650773aab370f73_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_da9f67cf188058a98650773aab370f73_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_da9f67cf188058a98650773aab370f73_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_da9f67cf188058a98650773aab370f73_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_da9f67cf188058a98650773aab370f73.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_da9f67cf188058a98650773aab370f73_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_da9f67cf188058a98650773aab370f73 = L.geoJson(null, {
+                onEachFeature: geo_json_da9f67cf188058a98650773aab370f73_onEachFeature,
+            
+                style: geo_json_da9f67cf188058a98650773aab370f73_styler,
+                pointToLayer: geo_json_da9f67cf188058a98650773aab370f73_pointToLayer
+        });
+
+        function geo_json_da9f67cf188058a98650773aab370f73_add (data) {
+            geo_json_da9f67cf188058a98650773aab370f73
+                .addData(data)
+                .addTo(map_eb6d5c068e5b7769116639c2fad3c869);
+        }
+            geo_json_da9f67cf188058a98650773aab370f73_add({"bbox": [-116.97614976268291, 32.78038714580331, -116.96229017252178, 32.79495902137194], "features": [{"bbox": [-116.97614976268291, 32.78038714580331, -116.96229017252178, 32.79495902137194], "geometry": {"coordinates": [[[-116.97614976268291, 32.79133199113046, 0.0], [-116.9761425626176, 32.79133168991147, 0.0], [-116.97604794618013, 32.791327734009414, 0.0], [-116.97579821230681, 32.7913172920736, 0.0], [-116.97552018386216, 32.7913398144735, 0.0], [-116.97554175775552, 32.788823183431965, 0.0], [-116.97552383683183, 32.78862264948231, 0.0], [-116.97522336206556, 32.788238237363046, 0.0], [-116.97495328332872, 32.78789270717781, 0.0], [-116.97478465604908, 32.787764518974505, 0.0], [-116.97453364727875, 32.78770827418523, 0.0], [-116.97412009982854, 32.78767057220026, 0.0], [-116.9740029676256, 32.787671259043776, 0.0], [-116.97304634065034, 32.78767136744196, 0.0], [-116.97093782132997, 32.78766720527365, 0.0], [-116.97088709110628, 32.7874322322723, 0.0], [-116.97087380686882, 32.78680290848026, 0.0], [-116.97087087460285, 32.78584810563424, 0.0], [-116.97086589404559, 32.784046509291734, 0.0], [-116.970847632597, 32.783604111402816, 0.0], [-116.97063096364066, 32.783169742819254, 0.0], [-116.97056323203667, 32.782844718595186, 0.0], [-116.9705817962132, 32.78113643286796, 0.0], [-116.97059529015972, 32.78039948837162, 0.0], [-116.96876025347638, 32.78039644207349, 0.0], [-116.9665933472527, 32.780392546576195, 0.0], [-116.96659336736981, 32.780395019900915, 0.0], [-116.96550989421293, 32.78039058456149, 0.0], [-116.96457612122339, 32.78039049532854, 0.0], [-116.9639481672848, 32.7803886310513, 0.0], [-116.96230185187798, 32.78038714580331, 0.0], [-116.9623059996818, 32.784119548630734, 0.0], [-116.96230635893639, 32.78496882498618, 0.0], [-116.96231512185966, 32.78766227855396, 0.0], [-116.96231916098671, 32.78936905755255, 0.0], [-116.96232266304301, 32.79020457346268, 0.0], [-116.96232272971253, 32.7902128184825, 0.0], [-116.9623217649275, 32.79049591626502, 0.0], [-116.962299195182, 32.792734953291394, 0.0], [-116.96229061138574, 32.793779140265, 0.0], [-116.96229017252178, 32.79383247101386, 0.0], [-116.96291658316193, 32.79383297895052, 0.0], [-116.9635722811576, 32.79383358950369, 0.0], [-116.96445943878317, 32.79383248884271, 0.0], [-116.9647827805154, 32.7938320856954, 0.0], [-116.96614784579127, 32.79383049791709, 0.0], [-116.96662856424676, 32.793839308078894, 0.0], [-116.96708190109192, 32.79384761530862, 0.0], [-116.96730209448609, 32.79391449814736, 0.0], [-116.96744157731798, 32.794059906776056, 0.0], [-116.96760932009697, 32.79427908557147, 0.0], [-116.96791326519065, 32.794640116864976, 0.0], [-116.96799563273842, 32.7947646942383, 0.0], [-116.9681087897177, 32.79487397503491, 0.0], [-116.96821328552478, 32.79491871707602, 0.0], [-116.96845423291856, 32.794936279754175, 0.0], [-116.97102348265446, 32.79495291270983, 0.0], [-116.97217542631805, 32.79495167837559, 0.0], [-116.97290601396578, 32.7949567492043, 0.0], [-116.97326886563314, 32.79495902137194, 0.0], [-116.97437516269385, 32.79494703997021, 0.0], [-116.97550764942791, 32.794954134082985, 0.0], [-116.97551885014028, 32.792884618743976, 0.0], [-116.97551926272448, 32.79280833093327, 0.0], [-116.97552001671745, 32.791605856220315, 0.0], [-116.97552002109288, 32.79159873974797, 0.0], [-116.9755201445501, 32.791401796862594, 0.0], [-116.97552018386216, 32.7913398144735, 0.0], [-116.97579821230681, 32.7913172920736, 0.0], [-116.97604794618013, 32.791327734009414, 0.0], [-116.9761425626176, 32.79133168991147, 0.0], [-116.97614976268291, 32.79133199113046, 0.0]]], "type": "MultiLineString"}, "id": "12", "properties": {"Configuration": 4, "Direction": 1, "ETL_Route_ID": 215, "Mode": "10: Local", "Operator": "MTS", "Route": 872, "RouteID": 872104, "Start": "El Cajon", "Stop": "El Cajon"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_da9f67cf188058a98650773aab370f73.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_18b446f28c6675f6f4a886c6875a816e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_18b446f28c6675f6f4a886c6875a816e_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_18b446f28c6675f6f4a886c6875a816e_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_18b446f28c6675f6f4a886c6875a816e_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_18b446f28c6675f6f4a886c6875a816e_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_18b446f28c6675f6f4a886c6875a816e.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_18b446f28c6675f6f4a886c6875a816e_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_18b446f28c6675f6f4a886c6875a816e = L.geoJson(null, {
+                onEachFeature: geo_json_18b446f28c6675f6f4a886c6875a816e_onEachFeature,
+            
+                style: geo_json_18b446f28c6675f6f4a886c6875a816e_styler,
+                pointToLayer: geo_json_18b446f28c6675f6f4a886c6875a816e_pointToLayer
+        });
+
+        function geo_json_18b446f28c6675f6f4a886c6875a816e_add (data) {
+            geo_json_18b446f28c6675f6f4a886c6875a816e
+                .addData(data)
+                .addTo(map_eb6d5c068e5b7769116639c2fad3c869);
+        }
+            geo_json_18b446f28c6675f6f4a886c6875a816e_add({"bbox": [-116.97614976268291, 32.78038714580331, -116.96229017252178, 32.794954134082985], "features": [{"bbox": [-116.97614976268291, 32.79133199113046, -116.97614976268291, 32.79133199113046], "geometry": {"coordinates": [-116.97614976268291, 32.79133199113046], "type": "Point"}, "id": "6973", "properties": {"ETL_Route_ID": 215, "HNODE": 13869, "STOPTYPE": "10: Local", "StopName": "EL CAJON TRANSIT CTR    EL CAJON TRANSIT CTR", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97478465604908, 32.787764518974505, -116.97478465604908, 32.787764518974505], "geometry": {"coordinates": [-116.97478465604908, 32.787764518974505], "type": "Point"}, "id": "6974", "properties": {"ETL_Route_ID": 215, "HNODE": 13988, "STOPTYPE": "10: Local", "StopName": "EL CAJON    WASHINGTON", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97093782132997, 32.78766720527365, -116.97093782132997, 32.78766720527365], "geometry": {"coordinates": [-116.97093782132997, 32.78766720527365], "type": "Point"}, "id": "6975", "properties": {"ETL_Route_ID": 215, "HNODE": 13996, "STOPTYPE": "10: Local", "StopName": "JOHNSON    WASHINGTON", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97086589404559, 32.784046509291734, -116.97086589404559, 32.784046509291734], "geometry": {"coordinates": [-116.97086589404559, 32.784046509291734], "type": "Point"}, "id": "6976", "properties": {"ETL_Route_ID": 215, "HNODE": 14130, "STOPTYPE": "10: Local", "StopName": "JOHNSON    RENETTE", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97059529015972, 32.78039948837162, -116.97059529015972, 32.78039948837162], "geometry": {"coordinates": [-116.97059529015972, 32.78039948837162], "type": "Point"}, "id": "6977", "properties": {"ETL_Route_ID": 215, "HNODE": 14238, "STOPTYPE": "10: Local", "StopName": "JOHNSON    CHASE", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.96659336736981, 32.780395019900915, -116.96659336736981, 32.780395019900915], "geometry": {"coordinates": [-116.96659336736981, 32.780395019900915], "type": "Point"}, "id": "6978", "properties": {"ETL_Route_ID": 215, "HNODE": 23135, "STOPTYPE": "10: Local", "StopName": "CHASE    ESTES", "YR": 2001}, "type": "Feature"}, {"bbox": [-116.96230185187798, 32.78038714580331, -116.96230185187798, 32.78038714580331], "geometry": {"coordinates": [-116.96230185187798, 32.78038714580331], "type": "Point"}, "id": "6979", "properties": {"ETL_Route_ID": 215, "HNODE": 14245, "STOPTYPE": "10: Local", "StopName": "S MAGNOLIA    CHASE", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.9623059996818, 32.784119548630734, -116.9623059996818, 32.784119548630734], "geometry": {"coordinates": [-116.9623059996818, 32.784119548630734], "type": "Point"}, "id": "6980", "properties": {"ETL_Route_ID": 215, "HNODE": 14126, "STOPTYPE": "10: Local", "StopName": "MAGNOLIA    RENETTE", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.96231512185966, 32.78766227855396, -116.96231512185966, 32.78766227855396], "geometry": {"coordinates": [-116.96231512185966, 32.78766227855396], "type": "Point"}, "id": "6981", "properties": {"ETL_Route_ID": 215, "HNODE": 14001, "STOPTYPE": "10: Local", "StopName": "MAGNOLIA    WASHINGTON", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.96232272971253, 32.7902128184825, -116.96232272971253, 32.7902128184825], "geometry": {"coordinates": [-116.96232272971253, 32.7902128184825], "type": "Point"}, "id": "6982", "properties": {"ETL_Route_ID": 215, "HNODE": 13919, "STOPTYPE": "10: Local", "StopName": "MAGNOLIA    CAMDEN", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.962299195182, 32.792734953291394, -116.962299195182, 32.792734953291394], "geometry": {"coordinates": [-116.962299195182, 32.792734953291394], "type": "Point"}, "id": "6983", "properties": {"ETL_Route_ID": 215, "HNODE": 13810, "STOPTYPE": "10: Local", "StopName": "MAGNOLIA    LEXINGTON", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.96229017252178, 32.79383247101386, -116.96229017252178, 32.79383247101386], "geometry": {"coordinates": [-116.96229017252178, 32.79383247101386], "type": "Point"}, "id": "6984", "properties": {"ETL_Route_ID": 215, "HNODE": 13766, "STOPTYPE": "10: Local", "StopName": "MAGNOLIA    E. DOUGLAS", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.96291658316193, 32.79383297895052, -116.96291658316193, 32.79383297895052], "geometry": {"coordinates": [-116.96291658316193, 32.79383297895052], "type": "Point"}, "id": "6985", "properties": {"ETL_Route_ID": 215, "HNODE": 7976, "STOPTYPE": "10: Local", "StopName": "W. DOUGLAS    zone connector", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.9647827805154, 32.7938320856954, -116.9647827805154, 32.7938320856954], "geometry": {"coordinates": [-116.9647827805154, 32.7938320856954], "type": "Point"}, "id": "6986", "properties": {"ETL_Route_ID": 215, "HNODE": 7465, "STOPTYPE": "10: Local", "StopName": "SUNSHINE    W. DOUGLAS", "YR": 2020}, "type": "Feature"}, {"bbox": [-116.96791326519065, 32.794640116864976, -116.96791326519065, 32.794640116864976], "geometry": {"coordinates": [-116.96791326519065, 32.794640116864976], "type": "Point"}, "id": "6987", "properties": {"ETL_Route_ID": 215, "HNODE": 13739, "STOPTYPE": "10: Local", "StopName": "W. DOUGLAS    EL CAJON/DOUGLAS", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97102348265446, 32.79495291270983, -116.97102348265446, 32.79495291270983], "geometry": {"coordinates": [-116.97102348265446, 32.79495291270983], "type": "Point"}, "id": "6988", "properties": {"ETL_Route_ID": 215, "HNODE": 13713, "STOPTYPE": "10: Local", "StopName": "JOHNSON    MAIN", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97550764942791, 32.794954134082985, -116.97550764942791, 32.794954134082985], "geometry": {"coordinates": [-116.97550764942791, 32.794954134082985], "type": "Point"}, "id": "6989", "properties": {"ETL_Route_ID": 215, "HNODE": 13711, "STOPTYPE": "10: Local", "StopName": "MARSHALL    MAIN", "YR": 1990}, "type": "Feature"}, {"bbox": [-116.97614976268291, 32.79133199113046, -116.97614976268291, 32.79133199113046], "geometry": {"coordinates": [-116.97614976268291, 32.79133199113046], "type": "Point"}, "id": "6990", "properties": {"ETL_Route_ID": 215, "HNODE": 13869, "STOPTYPE": "10: Local", "StopName": "EL CAJON TRANSIT CTR    EL CAJON TRANSIT CTR", "YR": 1990}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_18b446f28c6675f6f4a886c6875a816e.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            var layer_control_093a58aea7080bcacf26943e1b3e7a04 = {
+                base_layers : {
+                    "cartodbdark_matter" : tile_layer_2679278b40280e8758cfad290fc38596,
+                },
+                overlays :  {
+                    "Route 872 Dir. 1 Config. 4" : geo_json_da9f67cf188058a98650773aab370f73,
+                    "Stops for Route 872 Dir. 1 Config. 4" : geo_json_18b446f28c6675f6f4a886c6875a816e,
+                },
+            };
+            L.control.layers(
+                layer_control_093a58aea7080bcacf26943e1b3e7a04.base_layers,
+                layer_control_093a58aea7080bcacf26943e1b3e7a04.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_eb6d5c068e5b7769116639c2fad3c869);
+        
+    
+            map_eb6d5c068e5b7769116639c2fad3c869.fitBounds(
+                [[32.78038714580331, -116.97614976268291], [32.79495902137194, -116.96229017252178]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

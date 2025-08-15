@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_be2eeed8d8a4c2170ded4070284cf87a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_be2eeed8d8a4c2170ded4070284cf87a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_be2eeed8d8a4c2170ded4070284cf87a = L.map(
+                "map_be2eeed8d8a4c2170ded4070284cf87a",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_814590ae407c043f523d87b68de3f106 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        
+    
+        function geo_json_791b8aec5e5189d1dc7ceca687842b52_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_791b8aec5e5189d1dc7ceca687842b52_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_791b8aec5e5189d1dc7ceca687842b52_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_791b8aec5e5189d1dc7ceca687842b52_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_791b8aec5e5189d1dc7ceca687842b52_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_791b8aec5e5189d1dc7ceca687842b52.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_791b8aec5e5189d1dc7ceca687842b52_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_791b8aec5e5189d1dc7ceca687842b52 = L.geoJson(null, {
+                onEachFeature: geo_json_791b8aec5e5189d1dc7ceca687842b52_onEachFeature,
+            
+                style: geo_json_791b8aec5e5189d1dc7ceca687842b52_styler,
+                pointToLayer: geo_json_791b8aec5e5189d1dc7ceca687842b52_pointToLayer
+        });
+
+        function geo_json_791b8aec5e5189d1dc7ceca687842b52_add (data) {
+            geo_json_791b8aec5e5189d1dc7ceca687842b52
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_791b8aec5e5189d1dc7ceca687842b52_add({"bbox": [-117.18541702051724, 33.11844059276485, -117.09194758854547, 33.14697686357915], "features": [{"bbox": [-117.18541702051724, 33.11844059276485, -117.09194758854547, 33.14697686357915], "geometry": {"coordinates": [[[-117.18541702051724, 33.14697686357915, 0.0], [-117.1843100042798, 33.146723834505686, 0.0], [-117.18338514873003, 33.14654830428167, 0.0], [-117.1801526783048, 33.1461265298205, 0.0], [-117.17809116311238, 33.14582536007702, 0.0], [-117.17510582265194, 33.14544200622017, 0.0], [-117.1734324378453, 33.14506029661552, 0.0], [-117.17302782033853, 33.14496799726992, 0.0], [-117.1660616034125, 33.14327271239375, 0.0], [-117.16322843567396, 33.142583107881606, 0.0], [-117.16108071758623, 33.14206029419906, 0.0], [-117.16055923333988, 33.14193284711835, 0.0], [-117.15925963371586, 33.14161522442252, 0.0], [-117.1589577047295, 33.14148358876404, 0.0], [-117.15852100374366, 33.14111464835633, 0.0], [-117.15813072388616, 33.13990455477534, 0.0], [-117.15783749841687, 33.13899536575217, 0.0], [-117.15763530936222, 33.138478927302444, 0.0], [-117.15753675442097, 33.138227191704225, 0.0], [-117.1575117868874, 33.13816341866314, 0.0], [-117.15747935631764, 33.13808058095177, 0.0], [-117.15744946671639, 33.138004235093604, 0.0], [-117.15739598922794, 33.13786763902655, 0.0], [-117.15645502899203, 33.13546408287115, 0.0], [-117.15622945210706, 33.13497348168652, 0.0], [-117.15587840242775, 33.134669594632115, 0.0], [-117.15556928682949, 33.13462613094094, 0.0], [-117.15545474268616, 33.13461002538239, 0.0], [-117.15393845208406, 33.13471811648647, 0.0], [-117.153843745125, 33.13474399071578, 0.0], [-117.15213374123077, 33.13521115049738, 0.0], [-117.15085256113395, 33.13557380596482, 0.0], [-117.15074450246507, 33.13560439261309, 0.0], [-117.15046844706688, 33.13576090158963, 0.0], [-117.14838975720514, 33.13693937630725, 0.0], [-117.14769283444379, 33.1373118964054, 0.0], [-117.1471021437734, 33.137531103937775, 0.0], [-117.1462116099413, 33.137660128936595, 0.0], [-117.1422082921597, 33.1380028903246, 0.0], [-117.1418304745831, 33.138114999129854, 0.0], [-117.14157170944249, 33.13820865945551, 0.0], [-117.14135926685329, 33.13833263662415, 0.0], [-117.14134899231988, 33.13833863215843, 0.0], [-117.14120154420536, 33.1384246793583, 0.0], [-117.1411181309704, 33.138473357402624, 0.0], [-117.14108294195043, 33.13849389294967, 0.0], [-117.14106739964312, 33.138508876867725, 0.0], [-117.14102726430175, 33.138547569045194, 0.0], [-117.1409773936039, 33.13859564693149, 0.0], [-117.14091385070815, 33.138656905325234, 0.0], [-117.14088438676008, 33.138685310496726, 0.0], [-117.14074486285979, 33.13881981753038, 0.0], [-117.14035663786915, 33.13919447542142, 0.0], [-117.14023231731889, 33.139270073807104, 0.0], [-117.13994590713203, 33.13944423786487, 0.0], [-117.13967743744068, 33.139547858509516, 0.0], [-117.13949652382637, 33.1395873605654, 0.0], [-117.13920541972541, 33.13955316961113, 0.0], [-117.13896925718821, 33.139460042048555, 0.0], [-117.1374384380698, 33.13878829471877, 0.0], [-117.13720209904629, 33.1386809313333, 0.0], [-117.1367886056748, 33.138493089377754, 0.0], [-117.13637750810288, 33.138383892740144, 0.0], [-117.13588518312996, 33.138318701621124, 0.0], [-117.13509602358859, 33.138298230053636, 0.0], [-117.13429681061712, 33.138252539019525, 0.0], [-117.13377284558659, 33.13812709919873, 0.0], [-117.13332057076119, 33.13798355624022, 0.0], [-117.13259938191763, 33.13757505071974, 0.0], [-117.13047065270301, 33.13591088155119, 0.0], [-117.12985424005919, 33.135396509675665, 0.0], [-117.12933552476825, 33.13496365454531, 0.0], [-117.12923624044555, 33.13488080334365, 0.0], [-117.12910364152336, 33.134770151958115, 0.0], [-117.12903305948846, 33.134711251492895, 0.0], [-117.12846770092666, 33.13423946338683, 0.0], [-117.12775018292416, 33.13353956626587, 0.0], [-117.12713639928953, 33.13292193551692, 0.0], [-117.12621012827788, 33.13225126658567, 0.0], [-117.1249410473112, 33.13155597077698, 0.0], [-117.12413098251837, 33.13111214519466, 0.0], [-117.12280925608043, 33.130321351952624, 0.0], [-117.12166472505986, 33.12963655228198, 0.0], [-117.12021929577357, 33.128980208526194, 0.0], [-117.11672720217366, 33.12764062128717, 0.0], [-117.11356483040431, 33.1264368857301, 0.0], [-117.11279037874252, 33.12614234434467, 0.0], [-117.10988453613317, 33.125037126912936, 0.0], [-117.10653222083651, 33.123799355346385, 0.0], [-117.10586219417242, 33.12355194679222, 0.0], [-117.10465251618646, 33.1230999289731, 0.0], [-117.10378715183246, 33.12278569867423, 0.0], [-117.10350233338737, 33.12267725011986, 0.0], [-117.10335111902734, 33.12261967231021, 0.0], [-117.10317898115383, 33.122559956125876, 0.0], [-117.10310505608705, 33.12253431060111, 0.0], [-117.10306358723682, 33.12251992504873, 0.0], [-117.10301859052602, 33.12250431488089, 0.0], [-117.10293161966361, 33.12247414403743, 0.0], [-117.10286336454736, 33.12244804725059, 0.0], [-117.10274802459537, 33.122403946927314, 0.0], [-117.10265016991941, 33.1223669778453, 0.0], [-117.10059746494323, 33.12159144248018, 0.0], [-117.09728669439308, 33.12036385104333, 0.0], [-117.09565255010394, 33.11974754096721, 0.0], [-117.09357938608852, 33.11898798102527, 0.0], [-117.09194758854547, 33.11844059276485, 0.0]]], "type": "MultiLineString"}, "id": "0", "properties": {"Configuration": 5, "Direction": 1, "ETL_Route_ID": 6, "Mode": "5: Light Rail", "Operator": "NCTD", "Route": 399, "RouteID": 399105, "Start": "San Marcos", "Stop": "Escondido"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_791b8aec5e5189d1dc7ceca687842b52.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_d77403894e24562dabb7ed091d36a140_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_d77403894e24562dabb7ed091d36a140_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_d77403894e24562dabb7ed091d36a140_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_d77403894e24562dabb7ed091d36a140_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_d77403894e24562dabb7ed091d36a140_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_d77403894e24562dabb7ed091d36a140.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_d77403894e24562dabb7ed091d36a140_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_d77403894e24562dabb7ed091d36a140 = L.geoJson(null, {
+                onEachFeature: geo_json_d77403894e24562dabb7ed091d36a140_onEachFeature,
+            
+                style: geo_json_d77403894e24562dabb7ed091d36a140_styler,
+                pointToLayer: geo_json_d77403894e24562dabb7ed091d36a140_pointToLayer
+        });
+
+        function geo_json_d77403894e24562dabb7ed091d36a140_add (data) {
+            geo_json_d77403894e24562dabb7ed091d36a140
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_d77403894e24562dabb7ed091d36a140_add({"bbox": [-117.18541702051724, 33.11844059276485, -117.09194758854547, 33.14697686357915], "features": [{"bbox": [-117.18541702051724, 33.14697686357915, -117.18541702051724, 33.14697686357915], "geometry": {"coordinates": [-117.18541702051724, 33.14697686357915, 0.0], "type": "Point"}, "id": "41", "properties": {"ETL_Route_ID": 6, "HNODE": 7420, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    PALOMAR COLLEGE", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.16108071758623, 33.14206029419906, -117.16108071758623, 33.14206029419906], "geometry": {"coordinates": [-117.16108071758623, 33.14206029419906, 0.0], "type": "Point"}, "id": "42", "properties": {"ETL_Route_ID": 6, "HNODE": 23986, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    SAN MARCOS CIVIC CTR", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.15393845208406, 33.13471811648647, -117.15393845208406, 33.13471811648647], "geometry": {"coordinates": [-117.15393845208406, 33.13471811648647, 0.0], "type": "Point"}, "id": "43", "properties": {"ETL_Route_ID": 6, "HNODE": 23887, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    CSU-SAN MARCOS", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.12413098251837, 33.13111214519466, -117.12413098251837, 33.13111214519466], "geometry": {"coordinates": [-117.12413098251837, 33.13111214519466, 0.0], "type": "Point"}, "id": "44", "properties": {"ETL_Route_ID": 6, "HNODE": 23958, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    NORDAHL ROAD", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.09194758854547, 33.11844059276485, -117.09194758854547, 33.11844059276485], "geometry": {"coordinates": [-117.09194758854547, 33.11844059276485, 0.0], "type": "Point"}, "id": "45", "properties": {"ETL_Route_ID": 6, "HNODE": 8213, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    ESCONDIDO TC", "YR": 2008}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_d77403894e24562dabb7ed091d36a140.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_09bebba1a84c7dbffe84e8a58dc7204a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_09bebba1a84c7dbffe84e8a58dc7204a_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_09bebba1a84c7dbffe84e8a58dc7204a_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_09bebba1a84c7dbffe84e8a58dc7204a_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_09bebba1a84c7dbffe84e8a58dc7204a_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_09bebba1a84c7dbffe84e8a58dc7204a.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_09bebba1a84c7dbffe84e8a58dc7204a_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_09bebba1a84c7dbffe84e8a58dc7204a = L.geoJson(null, {
+                onEachFeature: geo_json_09bebba1a84c7dbffe84e8a58dc7204a_onEachFeature,
+            
+                style: geo_json_09bebba1a84c7dbffe84e8a58dc7204a_styler,
+                pointToLayer: geo_json_09bebba1a84c7dbffe84e8a58dc7204a_pointToLayer
+        });
+
+        function geo_json_09bebba1a84c7dbffe84e8a58dc7204a_add (data) {
+            geo_json_09bebba1a84c7dbffe84e8a58dc7204a
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_09bebba1a84c7dbffe84e8a58dc7204a_add({"bbox": [-117.18541702051724, 33.11844059276485, -117.09194758854547, 33.14697686357915], "features": [{"bbox": [-117.18541702051724, 33.11844059276485, -117.09194758854547, 33.14697686357915], "geometry": {"coordinates": [[[-117.09194758854547, 33.11844059276485, 0.0], [-117.09357938608852, 33.11898798102527, 0.0], [-117.09565255010394, 33.11974754096721, 0.0], [-117.09728669439308, 33.12036385104333, 0.0], [-117.10059746494323, 33.12159144248018, 0.0], [-117.10265016991941, 33.1223669778453, 0.0], [-117.10274802459537, 33.122403946927314, 0.0], [-117.10286336454736, 33.12244804725059, 0.0], [-117.10293161966361, 33.12247414403743, 0.0], [-117.10301859052602, 33.12250431488089, 0.0], [-117.10306358723682, 33.12251992504873, 0.0], [-117.10310505608705, 33.12253431060111, 0.0], [-117.10317898115383, 33.122559956125876, 0.0], [-117.10335111902734, 33.12261967231021, 0.0], [-117.10350233338737, 33.12267725011986, 0.0], [-117.10378715183246, 33.12278569867423, 0.0], [-117.10465251618646, 33.1230999289731, 0.0], [-117.10586219417242, 33.12355194679222, 0.0], [-117.10653222083651, 33.123799355346385, 0.0], [-117.10988453613317, 33.125037126912936, 0.0], [-117.11279037874252, 33.12614234434467, 0.0], [-117.11356483040431, 33.1264368857301, 0.0], [-117.11672720217366, 33.12764062128717, 0.0], [-117.12021929577357, 33.128980208526194, 0.0], [-117.12166472505986, 33.12963655228198, 0.0], [-117.12280925608043, 33.130321351952624, 0.0], [-117.12413098251837, 33.13111214519466, 0.0], [-117.1249410473112, 33.13155597077698, 0.0], [-117.12621012827788, 33.13225126658567, 0.0], [-117.12713639928953, 33.13292193551692, 0.0], [-117.12775018292416, 33.13353956626587, 0.0], [-117.12846770092666, 33.13423946338683, 0.0], [-117.12903305948846, 33.134711251492895, 0.0], [-117.12910364152336, 33.134770151958115, 0.0], [-117.12923624044555, 33.13488080334365, 0.0], [-117.12933552476825, 33.13496365454531, 0.0], [-117.12985424005919, 33.135396509675665, 0.0], [-117.13047065270301, 33.13591088155119, 0.0], [-117.13259938191763, 33.13757505071974, 0.0], [-117.13332057076119, 33.13798355624022, 0.0], [-117.13377284558659, 33.13812709919873, 0.0], [-117.13429681061712, 33.138252539019525, 0.0], [-117.13509602358859, 33.138298230053636, 0.0], [-117.13588518312996, 33.138318701621124, 0.0], [-117.13637750810288, 33.138383892740144, 0.0], [-117.1367886056748, 33.138493089377754, 0.0], [-117.13720209904629, 33.1386809313333, 0.0], [-117.1374384380698, 33.13878829471877, 0.0], [-117.13896925718821, 33.139460042048555, 0.0], [-117.13920541972541, 33.13955316961113, 0.0], [-117.13949652382637, 33.1395873605654, 0.0], [-117.13967743744068, 33.139547858509516, 0.0], [-117.13994590713203, 33.13944423786487, 0.0], [-117.14023231731889, 33.139270073807104, 0.0], [-117.14035663786915, 33.13919447542142, 0.0], [-117.14074486285979, 33.13881981753038, 0.0], [-117.14088438676008, 33.138685310496726, 0.0], [-117.14091385070815, 33.138656905325234, 0.0], [-117.1409773936039, 33.13859564693149, 0.0], [-117.14102726430175, 33.138547569045194, 0.0], [-117.14106739964312, 33.138508876867725, 0.0], [-117.14108294195043, 33.13849389294967, 0.0], [-117.1411181309704, 33.138473357402624, 0.0], [-117.14120154420536, 33.1384246793583, 0.0], [-117.14134899231988, 33.13833863215843, 0.0], [-117.14135926685329, 33.13833263662415, 0.0], [-117.14157170944249, 33.13820865945551, 0.0], [-117.1418304745831, 33.138114999129854, 0.0], [-117.1422082921597, 33.1380028903246, 0.0], [-117.1462116099413, 33.137660128936595, 0.0], [-117.1471021437734, 33.137531103937775, 0.0], [-117.14769283444379, 33.1373118964054, 0.0], [-117.14838975720514, 33.13693937630725, 0.0], [-117.15046844706688, 33.13576090158963, 0.0], [-117.15074450246507, 33.13560439261309, 0.0], [-117.15085256113395, 33.13557380596482, 0.0], [-117.15213374123077, 33.13521115049738, 0.0], [-117.153843745125, 33.13474399071578, 0.0], [-117.15393845208406, 33.13471811648647, 0.0], [-117.15545474268616, 33.13461002538239, 0.0], [-117.15556928682949, 33.13462613094094, 0.0], [-117.15587840242775, 33.134669594632115, 0.0], [-117.15622945210706, 33.13497348168652, 0.0], [-117.15645502899203, 33.13546408287115, 0.0], [-117.15739598922794, 33.13786763902655, 0.0], [-117.15744946671639, 33.138004235093604, 0.0], [-117.15747935631764, 33.13808058095177, 0.0], [-117.1575117868874, 33.13816341866314, 0.0], [-117.15753675442097, 33.138227191704225, 0.0], [-117.15763530936222, 33.138478927302444, 0.0], [-117.15783749841687, 33.13899536575217, 0.0], [-117.15813072388616, 33.13990455477534, 0.0], [-117.15852100374366, 33.14111464835633, 0.0], [-117.1589577047295, 33.14148358876404, 0.0], [-117.15925963371586, 33.14161522442252, 0.0], [-117.16055923333988, 33.14193284711835, 0.0], [-117.16108071758623, 33.14206029419906, 0.0], [-117.16322843567396, 33.142583107881606, 0.0], [-117.1660616034125, 33.14327271239375, 0.0], [-117.17302782033853, 33.14496799726992, 0.0], [-117.1734324378453, 33.14506029661552, 0.0], [-117.17510582265194, 33.14544200622017, 0.0], [-117.17809116311238, 33.14582536007702, 0.0], [-117.1801526783048, 33.1461265298205, 0.0], [-117.18338514873003, 33.14654830428167, 0.0], [-117.1843100042798, 33.146723834505686, 0.0], [-117.18541702051724, 33.14697686357915, 0.0]]], "type": "MultiLineString"}, "id": "1", "properties": {"Configuration": 5, "Direction": 2, "ETL_Route_ID": 8, "Mode": "5: Light Rail", "Operator": "NCTD", "Route": 399, "RouteID": 399205, "Start": "Escondido", "Stop": "San Marcos"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_09bebba1a84c7dbffe84e8a58dc7204a.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_62244419bbe2a2dd4123a8b50947739b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_62244419bbe2a2dd4123a8b50947739b_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_62244419bbe2a2dd4123a8b50947739b_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_62244419bbe2a2dd4123a8b50947739b_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_62244419bbe2a2dd4123a8b50947739b_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_62244419bbe2a2dd4123a8b50947739b.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_62244419bbe2a2dd4123a8b50947739b_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_62244419bbe2a2dd4123a8b50947739b = L.geoJson(null, {
+                onEachFeature: geo_json_62244419bbe2a2dd4123a8b50947739b_onEachFeature,
+            
+                style: geo_json_62244419bbe2a2dd4123a8b50947739b_styler,
+                pointToLayer: geo_json_62244419bbe2a2dd4123a8b50947739b_pointToLayer
+        });
+
+        function geo_json_62244419bbe2a2dd4123a8b50947739b_add (data) {
+            geo_json_62244419bbe2a2dd4123a8b50947739b
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_62244419bbe2a2dd4123a8b50947739b_add({"bbox": [-117.18541702051724, 33.11844059276485, -117.09194758854547, 33.14697686357915], "features": [{"bbox": [-117.09194758854547, 33.11844059276485, -117.09194758854547, 33.11844059276485], "geometry": {"coordinates": [-117.09194758854547, 33.11844059276485, 0.0], "type": "Point"}, "id": "61", "properties": {"ETL_Route_ID": 8, "HNODE": 8213, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    ESCONDIDO TC", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.12413098251837, 33.13111214519466, -117.12413098251837, 33.13111214519466], "geometry": {"coordinates": [-117.12413098251837, 33.13111214519466, 0.0], "type": "Point"}, "id": "62", "properties": {"ETL_Route_ID": 8, "HNODE": 23958, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    NORDAHL ROAD", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.15393845208406, 33.13471811648647, -117.15393845208406, 33.13471811648647], "geometry": {"coordinates": [-117.15393845208406, 33.13471811648647, 0.0], "type": "Point"}, "id": "63", "properties": {"ETL_Route_ID": 8, "HNODE": 23887, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    CSU-SAN MARCOS", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.16108071758623, 33.14206029419906, -117.16108071758623, 33.14206029419906], "geometry": {"coordinates": [-117.16108071758623, 33.14206029419906, 0.0], "type": "Point"}, "id": "64", "properties": {"ETL_Route_ID": 8, "HNODE": 23986, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    SAN MARCOS CIVIC CTR", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.18541702051724, 33.14697686357915, -117.18541702051724, 33.14697686357915], "geometry": {"coordinates": [-117.18541702051724, 33.14697686357915, 0.0], "type": "Point"}, "id": "65", "properties": {"ETL_Route_ID": 8, "HNODE": 7420, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    PALOMAR COLLEGE", "YR": 2008}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_62244419bbe2a2dd4123a8b50947739b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_a571f1983bb2e986555ec1ffea1288db_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_a571f1983bb2e986555ec1ffea1288db_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_a571f1983bb2e986555ec1ffea1288db_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_a571f1983bb2e986555ec1ffea1288db_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_a571f1983bb2e986555ec1ffea1288db_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_a571f1983bb2e986555ec1ffea1288db.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_a571f1983bb2e986555ec1ffea1288db_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_a571f1983bb2e986555ec1ffea1288db = L.geoJson(null, {
+                onEachFeature: geo_json_a571f1983bb2e986555ec1ffea1288db_onEachFeature,
+            
+                style: geo_json_a571f1983bb2e986555ec1ffea1288db_styler,
+                pointToLayer: geo_json_a571f1983bb2e986555ec1ffea1288db_pointToLayer
+        });
+
+        function geo_json_a571f1983bb2e986555ec1ffea1288db_add (data) {
+            geo_json_a571f1983bb2e986555ec1ffea1288db
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_a571f1983bb2e986555ec1ffea1288db_add({"bbox": [-117.37910490178847, 33.11844059276485, -117.09194758854547, 33.219722245007866], "features": [{"bbox": [-117.37910490178847, 33.11844059276485, -117.09194758854547, 33.219722245007866], "geometry": {"coordinates": [[[-117.37910490178847, 33.19177978503409, 0.0], [-117.37533546533882, 33.18728056924549, 0.0], [-117.37275040273612, 33.18419469392571, 0.0], [-117.37140729902079, 33.18259127808819, 0.0], [-117.37138836223271, 33.182568670559434, 0.0], [-117.37136346024056, 33.18254223950983, 0.0], [-117.37122154879484, 33.182391617960974, 0.0], [-117.37109179630305, 33.18225390109165, 0.0], [-117.37082921186598, 33.18204565993218, 0.0], [-117.37078305116664, 33.182009051878666, 0.0], [-117.37044523477029, 33.1817911263898, 0.0], [-117.37021056479323, 33.18171546411352, 0.0], [-117.36987499456421, 33.18167314581056, 0.0], [-117.36983308853968, 33.18167204372261, 0.0], [-117.36926029617491, 33.18165698443485, 0.0], [-117.36874816063168, 33.18173774034192, 0.0], [-117.36854946709987, 33.181791755762575, 0.0], [-117.36806980124618, 33.18198380516014, 0.0], [-117.36792773010988, 33.18205657902749, 0.0], [-117.36765251315933, 33.182197554234996, 0.0], [-117.36730538224448, 33.182402149039184, 0.0], [-117.36688815457312, 33.18274919718899, 0.0], [-117.36588604832562, 33.18401126512718, 0.0], [-117.36565442497158, 33.18430359153084, 0.0], [-117.36542073592426, 33.1846904851411, 0.0], [-117.36522544403317, 33.18526942775066, 0.0], [-117.36481365048893, 33.187073401394166, 0.0], [-117.3646273146863, 33.18758629924596, 0.0], [-117.36429550547444, 33.18822693437973, 0.0], [-117.36397456363768, 33.18869431557811, 0.0], [-117.36321277130787, 33.18948372971884, 0.0], [-117.36320668794556, 33.189490033385916, 0.0], [-117.36274867621793, 33.18984705284123, 0.0], [-117.36240005311664, 33.19006621343952, 0.0], [-117.36238946108118, 33.190072776642815, 0.0], [-117.36235082470995, 33.190096716371286, 0.0], [-117.36227450320094, 33.19014400563634, 0.0], [-117.36222449791272, 33.19017498980088, 0.0], [-117.36219508720804, 33.190193212656496, 0.0], [-117.3621795034367, 33.19020286849575, 0.0], [-117.36214310677137, 33.19022667895548, 0.0], [-117.36204802053344, 33.190288883425325, 0.0], [-117.36200660233372, 33.190315977928, 0.0], [-117.36150516894297, 33.19064400443948, 0.0], [-117.3610697754504, 33.190858533217735, 0.0], [-117.36072225059372, 33.19102976444659, 0.0], [-117.35877231111617, 33.192032653479494, 0.0], [-117.3587703291821, 33.19203367303445, 0.0], [-117.35359647039253, 33.19457135066649, 0.0], [-117.35278712044968, 33.19496310226343, 0.0], [-117.3488963138928, 33.19684625255764, 0.0], [-117.34824858385338, 33.19707187105799, 0.0], [-117.34597398564668, 33.19765269219461, 0.0], [-117.34335058917075, 33.19831625290854, 0.0], [-117.3386576601851, 33.199499546218014, 0.0], [-117.33767541751963, 33.19964421780438, 0.0], [-117.33692742409205, 33.19969750156793, 0.0], [-117.33444658039265, 33.19973846430757, 0.0], [-117.3320211515312, 33.199634048294605, 0.0], [-117.33070714297942, 33.199657471827194, 0.0], [-117.33042121391463, 33.19966256704066, 0.0], [-117.32930665753162, 33.19981574548886, 0.0], [-117.32639320378587, 33.20043529617642, 0.0], [-117.32431922212211, 33.200865008093146, 0.0], [-117.32379812427135, 33.20089370841626, 0.0], [-117.32324267752313, 33.20078720405269, 0.0], [-117.32229941754156, 33.20038034358185, 0.0], [-117.32174808937327, 33.20020920760759, 0.0], [-117.3211060170175, 33.20010289242513, 0.0], [-117.32043728857239, 33.20008915324058, 0.0], [-117.31423260620464, 33.20105973475473, 0.0], [-117.3113448236368, 33.20151627499781, 0.0], [-117.31046461984154, 33.2016630374079, 0.0], [-117.30808862191327, 33.20205917167807, 0.0], [-117.30680235045259, 33.20221168821957, 0.0], [-117.29759299862486, 33.20278539072838, 0.0], [-117.29484882303535, 33.202958887716726, 0.0], [-117.29218977483916, 33.203143701505205, 0.0], [-117.291380981062, 33.203312382886075, 0.0], [-117.28940030290427, 33.20404800403899, 0.0], [-117.28829883251275, 33.204488194464744, 0.0], [-117.28495333940981, 33.20579630515322, 0.0], [-117.28338144525111, 33.20641088144024, 0.0], [-117.27897695095201, 33.20859406932605, 0.0], [-117.27845629314075, 33.20880452396534, 0.0], [-117.27779136717076, 33.208980442189365, 0.0], [-117.27637072540173, 33.20911863979789, 0.0], [-117.27552928542798, 33.20929875522958, 0.0], [-117.2745525243913, 33.20965038897319, 0.0], [-117.2728458450265, 33.2104945175282, 0.0], [-117.27144728566475, 33.21084685577738, 0.0], [-117.27101506016861, 33.2110730420926, 0.0], [-117.27062376208711, 33.21144455870868, 0.0], [-117.27037182048443, 33.21199082920406, 0.0], [-117.27024937176405, 33.21242609516559, 0.0], [-117.27013517208538, 33.212867889247626, 0.0], [-117.26989465989942, 33.21327306870614, 0.0], [-117.26836149998975, 33.21479554344078, 0.0], [-117.26772084617166, 33.215431710651615, 0.0], [-117.26362623988231, 33.218328876219665, 0.0], [-117.26296791158676, 33.21865994903166, 0.0], [-117.26222814228846, 33.218876521831476, 0.0], [-117.25936749468752, 33.219491033414236, 0.0], [-117.25866303645724, 33.219651779047034, 0.0], [-117.25823033262947, 33.21970092232972, 0.0], [-117.25818967493342, 33.21970334487645, 0.0], [-117.25787251827565, 33.219722245007866, 0.0], [-117.25758130376711, 33.219705922252864, 0.0], [-117.25700162142016, 33.21962762687837, 0.0], [-117.25643073562966, 33.21946103168079, 0.0], [-117.25591127629575, 33.21921651072088, 0.0], [-117.25549114265993, 33.21893627560397, 0.0], [-117.25513268447035, 33.2186162374898, 0.0], [-117.25483262347332, 33.218255871613714, 0.0], [-117.25459759520933, 33.21786337091864, 0.0], [-117.25437780964808, 33.21723163031692, 0.0], [-117.25412648910141, 33.2155864831314, 0.0], [-117.25403491010616, 33.21498698630857, 0.0], [-117.25385339411358, 33.213984440813626, 0.0], [-117.25374991928055, 33.21348490344341, 0.0], [-117.25355227644654, 33.21253074107713, 0.0], [-117.25347808559796, 33.21207265051314, 0.0], [-117.25297131846095, 33.208943504858645, 0.0], [-117.25285916205884, 33.20825093830889, 0.0], [-117.25261984824918, 33.207623748874155, 0.0], [-117.25222735194424, 33.20703847498161, 0.0], [-117.25189650965979, 33.2066978649381, 0.0], [-117.25151546194546, 33.206398337333404, 0.0], [-117.25110071254137, 33.20615349987539, 0.0], [-117.25102545483753, 33.20612125666212, 0.0], [-117.25066373852451, 33.2059662830942, 0.0], [-117.24994562550867, 33.20578188233154, 0.0], [-117.24798927110203, 33.205529940566635, 0.0], [-117.24751384032446, 33.205410084891035, 0.0], [-117.24686547162075, 33.20517645639107, 0.0], [-117.24637295634693, 33.204847575541905, 0.0], [-117.24596035183346, 33.2045018343449, 0.0], [-117.24559107112538, 33.204084283956085, 0.0], [-117.24507724895915, 33.2033177375563, 0.0], [-117.24431618027715, 33.202161786326606, 0.0], [-117.24416408048612, 33.201930764309665, 0.0], [-117.24379725076385, 33.20136576384927, 0.0], [-117.24279487535088, 33.19982183927742, 0.0], [-117.24168974585244, 33.19824282251115, 0.0], [-117.24104038336912, 33.19731497829375, 0.0], [-117.24071138140175, 33.19684983828308, 0.0], [-117.24019986996751, 33.19612665868661, 0.0], [-117.23940840431884, 33.19537165016292, 0.0], [-117.23825124405116, 33.19450906400286, 0.0], [-117.23802450767391, 33.19425993557798, 0.0], [-117.23786292439563, 33.193990498393994, 0.0], [-117.23774953906917, 33.19364674356578, 0.0], [-117.23772084871749, 33.1932764786159, 0.0], [-117.23779332707265, 33.192013082894846, 0.0], [-117.23783013417598, 33.191371468631495, 0.0], [-117.23781620797112, 33.191295996797244, 0.0], [-117.23777442949046, 33.19106958037938, 0.0], [-117.23766364887585, 33.19081155709866, 0.0], [-117.23763970997463, 33.19077953808114, 0.0], [-117.23748940650471, 33.19057850030462, 0.0], [-117.23720846143962, 33.190303966682244, 0.0], [-117.23702719821108, 33.19017293336979, 0.0], [-117.23658861359348, 33.189977984375965, 0.0], [-117.23655320227085, 33.189970167721135, 0.0], [-117.23611509024464, 33.18987346100169, 0.0], [-117.2356869728312, 33.18988236203652, 0.0], [-117.2353313810816, 33.18994565456407, 0.0], [-117.23498924604989, 33.190047888465486, 0.0], [-117.23469967805876, 33.190134413371744, 0.0], [-117.23467654354573, 33.19014132578345, 0.0], [-117.23405048439689, 33.19028014658335, 0.0], [-117.23347475568764, 33.19024348748583, 0.0], [-117.23268137316802, 33.19003649686509, 0.0], [-117.23210802822936, 33.18992065624278, 0.0], [-117.23173539636834, 33.189921957945174, 0.0], [-117.23094289882775, 33.190060918413494, 0.0], [-117.23069957361068, 33.1901035832227, 0.0], [-117.23046872550789, 33.190126730202344, 0.0], [-117.23034060707535, 33.19013957569311, 0.0], [-117.23022938760855, 33.19015072746891, 0.0], [-117.22996280324166, 33.190135244699235, 0.0], [-117.22992170974989, 33.19012667934694, 0.0], [-117.22965153863866, 33.19007036701349, 0.0], [-117.22920325390751, 33.1899441567938, 0.0], [-117.2291957359778, 33.18994204029824, 0.0], [-117.228659679206, 33.18965218695422, 0.0], [-117.2281995858443, 33.189139104707614, 0.0], [-117.2277342978863, 33.188452909431724, 0.0], [-117.22751121687685, 33.1882342412304, 0.0], [-117.2271289257825, 33.18795498699856, 0.0], [-117.22637581974693, 33.187545625856444, 0.0], [-117.2259549444354, 33.18717652172268, 0.0], [-117.22571834089857, 33.186770236160704, 0.0], [-117.22539060023988, 33.18566408302581, 0.0], [-117.22514763012471, 33.185125645142605, 0.0], [-117.22509229996004, 33.184990970937434, 0.0], [-117.22503676274711, 33.18485579246601, 0.0], [-117.22487239942346, 33.18462511385025, 0.0], [-117.22470526068601, 33.1844387072869, 0.0], [-117.22440694235668, 33.18421320466811, 0.0], [-117.22434680583105, 33.1841757136621, 0.0], [-117.2242884068512, 33.184139305473394, 0.0], [-117.22424237125914, 33.184110605458486, 0.0], [-117.22402708670639, 33.18401591403265, 0.0], [-117.22385806474195, 33.183941570633614, 0.0], [-117.22350424286576, 33.183868491506324, 0.0], [-117.22300992990435, 33.183800636703474, 0.0], [-117.22286227739112, 33.18378677710972, 0.0], [-117.22252894511685, 33.18375548727812, 0.0], [-117.22179005871013, 33.18359170032667, 0.0], [-117.219217997907, 33.18273424781964, 0.0], [-117.21844756006028, 33.18237582181443, 0.0], [-117.21767479831828, 33.181806325766345, 0.0], [-117.21717135323705, 33.18120559130267, 0.0], [-117.2164637314882, 33.1798726050228, 0.0], [-117.21600033842473, 33.179048927109534, 0.0], [-117.21560219774643, 33.178510580394494, 0.0], [-117.21466313157785, 33.1775256926422, 0.0], [-117.21389620664293, 33.176865532167724, 0.0], [-117.21389102562273, 33.176861071929885, 0.0], [-117.21288007866886, 33.17614421340172, 0.0], [-117.21272165615126, 33.17603187481886, 0.0], [-117.20927745581639, 33.17397378394279, 0.0], [-117.20923444420495, 33.17394808119058, 0.0], [-117.20841067118575, 33.173632882171866, 0.0], [-117.20793262541511, 33.17353860705911, 0.0], [-117.20792920615588, 33.173537932838066, 0.0], [-117.20719859558088, 33.17352296267397, 0.0], [-117.20660523653586, 33.17350665417114, 0.0], [-117.2059386968697, 33.173522789502734, 0.0], [-117.20541032531828, 33.173471893383535, 0.0], [-117.20477847517266, 33.173262894234774, 0.0], [-117.20474447944325, 33.17325164911846, 0.0], [-117.20415508852774, 33.172849138375625, 0.0], [-117.20389536070054, 33.17255732570802, 0.0], [-117.20372382871439, 33.17226126137742, 0.0], [-117.20360734248644, 33.171918049513884, 0.0], [-117.20356933476297, 33.17157863071918, 0.0], [-117.20358636929211, 33.171492198115615, 0.0], [-117.20357453151065, 33.171155051437566, 0.0], [-117.20365815870596, 33.17088121103509, 0.0], [-117.20406496261778, 33.170064724955004, 0.0], [-117.2043681658508, 33.16945616176605, 0.0], [-117.20539996550988, 33.16772354967174, 0.0], [-117.20552070297182, 33.167407368868226, 0.0], [-117.2055796918797, 33.16712272213939, 0.0], [-117.20553753024818, 33.166702531951216, 0.0], [-117.20549835239045, 33.166556065168145, 0.0], [-117.20537626697042, 33.16629864949329, 0.0], [-117.20505019138236, 33.1659147277214, 0.0], [-117.20465862353356, 33.165668182709446, 0.0], [-117.20433183170825, 33.16551815826638, 0.0], [-117.20383541425612, 33.165396099674375, 0.0], [-117.20196458992693, 33.16510017852197, 0.0], [-117.2016256472301, 33.165034344407374, 0.0], [-117.20112410527044, 33.164891149894345, 0.0], [-117.2007036263348, 33.16468933978974, 0.0], [-117.20047667766718, 33.164554206065155, 0.0], [-117.20039446030304, 33.16450618916404, 0.0], [-117.20033192010256, 33.16446461658928, 0.0], [-117.20005961411279, 33.164214944356985, 0.0], [-117.19975206522199, 33.16387923904064, 0.0], [-117.1994730646888, 33.16346360881327, 0.0], [-117.19931151989155, 33.16303058770301, 0.0], [-117.19929742306093, 33.1629358736141, 0.0], [-117.19917856216219, 33.16252148965477, 0.0], [-117.1991657601286, 33.16239543330876, 0.0], [-117.19919350179599, 33.162090415354996, 0.0], [-117.19928547856874, 33.16138005595593, 0.0], [-117.19933242259096, 33.16103778658615, 0.0], [-117.19933065493626, 33.1608745405378, 0.0], [-117.1993477063198, 33.160185918343316, 0.0], [-117.199321078803, 33.15983926460369, 0.0], [-117.19928124489553, 33.15963096127715, 0.0], [-117.19899479727927, 33.15882785228018, 0.0], [-117.19866522585981, 33.15827747438078, 0.0], [-117.19856883970303, 33.1581165096963, 0.0], [-117.1961045350493, 33.15443590091094, 0.0], [-117.19484970870371, 33.15260674485319, 0.0], [-117.19427176820908, 33.152036718710555, 0.0], [-117.19268528576828, 33.15080750890669, 0.0], [-117.1922750927689, 33.15048968233052, 0.0], [-117.18991936951183, 33.14866444372522, 0.0], [-117.18955072848006, 33.14841190551475, 0.0], [-117.18902849952121, 33.14813134284505, 0.0], [-117.18867496274788, 33.147941406405664, 0.0], [-117.18788791917015, 33.14767004461185, 0.0], [-117.18565779930825, 33.14703661153999, 0.0], [-117.18541702051724, 33.14697686357915, 0.0], [-117.1843100042798, 33.146723834505686, 0.0], [-117.18338514873003, 33.14654830428167, 0.0], [-117.1801526783048, 33.1461265298205, 0.0], [-117.17809116311238, 33.14582536007702, 0.0], [-117.17510582265194, 33.14544200622017, 0.0], [-117.1734324378453, 33.14506029661552, 0.0], [-117.17302782033853, 33.14496799726992, 0.0], [-117.1660616034125, 33.14327271239375, 0.0], [-117.16322843567396, 33.142583107881606, 0.0], [-117.16108071758623, 33.14206029419906, 0.0], [-117.16055923333988, 33.14193284711835, 0.0], [-117.15925963371586, 33.14161522442252, 0.0], [-117.1589577047295, 33.14148358876404, 0.0], [-117.15852100374366, 33.14111464835633, 0.0], [-117.15813072388616, 33.13990455477534, 0.0], [-117.15783749841687, 33.13899536575217, 0.0], [-117.15763530936222, 33.138478927302444, 0.0], [-117.15753675442097, 33.138227191704225, 0.0], [-117.1575117868874, 33.13816341866314, 0.0], [-117.15747935631764, 33.13808058095177, 0.0], [-117.15744946671639, 33.138004235093604, 0.0], [-117.15739598922794, 33.13786763902655, 0.0], [-117.15645502899203, 33.13546408287115, 0.0], [-117.15622945210706, 33.13497348168652, 0.0], [-117.15587840242775, 33.134669594632115, 0.0], [-117.15556928682949, 33.13462613094094, 0.0], [-117.15545474268616, 33.13461002538239, 0.0], [-117.15393845208406, 33.13471811648647, 0.0], [-117.153843745125, 33.13474399071578, 0.0], [-117.15213374123077, 33.13521115049738, 0.0], [-117.15085256113395, 33.13557380596482, 0.0], [-117.15074450246507, 33.13560439261309, 0.0], [-117.15046844706688, 33.13576090158963, 0.0], [-117.14838975720514, 33.13693937630725, 0.0], [-117.14769283444379, 33.1373118964054, 0.0], [-117.1471021437734, 33.137531103937775, 0.0], [-117.1462116099413, 33.137660128936595, 0.0], [-117.1422082921597, 33.1380028903246, 0.0], [-117.1418304745831, 33.138114999129854, 0.0], [-117.14157170944249, 33.13820865945551, 0.0], [-117.14135926685329, 33.13833263662415, 0.0], [-117.14134899231988, 33.13833863215843, 0.0], [-117.14120154420536, 33.1384246793583, 0.0], [-117.1411181309704, 33.138473357402624, 0.0], [-117.14108294195043, 33.13849389294967, 0.0], [-117.14106739964312, 33.138508876867725, 0.0], [-117.14102726430175, 33.138547569045194, 0.0], [-117.1409773936039, 33.13859564693149, 0.0], [-117.14091385070815, 33.138656905325234, 0.0], [-117.14088438676008, 33.138685310496726, 0.0], [-117.14074486285979, 33.13881981753038, 0.0], [-117.14035663786915, 33.13919447542142, 0.0], [-117.14023231731889, 33.139270073807104, 0.0], [-117.13994590713203, 33.13944423786487, 0.0], [-117.13967743744068, 33.139547858509516, 0.0], [-117.13949652382637, 33.1395873605654, 0.0], [-117.13920541972541, 33.13955316961113, 0.0], [-117.13896925718821, 33.139460042048555, 0.0], [-117.1374384380698, 33.13878829471877, 0.0], [-117.13720209904629, 33.1386809313333, 0.0], [-117.1367886056748, 33.138493089377754, 0.0], [-117.13637750810288, 33.138383892740144, 0.0], [-117.13588518312996, 33.138318701621124, 0.0], [-117.13509602358859, 33.138298230053636, 0.0], [-117.13429681061712, 33.138252539019525, 0.0], [-117.13377284558659, 33.13812709919873, 0.0], [-117.13332057076119, 33.13798355624022, 0.0], [-117.13259938191763, 33.13757505071974, 0.0], [-117.13047065270301, 33.13591088155119, 0.0], [-117.12985424005919, 33.135396509675665, 0.0], [-117.12933552476825, 33.13496365454531, 0.0], [-117.12923624044555, 33.13488080334365, 0.0], [-117.12910364152336, 33.134770151958115, 0.0], [-117.12903305948846, 33.134711251492895, 0.0], [-117.12846770092666, 33.13423946338683, 0.0], [-117.12775018292416, 33.13353956626587, 0.0], [-117.12713639928953, 33.13292193551692, 0.0], [-117.12621012827788, 33.13225126658567, 0.0], [-117.1249410473112, 33.13155597077698, 0.0], [-117.12413098251837, 33.13111214519466, 0.0], [-117.12280925608043, 33.130321351952624, 0.0], [-117.12166472505986, 33.12963655228198, 0.0], [-117.12021929577357, 33.128980208526194, 0.0], [-117.11672720217366, 33.12764062128717, 0.0], [-117.11356483040431, 33.1264368857301, 0.0], [-117.11279037874252, 33.12614234434467, 0.0], [-117.10988453613317, 33.125037126912936, 0.0], [-117.10653222083651, 33.123799355346385, 0.0], [-117.10586219417242, 33.12355194679222, 0.0], [-117.10465251618646, 33.1230999289731, 0.0], [-117.10378715183246, 33.12278569867423, 0.0], [-117.10350233338737, 33.12267725011986, 0.0], [-117.10335111902734, 33.12261967231021, 0.0], [-117.10317898115383, 33.122559956125876, 0.0], [-117.10310505608705, 33.12253431060111, 0.0], [-117.10306358723682, 33.12251992504873, 0.0], [-117.10301859052602, 33.12250431488089, 0.0], [-117.10293161966361, 33.12247414403743, 0.0], [-117.10286336454736, 33.12244804725059, 0.0], [-117.10274802459537, 33.122403946927314, 0.0], [-117.10265016991941, 33.1223669778453, 0.0], [-117.10059746494323, 33.12159144248018, 0.0], [-117.09728669439308, 33.12036385104333, 0.0], [-117.09565255010394, 33.11974754096721, 0.0], [-117.09357938608852, 33.11898798102527, 0.0], [-117.09194758854547, 33.11844059276485, 0.0]]], "type": "MultiLineString"}, "id": "107", "properties": {"Configuration": 1, "Direction": 1, "ETL_Route_ID": 5, "Mode": "5: Light Rail", "Operator": "NCTD", "Route": 399, "RouteID": 399101, "Start": "Oceanside", "Stop": "Escondido"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a571f1983bb2e986555ec1ffea1288db.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_2582a77d4d4c11742c8f0a37453b831d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_2582a77d4d4c11742c8f0a37453b831d_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_2582a77d4d4c11742c8f0a37453b831d_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_2582a77d4d4c11742c8f0a37453b831d_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_2582a77d4d4c11742c8f0a37453b831d_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_2582a77d4d4c11742c8f0a37453b831d.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_2582a77d4d4c11742c8f0a37453b831d_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_2582a77d4d4c11742c8f0a37453b831d = L.geoJson(null, {
+                onEachFeature: geo_json_2582a77d4d4c11742c8f0a37453b831d_onEachFeature,
+            
+                style: geo_json_2582a77d4d4c11742c8f0a37453b831d_styler,
+                pointToLayer: geo_json_2582a77d4d4c11742c8f0a37453b831d_pointToLayer
+        });
+
+        function geo_json_2582a77d4d4c11742c8f0a37453b831d_add (data) {
+            geo_json_2582a77d4d4c11742c8f0a37453b831d
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_2582a77d4d4c11742c8f0a37453b831d_add({"bbox": [-117.37910490178847, 33.11844059276485, -117.09194758854547, 33.219491033414236], "features": [{"bbox": [-117.37910490178847, 33.19177978503409, -117.37910490178847, 33.19177978503409], "geometry": {"coordinates": [-117.37910490178847, 33.19177978503409, 0.0], "type": "Point"}, "id": "26", "properties": {"ETL_Route_ID": 5, "HNODE": 23503, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    OCEANSIDE TC", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.36854946709987, 33.181791755762575, -117.36854946709987, 33.181791755762575], "geometry": {"coordinates": [-117.36854946709987, 33.181791755762575, 0.0], "type": "Point"}, "id": "27", "properties": {"ETL_Route_ID": 5, "HNODE": 6781, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    COAST HIGHWAY", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.35359647039253, 33.19457135066649, -117.35359647039253, 33.19457135066649], "geometry": {"coordinates": [-117.35359647039253, 33.19457135066649, 0.0], "type": "Point"}, "id": "28", "properties": {"ETL_Route_ID": 5, "HNODE": 6493, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    CROUCH STREET", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.3320211515312, 33.199634048294605, -117.3320211515312, 33.199634048294605], "geometry": {"coordinates": [-117.3320211515312, 33.199634048294605, 0.0], "type": "Point"}, "id": "29", "properties": {"ETL_Route_ID": 5, "HNODE": 17675, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    EL CAMINO REAL", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.3113448236368, 33.20151627499781, -117.3113448236368, 33.20151627499781], "geometry": {"coordinates": [-117.3113448236368, 33.20151627499781, 0.0], "type": "Point"}, "id": "30", "properties": {"ETL_Route_ID": 5, "HNODE": 6320, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    RANCHO DEL ORO", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.28829883251275, 33.204488194464744, -117.28829883251275, 33.204488194464744], "geometry": {"coordinates": [-117.28829883251275, 33.204488194464744, 0.0], "type": "Point"}, "id": "31", "properties": {"ETL_Route_ID": 5, "HNODE": 6201, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    COLLEGE BLVD", "YR": 2010}, "type": "Feature"}, {"bbox": [-117.25936749468752, 33.219491033414236, -117.25936749468752, 33.219491033414236], "geometry": {"coordinates": [-117.25936749468752, 33.219491033414236, 0.0], "type": "Point"}, "id": "32", "properties": {"ETL_Route_ID": 5, "HNODE": 5927, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    MELROSE DR", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.24507724895915, 33.2033177375563, -117.24507724895915, 33.2033177375563], "geometry": {"coordinates": [-117.24507724895915, 33.2033177375563, 0.0], "type": "Point"}, "id": "33", "properties": {"ETL_Route_ID": 5, "HNODE": 23675, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    VISTA TRANSIT CENTER", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.23720846143962, 33.190303966682244, -117.23720846143962, 33.190303966682244], "geometry": {"coordinates": [-117.23720846143962, 33.190303966682244, 0.0], "type": "Point"}, "id": "34", "properties": {"ETL_Route_ID": 5, "HNODE": 6623, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    ESCONDIDO AVE", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.20719859558088, 33.17352296267397, -117.20719859558088, 33.17352296267397], "geometry": {"coordinates": [-117.20719859558088, 33.17352296267397, 0.0], "type": "Point"}, "id": "35", "properties": {"ETL_Route_ID": 5, "HNODE": 6975, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    BUENA CREEK", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.18541702051724, 33.14697686357915, -117.18541702051724, 33.14697686357915], "geometry": {"coordinates": [-117.18541702051724, 33.14697686357915, 0.0], "type": "Point"}, "id": "36", "properties": {"ETL_Route_ID": 5, "HNODE": 7420, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    PALOMAR COLLEGE", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.16108071758623, 33.14206029419906, -117.16108071758623, 33.14206029419906], "geometry": {"coordinates": [-117.16108071758623, 33.14206029419906, 0.0], "type": "Point"}, "id": "37", "properties": {"ETL_Route_ID": 5, "HNODE": 23986, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    SAN MARCOS CIVIC CTR", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.15393845208406, 33.13471811648647, -117.15393845208406, 33.13471811648647], "geometry": {"coordinates": [-117.15393845208406, 33.13471811648647, 0.0], "type": "Point"}, "id": "38", "properties": {"ETL_Route_ID": 5, "HNODE": 23887, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    CSU-SAN MARCOS", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.12413098251837, 33.13111214519466, -117.12413098251837, 33.13111214519466], "geometry": {"coordinates": [-117.12413098251837, 33.13111214519466, 0.0], "type": "Point"}, "id": "39", "properties": {"ETL_Route_ID": 5, "HNODE": 23958, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    NORDAHL ROAD", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.09194758854547, 33.11844059276485, -117.09194758854547, 33.11844059276485], "geometry": {"coordinates": [-117.09194758854547, 33.11844059276485, 0.0], "type": "Point"}, "id": "40", "properties": {"ETL_Route_ID": 5, "HNODE": 8213, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    ESCONDIDO TC", "YR": 2008}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_2582a77d4d4c11742c8f0a37453b831d.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_3f626e5848c47e7e3afbf80a18f4796b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_3f626e5848c47e7e3afbf80a18f4796b_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_3f626e5848c47e7e3afbf80a18f4796b_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_3f626e5848c47e7e3afbf80a18f4796b_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_3f626e5848c47e7e3afbf80a18f4796b_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_3f626e5848c47e7e3afbf80a18f4796b.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_3f626e5848c47e7e3afbf80a18f4796b_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_3f626e5848c47e7e3afbf80a18f4796b = L.geoJson(null, {
+                onEachFeature: geo_json_3f626e5848c47e7e3afbf80a18f4796b_onEachFeature,
+            
+                style: geo_json_3f626e5848c47e7e3afbf80a18f4796b_styler,
+                pointToLayer: geo_json_3f626e5848c47e7e3afbf80a18f4796b_pointToLayer
+        });
+
+        function geo_json_3f626e5848c47e7e3afbf80a18f4796b_add (data) {
+            geo_json_3f626e5848c47e7e3afbf80a18f4796b
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_3f626e5848c47e7e3afbf80a18f4796b_add({"bbox": [-117.37910490178847, 33.11844059276485, -117.09194758854547, 33.219722245007866], "features": [{"bbox": [-117.37910490178847, 33.11844059276485, -117.09194758854547, 33.219722245007866], "geometry": {"coordinates": [[[-117.09194758854547, 33.11844059276485, 0.0], [-117.09357938608852, 33.11898798102527, 0.0], [-117.09565255010394, 33.11974754096721, 0.0], [-117.09728669439308, 33.12036385104333, 0.0], [-117.10059746494323, 33.12159144248018, 0.0], [-117.10265016991941, 33.1223669778453, 0.0], [-117.10274802459537, 33.122403946927314, 0.0], [-117.10286336454736, 33.12244804725059, 0.0], [-117.10293161966361, 33.12247414403743, 0.0], [-117.10301859052602, 33.12250431488089, 0.0], [-117.10306358723682, 33.12251992504873, 0.0], [-117.10310505608705, 33.12253431060111, 0.0], [-117.10317898115383, 33.122559956125876, 0.0], [-117.10335111902734, 33.12261967231021, 0.0], [-117.10350233338737, 33.12267725011986, 0.0], [-117.10378715183246, 33.12278569867423, 0.0], [-117.10465251618646, 33.1230999289731, 0.0], [-117.10586219417242, 33.12355194679222, 0.0], [-117.10653222083651, 33.123799355346385, 0.0], [-117.10988453613317, 33.125037126912936, 0.0], [-117.11279037874252, 33.12614234434467, 0.0], [-117.11356483040431, 33.1264368857301, 0.0], [-117.11672720217366, 33.12764062128717, 0.0], [-117.12021929577357, 33.128980208526194, 0.0], [-117.12166472505986, 33.12963655228198, 0.0], [-117.12280925608043, 33.130321351952624, 0.0], [-117.12413098251837, 33.13111214519466, 0.0], [-117.1249410473112, 33.13155597077698, 0.0], [-117.12621012827788, 33.13225126658567, 0.0], [-117.12713639928953, 33.13292193551692, 0.0], [-117.12775018292416, 33.13353956626587, 0.0], [-117.12846770092666, 33.13423946338683, 0.0], [-117.12903305948846, 33.134711251492895, 0.0], [-117.12910364152336, 33.134770151958115, 0.0], [-117.12923624044555, 33.13488080334365, 0.0], [-117.12933552476825, 33.13496365454531, 0.0], [-117.12985424005919, 33.135396509675665, 0.0], [-117.13047065270301, 33.13591088155119, 0.0], [-117.13259938191763, 33.13757505071974, 0.0], [-117.13332057076119, 33.13798355624022, 0.0], [-117.13377284558659, 33.13812709919873, 0.0], [-117.13429681061712, 33.138252539019525, 0.0], [-117.13509602358859, 33.138298230053636, 0.0], [-117.13588518312996, 33.138318701621124, 0.0], [-117.13637750810288, 33.138383892740144, 0.0], [-117.1367886056748, 33.138493089377754, 0.0], [-117.13720209904629, 33.1386809313333, 0.0], [-117.1374384380698, 33.13878829471877, 0.0], [-117.13896925718821, 33.139460042048555, 0.0], [-117.13920541972541, 33.13955316961113, 0.0], [-117.13949652382637, 33.1395873605654, 0.0], [-117.13967743744068, 33.139547858509516, 0.0], [-117.13994590713203, 33.13944423786487, 0.0], [-117.14023231731889, 33.139270073807104, 0.0], [-117.14035663786915, 33.13919447542142, 0.0], [-117.14074486285979, 33.13881981753038, 0.0], [-117.14088438676008, 33.138685310496726, 0.0], [-117.14091385070815, 33.138656905325234, 0.0], [-117.1409773936039, 33.13859564693149, 0.0], [-117.14102726430175, 33.138547569045194, 0.0], [-117.14106739964312, 33.138508876867725, 0.0], [-117.14108294195043, 33.13849389294967, 0.0], [-117.1411181309704, 33.138473357402624, 0.0], [-117.14120154420536, 33.1384246793583, 0.0], [-117.14134899231988, 33.13833863215843, 0.0], [-117.14135926685329, 33.13833263662415, 0.0], [-117.14157170944249, 33.13820865945551, 0.0], [-117.1418304745831, 33.138114999129854, 0.0], [-117.1422082921597, 33.1380028903246, 0.0], [-117.1462116099413, 33.137660128936595, 0.0], [-117.1471021437734, 33.137531103937775, 0.0], [-117.14769283444379, 33.1373118964054, 0.0], [-117.14838975720514, 33.13693937630725, 0.0], [-117.15046844706688, 33.13576090158963, 0.0], [-117.15074450246507, 33.13560439261309, 0.0], [-117.15085256113395, 33.13557380596482, 0.0], [-117.15213374123077, 33.13521115049738, 0.0], [-117.153843745125, 33.13474399071578, 0.0], [-117.15393845208406, 33.13471811648647, 0.0], [-117.15545474268616, 33.13461002538239, 0.0], [-117.15556928682949, 33.13462613094094, 0.0], [-117.15587840242775, 33.134669594632115, 0.0], [-117.15622945210706, 33.13497348168652, 0.0], [-117.15645502899203, 33.13546408287115, 0.0], [-117.15739598922794, 33.13786763902655, 0.0], [-117.15744946671639, 33.138004235093604, 0.0], [-117.15747935631764, 33.13808058095177, 0.0], [-117.1575117868874, 33.13816341866314, 0.0], [-117.15753675442097, 33.138227191704225, 0.0], [-117.15763530936222, 33.138478927302444, 0.0], [-117.15783749841687, 33.13899536575217, 0.0], [-117.15813072388616, 33.13990455477534, 0.0], [-117.15852100374366, 33.14111464835633, 0.0], [-117.1589577047295, 33.14148358876404, 0.0], [-117.15925963371586, 33.14161522442252, 0.0], [-117.16055923333988, 33.14193284711835, 0.0], [-117.16108071758623, 33.14206029419906, 0.0], [-117.16322843567396, 33.142583107881606, 0.0], [-117.1660616034125, 33.14327271239375, 0.0], [-117.17302782033853, 33.14496799726992, 0.0], [-117.1734324378453, 33.14506029661552, 0.0], [-117.17510582265194, 33.14544200622017, 0.0], [-117.17809116311238, 33.14582536007702, 0.0], [-117.1801526783048, 33.1461265298205, 0.0], [-117.18338514873003, 33.14654830428167, 0.0], [-117.1843100042798, 33.146723834505686, 0.0], [-117.18541702051724, 33.14697686357915, 0.0], [-117.18565779930825, 33.14703661153999, 0.0], [-117.18788791917015, 33.14767004461185, 0.0], [-117.18867496274788, 33.147941406405664, 0.0], [-117.18902849952121, 33.14813134284505, 0.0], [-117.18955072848006, 33.14841190551475, 0.0], [-117.18991936951183, 33.14866444372522, 0.0], [-117.1922750927689, 33.15048968233052, 0.0], [-117.19268528576828, 33.15080750890669, 0.0], [-117.19427176820908, 33.152036718710555, 0.0], [-117.19484970870371, 33.15260674485319, 0.0], [-117.1961045350493, 33.15443590091094, 0.0], [-117.19856883970303, 33.1581165096963, 0.0], [-117.19866522585981, 33.15827747438078, 0.0], [-117.19899479727927, 33.15882785228018, 0.0], [-117.19928124489553, 33.15963096127715, 0.0], [-117.199321078803, 33.15983926460369, 0.0], [-117.1993477063198, 33.160185918343316, 0.0], [-117.19933065493626, 33.1608745405378, 0.0], [-117.19933242259096, 33.16103778658615, 0.0], [-117.19928547856874, 33.16138005595593, 0.0], [-117.19919350179599, 33.162090415354996, 0.0], [-117.1991657601286, 33.16239543330876, 0.0], [-117.19917856216219, 33.16252148965477, 0.0], [-117.19929742306093, 33.1629358736141, 0.0], [-117.19931151989155, 33.16303058770301, 0.0], [-117.1994730646888, 33.16346360881327, 0.0], [-117.19975206522199, 33.16387923904064, 0.0], [-117.20005961411279, 33.164214944356985, 0.0], [-117.20033192010256, 33.16446461658928, 0.0], [-117.20039446030304, 33.16450618916404, 0.0], [-117.20047667766718, 33.164554206065155, 0.0], [-117.2007036263348, 33.16468933978974, 0.0], [-117.20112410527044, 33.164891149894345, 0.0], [-117.2016256472301, 33.165034344407374, 0.0], [-117.20196458992693, 33.16510017852197, 0.0], [-117.20383541425612, 33.165396099674375, 0.0], [-117.20433183170825, 33.16551815826638, 0.0], [-117.20465862353356, 33.165668182709446, 0.0], [-117.20505019138236, 33.1659147277214, 0.0], [-117.20537626697042, 33.16629864949329, 0.0], [-117.20549835239045, 33.166556065168145, 0.0], [-117.20553753024818, 33.166702531951216, 0.0], [-117.2055796918797, 33.16712272213939, 0.0], [-117.20552070297182, 33.167407368868226, 0.0], [-117.20539996550988, 33.16772354967174, 0.0], [-117.2043681658508, 33.16945616176605, 0.0], [-117.20406496261778, 33.170064724955004, 0.0], [-117.20365815870596, 33.17088121103509, 0.0], [-117.20357453151065, 33.171155051437566, 0.0], [-117.20358636929211, 33.171492198115615, 0.0], [-117.20356933476297, 33.17157863071918, 0.0], [-117.20360734248644, 33.171918049513884, 0.0], [-117.20372382871439, 33.17226126137742, 0.0], [-117.20389536070054, 33.17255732570802, 0.0], [-117.20415508852774, 33.172849138375625, 0.0], [-117.20474447944325, 33.17325164911846, 0.0], [-117.20477847517266, 33.173262894234774, 0.0], [-117.20541032531828, 33.173471893383535, 0.0], [-117.2059386968697, 33.173522789502734, 0.0], [-117.20660523653586, 33.17350665417114, 0.0], [-117.20719859558088, 33.17352296267397, 0.0], [-117.20792920615588, 33.173537932838066, 0.0], [-117.20793262541511, 33.17353860705911, 0.0], [-117.20841067118575, 33.173632882171866, 0.0], [-117.20923444420495, 33.17394808119058, 0.0], [-117.20927745581639, 33.17397378394279, 0.0], [-117.21272165615126, 33.17603187481886, 0.0], [-117.21288007866886, 33.17614421340172, 0.0], [-117.21389102562273, 33.176861071929885, 0.0], [-117.21389620664293, 33.176865532167724, 0.0], [-117.21466313157785, 33.1775256926422, 0.0], [-117.21560219774643, 33.178510580394494, 0.0], [-117.21600033842473, 33.179048927109534, 0.0], [-117.2164637314882, 33.1798726050228, 0.0], [-117.21717135323705, 33.18120559130267, 0.0], [-117.21767479831828, 33.181806325766345, 0.0], [-117.21844756006028, 33.18237582181443, 0.0], [-117.219217997907, 33.18273424781964, 0.0], [-117.22179005871013, 33.18359170032667, 0.0], [-117.22252894511685, 33.18375548727812, 0.0], [-117.22286227739112, 33.18378677710972, 0.0], [-117.22300992990435, 33.183800636703474, 0.0], [-117.22350424286576, 33.183868491506324, 0.0], [-117.22385806474195, 33.183941570633614, 0.0], [-117.22402708670639, 33.18401591403265, 0.0], [-117.22424237125914, 33.184110605458486, 0.0], [-117.2242884068512, 33.184139305473394, 0.0], [-117.22434680583105, 33.1841757136621, 0.0], [-117.22440694235668, 33.18421320466811, 0.0], [-117.22470526068601, 33.1844387072869, 0.0], [-117.22487239942346, 33.18462511385025, 0.0], [-117.22503676274711, 33.18485579246601, 0.0], [-117.22509229996004, 33.184990970937434, 0.0], [-117.22514763012471, 33.185125645142605, 0.0], [-117.22539060023988, 33.18566408302581, 0.0], [-117.22571834089857, 33.186770236160704, 0.0], [-117.2259549444354, 33.18717652172268, 0.0], [-117.22637581974693, 33.187545625856444, 0.0], [-117.2271289257825, 33.18795498699856, 0.0], [-117.22751121687685, 33.1882342412304, 0.0], [-117.2277342978863, 33.188452909431724, 0.0], [-117.2281995858443, 33.189139104707614, 0.0], [-117.228659679206, 33.18965218695422, 0.0], [-117.2291957359778, 33.18994204029824, 0.0], [-117.22920325390751, 33.1899441567938, 0.0], [-117.22965153863866, 33.19007036701349, 0.0], [-117.22992170974989, 33.19012667934694, 0.0], [-117.22996280324166, 33.190135244699235, 0.0], [-117.23022938760855, 33.19015072746891, 0.0], [-117.23034060707535, 33.19013957569311, 0.0], [-117.23046872550789, 33.190126730202344, 0.0], [-117.23069957361068, 33.1901035832227, 0.0], [-117.23094289882775, 33.190060918413494, 0.0], [-117.23173539636834, 33.189921957945174, 0.0], [-117.23210802822936, 33.18992065624278, 0.0], [-117.23268137316802, 33.19003649686509, 0.0], [-117.23347475568764, 33.19024348748583, 0.0], [-117.23405048439689, 33.19028014658335, 0.0], [-117.23467654354573, 33.19014132578345, 0.0], [-117.23469967805876, 33.190134413371744, 0.0], [-117.23498924604989, 33.190047888465486, 0.0], [-117.2353313810816, 33.18994565456407, 0.0], [-117.2356869728312, 33.18988236203652, 0.0], [-117.23611509024464, 33.18987346100169, 0.0], [-117.23655320227085, 33.189970167721135, 0.0], [-117.23658861359348, 33.189977984375965, 0.0], [-117.23702719821108, 33.19017293336979, 0.0], [-117.23720846143962, 33.190303966682244, 0.0], [-117.23748940650471, 33.19057850030462, 0.0], [-117.23763970997463, 33.19077953808114, 0.0], [-117.23766364887585, 33.19081155709866, 0.0], [-117.23777442949046, 33.19106958037938, 0.0], [-117.23781620797112, 33.191295996797244, 0.0], [-117.23783013417598, 33.191371468631495, 0.0], [-117.23779332707265, 33.192013082894846, 0.0], [-117.23772084871749, 33.1932764786159, 0.0], [-117.23774953906917, 33.19364674356578, 0.0], [-117.23786292439563, 33.193990498393994, 0.0], [-117.23802450767391, 33.19425993557798, 0.0], [-117.23825124405116, 33.19450906400286, 0.0], [-117.23940840431884, 33.19537165016292, 0.0], [-117.24019986996751, 33.19612665868661, 0.0], [-117.24071138140175, 33.19684983828308, 0.0], [-117.24104038336912, 33.19731497829375, 0.0], [-117.24168974585244, 33.19824282251115, 0.0], [-117.24279487535088, 33.19982183927742, 0.0], [-117.24379725076385, 33.20136576384927, 0.0], [-117.24416408048612, 33.201930764309665, 0.0], [-117.24431618027715, 33.202161786326606, 0.0], [-117.24507724895915, 33.2033177375563, 0.0], [-117.24559107112538, 33.204084283956085, 0.0], [-117.24596035183346, 33.2045018343449, 0.0], [-117.24637295634693, 33.204847575541905, 0.0], [-117.24686547162075, 33.20517645639107, 0.0], [-117.24751384032446, 33.205410084891035, 0.0], [-117.24798927110203, 33.205529940566635, 0.0], [-117.24994562550867, 33.20578188233154, 0.0], [-117.25066373852451, 33.2059662830942, 0.0], [-117.25102545483753, 33.20612125666212, 0.0], [-117.25110071254137, 33.20615349987539, 0.0], [-117.25151546194546, 33.206398337333404, 0.0], [-117.25189650965979, 33.2066978649381, 0.0], [-117.25222735194424, 33.20703847498161, 0.0], [-117.25261984824918, 33.207623748874155, 0.0], [-117.25285916205884, 33.20825093830889, 0.0], [-117.25297131846095, 33.208943504858645, 0.0], [-117.25347808559796, 33.21207265051314, 0.0], [-117.25355227644654, 33.21253074107713, 0.0], [-117.25374991928055, 33.21348490344341, 0.0], [-117.25385339411358, 33.213984440813626, 0.0], [-117.25403491010616, 33.21498698630857, 0.0], [-117.25412648910141, 33.2155864831314, 0.0], [-117.25437780964808, 33.21723163031692, 0.0], [-117.25459759520933, 33.21786337091864, 0.0], [-117.25483262347332, 33.218255871613714, 0.0], [-117.25513268447035, 33.2186162374898, 0.0], [-117.25549114265993, 33.21893627560397, 0.0], [-117.25591127629575, 33.21921651072088, 0.0], [-117.25643073562966, 33.21946103168079, 0.0], [-117.25700162142016, 33.21962762687837, 0.0], [-117.25758130376711, 33.219705922252864, 0.0], [-117.25787251827565, 33.219722245007866, 0.0], [-117.25818967493342, 33.21970334487645, 0.0], [-117.25823033262947, 33.21970092232972, 0.0], [-117.25866303645724, 33.219651779047034, 0.0], [-117.25936749468752, 33.219491033414236, 0.0], [-117.26222814228846, 33.218876521831476, 0.0], [-117.26296791158676, 33.21865994903166, 0.0], [-117.26362623988231, 33.218328876219665, 0.0], [-117.26772084617166, 33.215431710651615, 0.0], [-117.26836149998975, 33.21479554344078, 0.0], [-117.26989465989942, 33.21327306870614, 0.0], [-117.27013517208538, 33.212867889247626, 0.0], [-117.27024937176405, 33.21242609516559, 0.0], [-117.27037182048443, 33.21199082920406, 0.0], [-117.27062376208711, 33.21144455870868, 0.0], [-117.27101506016861, 33.2110730420926, 0.0], [-117.27144728566475, 33.21084685577738, 0.0], [-117.2728458450265, 33.2104945175282, 0.0], [-117.2745525243913, 33.20965038897319, 0.0], [-117.27552928542798, 33.20929875522958, 0.0], [-117.27637072540173, 33.20911863979789, 0.0], [-117.27779136717076, 33.208980442189365, 0.0], [-117.27845629314075, 33.20880452396534, 0.0], [-117.27897695095201, 33.20859406932605, 0.0], [-117.28338144525111, 33.20641088144024, 0.0], [-117.28495333940981, 33.20579630515322, 0.0], [-117.28829883251275, 33.204488194464744, 0.0], [-117.28940030290427, 33.20404800403899, 0.0], [-117.291380981062, 33.203312382886075, 0.0], [-117.29218977483916, 33.203143701505205, 0.0], [-117.29484882303535, 33.202958887716726, 0.0], [-117.29759299862486, 33.20278539072838, 0.0], [-117.30680235045259, 33.20221168821957, 0.0], [-117.30808862191327, 33.20205917167807, 0.0], [-117.31046461984154, 33.2016630374079, 0.0], [-117.3113448236368, 33.20151627499781, 0.0], [-117.31423260620464, 33.20105973475473, 0.0], [-117.32043728857239, 33.20008915324058, 0.0], [-117.3211060170175, 33.20010289242513, 0.0], [-117.32174808937327, 33.20020920760759, 0.0], [-117.32229941754156, 33.20038034358185, 0.0], [-117.32324267752313, 33.20078720405269, 0.0], [-117.32379812427135, 33.20089370841626, 0.0], [-117.32431922212211, 33.200865008093146, 0.0], [-117.32639320378587, 33.20043529617642, 0.0], [-117.32930665753162, 33.19981574548886, 0.0], [-117.33042121391463, 33.19966256704066, 0.0], [-117.33070714297942, 33.199657471827194, 0.0], [-117.3320211515312, 33.199634048294605, 0.0], [-117.33444658039265, 33.19973846430757, 0.0], [-117.33692742409205, 33.19969750156793, 0.0], [-117.33767541751963, 33.19964421780438, 0.0], [-117.3386576601851, 33.199499546218014, 0.0], [-117.34335058917075, 33.19831625290854, 0.0], [-117.34597398564668, 33.19765269219461, 0.0], [-117.34824858385338, 33.19707187105799, 0.0], [-117.3488963138928, 33.19684625255764, 0.0], [-117.35278712044968, 33.19496310226343, 0.0], [-117.35359647039253, 33.19457135066649, 0.0], [-117.3587703291821, 33.19203367303445, 0.0], [-117.35877231111617, 33.192032653479494, 0.0], [-117.36072225059372, 33.19102976444659, 0.0], [-117.3610697754504, 33.190858533217735, 0.0], [-117.36150516894297, 33.19064400443948, 0.0], [-117.36200660233372, 33.190315977928, 0.0], [-117.36204802053344, 33.190288883425325, 0.0], [-117.36214310677137, 33.19022667895548, 0.0], [-117.3621795034367, 33.19020286849575, 0.0], [-117.36219508720804, 33.190193212656496, 0.0], [-117.36222449791272, 33.19017498980088, 0.0], [-117.36227450320094, 33.19014400563634, 0.0], [-117.36235082470995, 33.190096716371286, 0.0], [-117.36238946108118, 33.190072776642815, 0.0], [-117.36240005311664, 33.19006621343952, 0.0], [-117.36274867621793, 33.18984705284123, 0.0], [-117.36320668794556, 33.189490033385916, 0.0], [-117.36321277130787, 33.18948372971884, 0.0], [-117.36397456363768, 33.18869431557811, 0.0], [-117.36429550547444, 33.18822693437973, 0.0], [-117.3646273146863, 33.18758629924596, 0.0], [-117.36481365048893, 33.187073401394166, 0.0], [-117.36522544403317, 33.18526942775066, 0.0], [-117.36542073592426, 33.1846904851411, 0.0], [-117.36565442497158, 33.18430359153084, 0.0], [-117.36588604832562, 33.18401126512718, 0.0], [-117.36688815457312, 33.18274919718899, 0.0], [-117.36730538224448, 33.182402149039184, 0.0], [-117.36765251315933, 33.182197554234996, 0.0], [-117.36792773010988, 33.18205657902749, 0.0], [-117.36806980124618, 33.18198380516014, 0.0], [-117.36854946709987, 33.181791755762575, 0.0], [-117.36874816063168, 33.18173774034192, 0.0], [-117.36926029617491, 33.18165698443485, 0.0], [-117.36983308853968, 33.18167204372261, 0.0], [-117.36987499456421, 33.18167314581056, 0.0], [-117.37021056479323, 33.18171546411352, 0.0], [-117.37044523477029, 33.1817911263898, 0.0], [-117.37078305116664, 33.182009051878666, 0.0], [-117.37082921186598, 33.18204565993218, 0.0], [-117.37109179630305, 33.18225390109165, 0.0], [-117.37122154879484, 33.182391617960974, 0.0], [-117.37136346024056, 33.18254223950983, 0.0], [-117.37138836223271, 33.182568670559434, 0.0], [-117.37140729902079, 33.18259127808819, 0.0], [-117.37275040273612, 33.18419469392571, 0.0], [-117.37533546533882, 33.18728056924549, 0.0], [-117.37910490178847, 33.19177978503409, 0.0]]], "type": "MultiLineString"}, "id": "217", "properties": {"Configuration": 1, "Direction": 2, "ETL_Route_ID": 7, "Mode": "5: Light Rail", "Operator": "NCTD", "Route": 399, "RouteID": 399201, "Start": "Escondido", "Stop": "Oceanside"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_3f626e5848c47e7e3afbf80a18f4796b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_74c7a380b912a0ea1365274423f91d5a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_74c7a380b912a0ea1365274423f91d5a_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_74c7a380b912a0ea1365274423f91d5a_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_74c7a380b912a0ea1365274423f91d5a_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_74c7a380b912a0ea1365274423f91d5a_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_74c7a380b912a0ea1365274423f91d5a.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_74c7a380b912a0ea1365274423f91d5a_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_74c7a380b912a0ea1365274423f91d5a = L.geoJson(null, {
+                onEachFeature: geo_json_74c7a380b912a0ea1365274423f91d5a_onEachFeature,
+            
+                style: geo_json_74c7a380b912a0ea1365274423f91d5a_styler,
+                pointToLayer: geo_json_74c7a380b912a0ea1365274423f91d5a_pointToLayer
+        });
+
+        function geo_json_74c7a380b912a0ea1365274423f91d5a_add (data) {
+            geo_json_74c7a380b912a0ea1365274423f91d5a
+                .addData(data)
+                .addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        }
+            geo_json_74c7a380b912a0ea1365274423f91d5a_add({"bbox": [-117.37910490178847, 33.11844059276485, -117.09194758854547, 33.219491033414236], "features": [{"bbox": [-117.09194758854547, 33.11844059276485, -117.09194758854547, 33.11844059276485], "geometry": {"coordinates": [-117.09194758854547, 33.11844059276485, 0.0], "type": "Point"}, "id": "46", "properties": {"ETL_Route_ID": 7, "HNODE": 8213, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    ESCONDIDO TC", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.12413098251837, 33.13111214519466, -117.12413098251837, 33.13111214519466], "geometry": {"coordinates": [-117.12413098251837, 33.13111214519466, 0.0], "type": "Point"}, "id": "47", "properties": {"ETL_Route_ID": 7, "HNODE": 23958, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    NORDAHL ROAD", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.15393845208406, 33.13471811648647, -117.15393845208406, 33.13471811648647], "geometry": {"coordinates": [-117.15393845208406, 33.13471811648647, 0.0], "type": "Point"}, "id": "48", "properties": {"ETL_Route_ID": 7, "HNODE": 23887, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    CSU-SAN MARCOS", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.16108071758623, 33.14206029419906, -117.16108071758623, 33.14206029419906], "geometry": {"coordinates": [-117.16108071758623, 33.14206029419906, 0.0], "type": "Point"}, "id": "49", "properties": {"ETL_Route_ID": 7, "HNODE": 23986, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    SAN MARCOS CIVIC CTR", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.18541702051724, 33.14697686357915, -117.18541702051724, 33.14697686357915], "geometry": {"coordinates": [-117.18541702051724, 33.14697686357915, 0.0], "type": "Point"}, "id": "50", "properties": {"ETL_Route_ID": 7, "HNODE": 7420, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    PALOMAR COLLEGE", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.20719859558088, 33.17352296267397, -117.20719859558088, 33.17352296267397], "geometry": {"coordinates": [-117.20719859558088, 33.17352296267397, 0.0], "type": "Point"}, "id": "51", "properties": {"ETL_Route_ID": 7, "HNODE": 6975, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    BUENA CREEK", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.23720846143962, 33.190303966682244, -117.23720846143962, 33.190303966682244], "geometry": {"coordinates": [-117.23720846143962, 33.190303966682244, 0.0], "type": "Point"}, "id": "52", "properties": {"ETL_Route_ID": 7, "HNODE": 6623, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    ESCONDIDO AVE", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.24507724895915, 33.2033177375563, -117.24507724895915, 33.2033177375563], "geometry": {"coordinates": [-117.24507724895915, 33.2033177375563, 0.0], "type": "Point"}, "id": "53", "properties": {"ETL_Route_ID": 7, "HNODE": 23675, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    VISTA TRANSIT CENTER", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.25936749468752, 33.219491033414236, -117.25936749468752, 33.219491033414236], "geometry": {"coordinates": [-117.25936749468752, 33.219491033414236, 0.0], "type": "Point"}, "id": "54", "properties": {"ETL_Route_ID": 7, "HNODE": 5927, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    MELROSE DR", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.28829883251275, 33.204488194464744, -117.28829883251275, 33.204488194464744], "geometry": {"coordinates": [-117.28829883251275, 33.204488194464744, 0.0], "type": "Point"}, "id": "55", "properties": {"ETL_Route_ID": 7, "HNODE": 6201, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    COLLEGE BLVD", "YR": 2010}, "type": "Feature"}, {"bbox": [-117.3113448236368, 33.20151627499781, -117.3113448236368, 33.20151627499781], "geometry": {"coordinates": [-117.3113448236368, 33.20151627499781, 0.0], "type": "Point"}, "id": "56", "properties": {"ETL_Route_ID": 7, "HNODE": 6320, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    RANCHO DEL ORO", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.3320211515312, 33.199634048294605, -117.3320211515312, 33.199634048294605], "geometry": {"coordinates": [-117.3320211515312, 33.199634048294605, 0.0], "type": "Point"}, "id": "57", "properties": {"ETL_Route_ID": 7, "HNODE": 17675, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    EL CAMINO REAL", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.35359647039253, 33.19457135066649, -117.35359647039253, 33.19457135066649], "geometry": {"coordinates": [-117.35359647039253, 33.19457135066649, 0.0], "type": "Point"}, "id": "58", "properties": {"ETL_Route_ID": 7, "HNODE": 6493, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    CROUCH STREET", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.36854946709987, 33.181791755762575, -117.36854946709987, 33.181791755762575], "geometry": {"coordinates": [-117.36854946709987, 33.181791755762575, 0.0], "type": "Point"}, "id": "59", "properties": {"ETL_Route_ID": 7, "HNODE": 6781, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    COAST HIGHWAY", "YR": 2008}, "type": "Feature"}, {"bbox": [-117.37910490178847, 33.19177978503409, -117.37910490178847, 33.19177978503409], "geometry": {"coordinates": [-117.37910490178847, 33.19177978503409, 0.0], "type": "Point"}, "id": "60", "properties": {"ETL_Route_ID": 7, "HNODE": 23503, "STOPTYPE": "5: Light Rail", "StopName": "SPRINTER STATION    OCEANSIDE TC", "YR": 2008}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_74c7a380b912a0ea1365274423f91d5a.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            var layer_control_c13c65f0f9acba6c5414ed3cb0b20a1e = {
+                base_layers : {
+                    "cartodbdark_matter" : tile_layer_814590ae407c043f523d87b68de3f106,
+                },
+                overlays :  {
+                    "Route 399 Dir. 1 Config. 5" : geo_json_791b8aec5e5189d1dc7ceca687842b52,
+                    "Stops for Route 399 Dir. 1 Config. 5" : geo_json_d77403894e24562dabb7ed091d36a140,
+                    "Route 399 Dir. 2 Config. 5" : geo_json_09bebba1a84c7dbffe84e8a58dc7204a,
+                    "Stops for Route 399 Dir. 2 Config. 5" : geo_json_62244419bbe2a2dd4123a8b50947739b,
+                    "Route 399 Dir. 1 Config. 1" : geo_json_a571f1983bb2e986555ec1ffea1288db,
+                    "Stops for Route 399 Dir. 1 Config. 1" : geo_json_2582a77d4d4c11742c8f0a37453b831d,
+                    "Route 399 Dir. 2 Config. 1" : geo_json_3f626e5848c47e7e3afbf80a18f4796b,
+                    "Stops for Route 399 Dir. 2 Config. 1" : geo_json_74c7a380b912a0ea1365274423f91d5a,
+                },
+            };
+            L.control.layers(
+                layer_control_c13c65f0f9acba6c5414ed3cb0b20a1e.base_layers,
+                layer_control_c13c65f0f9acba6c5414ed3cb0b20a1e.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_be2eeed8d8a4c2170ded4070284cf87a);
+        
+    
+            map_be2eeed8d8a4c2170ded4070284cf87a.fitBounds(
+                [[33.11844059276485, -117.37910490178847], [33.219722245007866, -117.09194758854547]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>

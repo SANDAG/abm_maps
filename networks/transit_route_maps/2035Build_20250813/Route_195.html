@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_19f0e4d5b2beb912acde6bca0560b0c2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_19f0e4d5b2beb912acde6bca0560b0c2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_19f0e4d5b2beb912acde6bca0560b0c2 = L.map(
+                "map_19f0e4d5b2beb912acde6bca0560b0c2",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_34dd969e12496a73f5f6400121767e0b = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_19f0e4d5b2beb912acde6bca0560b0c2);
+        
+    
+        function geo_json_7e7fdf256b59b42ee0df1729fa3cb476_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_7e7fdf256b59b42ee0df1729fa3cb476_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_7e7fdf256b59b42ee0df1729fa3cb476_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_7e7fdf256b59b42ee0df1729fa3cb476_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_7e7fdf256b59b42ee0df1729fa3cb476_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_7e7fdf256b59b42ee0df1729fa3cb476.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_7e7fdf256b59b42ee0df1729fa3cb476_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_7e7fdf256b59b42ee0df1729fa3cb476 = L.geoJson(null, {
+                onEachFeature: geo_json_7e7fdf256b59b42ee0df1729fa3cb476_onEachFeature,
+            
+                style: geo_json_7e7fdf256b59b42ee0df1729fa3cb476_styler,
+                pointToLayer: geo_json_7e7fdf256b59b42ee0df1729fa3cb476_pointToLayer
+        });
+
+        function geo_json_7e7fdf256b59b42ee0df1729fa3cb476_add (data) {
+            geo_json_7e7fdf256b59b42ee0df1729fa3cb476
+                .addData(data)
+                .addTo(map_19f0e4d5b2beb912acde6bca0560b0c2);
+        }
+            geo_json_7e7fdf256b59b42ee0df1729fa3cb476_add({"bbox": [-117.11279394648724, 32.65556623337135, -117.06340877417888, 32.679296130855064], "features": [{"bbox": [-117.11279394648724, 32.65556623337135, -117.06340877417888, 32.679296130855064], "geometry": {"coordinates": [[[-117.11279394648724, 32.6741746850306, 0.0], [-117.11279227722787, 32.67417515749725, 0.0], [-117.11268501610854, 32.674205516441184, 0.0], [-117.11210691499191, 32.674369136971, 0.0], [-117.11154305148735, 32.674531116041656, 0.0], [-117.11109905415654, 32.67465515091306, 0.0], [-117.10992260229325, 32.67498218637224, 0.0], [-117.10982985893294, 32.67500811414839, 0.0], [-117.10974111238572, 32.675032924691806, 0.0], [-117.10969996822728, 32.67504469605042, 0.0], [-117.10964330435215, 32.675060907526536, 0.0], [-117.10962684476593, 32.67506561661291, 0.0], [-117.1095449901703, 32.675089035383834, 0.0], [-117.10948509938774, 32.675106170113835, 0.0], [-117.10946077518344, 32.67511312791686, 0.0], [-117.10898279277306, 32.675249844062286, 0.0], [-117.10847395877178, 32.67539081200005, 0.0], [-117.10796512314452, 32.67553177783848, 0.0], [-117.10691172907195, 32.675816700813634, 0.0], [-117.10635758199673, 32.67597721428164, 0.0], [-117.10586498723913, 32.67611805952749, 0.0], [-117.10533994889728, 32.67626462391101, 0.0], [-117.10485054716875, 32.676399945050505, 0.0], [-117.10431900639088, 32.67654655104107, 0.0], [-117.10382968134033, 32.67669011305142, 0.0], [-117.10330138666117, 32.6768366912554, 0.0], [-117.10279583712904, 32.67698310989605, 0.0], [-117.10228376024706, 32.677126823975, 0.0], [-117.10178465448854, 32.677267696931025, 0.0], [-117.10076054546424, 32.67756061028056, 0.0], [-117.10052982404657, 32.67762531786318, 0.0], [-117.10033894535385, 32.67767885010539, 0.0], [-117.09975582126893, 32.67784238664253, 0.0], [-117.09872512030404, 32.67812708294849, 0.0], [-117.09865643281483, 32.67814648218447, 0.0], [-117.09856630868892, 32.67817193615896, 0.0], [-117.0984672440687, 32.67819991421971, 0.0], [-117.0976977151227, 32.678417244921164, 0.0], [-117.09727912245965, 32.67853529214637, 0.0], [-117.09696847675974, 32.678622895247834, 0.0], [-117.09666383030952, 32.678710190363184, 0.0], [-117.09565907994747, 32.678991934252664, 0.0], [-117.09509039020597, 32.67916513977413, 0.0], [-117.09462528953051, 32.679296130855064, 0.0], [-117.09408773638116, 32.67796899042813, 0.0], [-117.09404703140545, 32.67762076000508, 0.0], [-117.09408812111438, 32.67736797661391, 0.0], [-117.094111482792, 32.67722426042812, 0.0], [-117.09333032398617, 32.67709767739195, 0.0], [-117.09191122853348, 32.67686825431633, 0.0], [-117.09193617307058, 32.67675786942373, 0.0], [-117.09193742115296, 32.6767525740289, 0.0], [-117.09206891107928, 32.676194621168975, 0.0], [-117.09234764767022, 32.67594672685928, 0.0], [-117.09256931587029, 32.67584846624391, 0.0], [-117.09265353292207, 32.675819580825944, 0.0], [-117.09278702351719, 32.67567574715658, 0.0], [-117.09287028181049, 32.67554654828763, 0.0], [-117.09287731311576, 32.675432162900464, 0.0], [-117.09285157631165, 32.675289417374564, 0.0], [-117.09245780329856, 32.673870036495295, 0.0], [-117.09240511676087, 32.673627430189484, 0.0], [-117.09236929176438, 32.67344902224083, 0.0], [-117.09230950300781, 32.67331338044993, 0.0], [-117.09194297339275, 32.67236325535472, 0.0], [-117.09161310287472, 32.67150797694488, 0.0], [-117.0914432162882, 32.67107212575774, 0.0], [-117.09127666040209, 32.67064449709713, 0.0], [-117.09060059939095, 32.66892305349958, 0.0], [-117.09026415050596, 32.66805682266997, 0.0], [-117.08992778673583, 32.66719883678279, 0.0], [-117.08975799632081, 32.66677122827069, 0.0], [-117.08958815523977, 32.666338122913686, 0.0], [-117.08929870528733, 32.66545755218315, 0.0], [-117.08932211681639, 32.66535679801112, 0.0], [-117.08931097316362, 32.665210103924714, 0.0], [-117.08918552207093, 32.665002347789816, 0.0], [-117.08905578601627, 32.66485646075022, 0.0], [-117.08897478441926, 32.66470996786324, 0.0], [-117.08860178911432, 32.66375575492105, 0.0], [-117.08841893716168, 32.66331998808872, 0.0], [-117.08780721920853, 32.66186139846539, 0.0], [-117.08758861585535, 32.66125271876955, 0.0], [-117.08742304862166, 32.660754167127216, 0.0], [-117.08724631538782, 32.6602771298424, 0.0], [-117.08621897609808, 32.66055620269704, 0.0], [-117.08520148127403, 32.66084619330582, 0.0], [-117.08449159290757, 32.66102415543228, 0.0], [-117.08335317362686, 32.66124073996853, 0.0], [-117.08150591810703, 32.66157615928478, 0.0], [-117.08100246769185, 32.661594945121884, 0.0], [-117.08048698068366, 32.661543173550776, 0.0], [-117.08009524450047, 32.661479084075765, 0.0], [-117.07971247716081, 32.66141646054351, 0.0], [-117.07929918372056, 32.661347779506514, 0.0], [-117.0785668713597, 32.661215553602936, 0.0], [-117.07791606525225, 32.661112459370386, 0.0], [-117.07782630567743, 32.66109566670216, 0.0], [-117.0777175165276, 32.66107531362686, 0.0], [-117.07738872431858, 32.66100880829745, 0.0], [-117.07728944296507, 32.660988330627795, 0.0], [-117.07728032485181, 32.66098644947236, 0.0], [-117.077027365575, 32.660934274184946, 0.0], [-117.07681004031308, 32.660889540399864, 0.0], [-117.07663680166507, 32.660853881484734, 0.0], [-117.0765618344115, 32.66083845043563, 0.0], [-117.07651923373311, 32.660828887277766, 0.0], [-117.07601970652927, 32.66071675248132, 0.0], [-117.07581778545942, 32.660670363675024, 0.0], [-117.07574794769336, 32.66065431976589, 0.0], [-117.07554011282251, 32.66060657152354, 0.0], [-117.07542219867582, 32.66057948206236, 0.0], [-117.07540341273526, 32.66057482683258, 0.0], [-117.07528706749324, 32.660545992706325, 0.0], [-117.07509877767788, 32.6604993284353, 0.0], [-117.07501185305098, 32.66047778516235, 0.0], [-117.0748828435882, 32.66044662415918, 0.0], [-117.07484576976921, 32.660437669091166, 0.0], [-117.0742009607216, 32.660279820552894, 0.0], [-117.0736180891679, 32.66014354280327, 0.0], [-117.07235457599775, 32.659838648508746, 0.0], [-117.07191578707196, 32.65982205990049, 0.0], [-117.07181523398107, 32.65984032026912, 0.0], [-117.07148761773725, 32.65989912242349, 0.0], [-117.07018355997273, 32.66047426735046, 0.0], [-117.06959169790566, 32.66059391430336, 0.0], [-117.06899251586005, 32.66062510643219, 0.0], [-117.0688904893701, 32.660619045433734, 0.0], [-117.06881936403701, 32.66061481976397, 0.0], [-117.06878445465851, 32.66061274585863, 0.0], [-117.06874204262274, 32.66060755307366, 0.0], [-117.0686795403372, 32.660599899385105, 0.0], [-117.0686598396259, 32.66059748730518, 0.0], [-117.06855024775369, 32.66058406761788, 0.0], [-117.06835864723341, 32.660549115038776, 0.0], [-117.06833218490414, 32.66054428785702, 0.0], [-117.06824045710269, 32.66052396829765, 0.0], [-117.06821171846363, 32.660517601608476, 0.0], [-117.06748005583466, 32.66027756482566, 0.0], [-117.06629049889739, 32.65971128739066, 0.0], [-117.06470295726517, 32.65897090018065, 0.0], [-117.06407576199584, 32.65878209913687, 0.0], [-117.06340877417888, 32.65868205889731, 0.0], [-117.06342413454787, 32.65840985703458, 0.0], [-117.06347861042484, 32.65832759325269, 0.0], [-117.06356070164858, 32.65824514632924, 0.0], [-117.06375352421429, 32.65819110355258, 0.0], [-117.06393995674489, 32.65814891986345, 0.0], [-117.06391927440148, 32.658020152813435, 0.0], [-117.06387247564355, 32.657525734248885, 0.0], [-117.06375164710987, 32.65640240037635, 0.0], [-117.06372745265084, 32.65606889376573, 0.0], [-117.06375818860964, 32.655702592902415, 0.0], [-117.06442947012349, 32.65556623337135, 0.0]]], "type": "MultiLineString"}, "id": "150", "properties": {"Configuration": 1, "Direction": 2, "ETL_Route_ID": 192, "Mode": "10: Local", "Operator": "MTS", "Route": 195, "RouteID": 195201, "Start": "National City", "Stop": "National City"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_7e7fdf256b59b42ee0df1729fa3cb476.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_b0f467fc70f0625a9d4f4f82888c3523_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_b0f467fc70f0625a9d4f4f82888c3523_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_b0f467fc70f0625a9d4f4f82888c3523_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_b0f467fc70f0625a9d4f4f82888c3523_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_b0f467fc70f0625a9d4f4f82888c3523_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_b0f467fc70f0625a9d4f4f82888c3523.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_b0f467fc70f0625a9d4f4f82888c3523_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_b0f467fc70f0625a9d4f4f82888c3523 = L.geoJson(null, {
+                onEachFeature: geo_json_b0f467fc70f0625a9d4f4f82888c3523_onEachFeature,
+            
+                style: geo_json_b0f467fc70f0625a9d4f4f82888c3523_styler,
+                pointToLayer: geo_json_b0f467fc70f0625a9d4f4f82888c3523_pointToLayer
+        });
+
+        function geo_json_b0f467fc70f0625a9d4f4f82888c3523_add (data) {
+            geo_json_b0f467fc70f0625a9d4f4f82888c3523
+                .addData(data)
+                .addTo(map_19f0e4d5b2beb912acde6bca0560b0c2);
+        }
+            geo_json_b0f467fc70f0625a9d4f4f82888c3523_add({"bbox": [-117.11279394648724, 32.65556623337135, -117.06340877417888, 32.679296130855064], "features": [{"bbox": [-117.11279394648724, 32.6741746850306, -117.11279394648724, 32.6741746850306], "geometry": {"coordinates": [-117.11279394648724, 32.6741746850306], "type": "Point"}, "id": "4629", "properties": {"ETL_Route_ID": 192, "HNODE": 19410, "STOPTYPE": "10: Local", "StopName": "TROLLEY STATION    8TH STREET TROLLEY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10796512314452, 32.67553177783848, -117.10796512314452, 32.67553177783848], "geometry": {"coordinates": [-117.10796512314452, 32.67553177783848], "type": "Point"}, "id": "4630", "properties": {"ETL_Route_ID": 192, "HNODE": 19379, "STOPTYPE": "10: Local", "StopName": "08TH    ROOSEVELT", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10691172907195, 32.675816700813634, -117.10691172907195, 32.675816700813634], "geometry": {"coordinates": [-117.10691172907195, 32.675816700813634], "type": "Point"}, "id": "4631", "properties": {"ETL_Route_ID": 192, "HNODE": 19372, "STOPTYPE": "10: Local", "StopName": "08TH    NATIONAL CITY / 08TH", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10485054716875, 32.676399945050505, -117.10485054716875, 32.676399945050505], "geometry": {"coordinates": [-117.10485054716875, 32.676399945050505], "type": "Point"}, "id": "4632", "properties": {"ETL_Route_ID": 192, "HNODE": 19364, "STOPTYPE": "10: Local", "StopName": "08TH    B", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10279583712904, 32.67698310989605, -117.10279583712904, 32.67698310989605], "geometry": {"coordinates": [-117.10279583712904, 32.67698310989605], "type": "Point"}, "id": "4633", "properties": {"ETL_Route_ID": 192, "HNODE": 19348, "STOPTYPE": "10: Local", "StopName": "08TH    D / 08TH", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09872512030404, 32.67812708294849, -117.09872512030404, 32.67812708294849], "geometry": {"coordinates": [-117.09872512030404, 32.67812708294849], "type": "Point"}, "id": "4634", "properties": {"ETL_Route_ID": 192, "HNODE": 19317, "STOPTYPE": "10: Local", "StopName": "HIGHLAND    08TH / HIGHLAND", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09462528953051, 32.679296130855064, -117.09462528953051, 32.679296130855064], "geometry": {"coordinates": [-117.09462528953051, 32.679296130855064], "type": "Point"}, "id": "4635", "properties": {"ETL_Route_ID": 192, "HNODE": 19285, "STOPTYPE": "10: Local", "StopName": "08TH    L", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.094111482792, 32.67722426042812, -117.094111482792, 32.67722426042812], "geometry": {"coordinates": [-117.094111482792, 32.67722426042812], "type": "Point"}, "id": "4636", "properties": {"ETL_Route_ID": 192, "HNODE": 19343, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "PLAZA    PLAZA/L", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09191122853348, 32.67686825431633, -117.09191122853348, 32.67686825431633], "geometry": {"coordinates": [-117.09191122853348, 32.67686825431633], "type": "Point"}, "id": "4637", "properties": {"ETL_Route_ID": 192, "HNODE": 19353, "STOPTYPE": "10: Local", "StopName": "N    PLAZA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09127666040209, 32.67064449709713, -117.09127666040209, 32.67064449709713], "geometry": {"coordinates": [-117.09127666040209, 32.67064449709713], "type": "Point"}, "id": "4638", "properties": {"ETL_Route_ID": 192, "HNODE": 19487, "STOPTYPE": "10: Local", "StopName": "L    18TH", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09026415050596, 32.66805682266997, -117.09026415050596, 32.66805682266997], "geometry": {"coordinates": [-117.09026415050596, 32.66805682266997], "type": "Point"}, "id": "4639", "properties": {"ETL_Route_ID": 192, "HNODE": 19538, "STOPTYPE": "10: Local", "StopName": "L    zone connector", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.08929870528733, 32.66545755218315, -117.08929870528733, 32.66545755218315], "geometry": {"coordinates": [-117.08929870528733, 32.66545755218315], "type": "Point"}, "id": "4640", "properties": {"ETL_Route_ID": 192, "HNODE": 19583, "STOPTYPE": "10: Local", "StopName": "24TH    L", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.08724631538782, 32.6602771298424, -117.08724631538782, 32.6602771298424], "geometry": {"coordinates": [-117.08724631538782, 32.6602771298424], "type": "Point"}, "id": "4641", "properties": {"ETL_Route_ID": 192, "HNODE": 19684, "STOPTYPE": "10: Local", "StopName": "L    30TH", "YR": 2003}, "type": "Feature"}, {"bbox": [-117.08335317362686, 32.66124073996853, -117.08335317362686, 32.66124073996853], "geometry": {"coordinates": [-117.08335317362686, 32.66124073996853], "type": "Point"}, "id": "4642", "properties": {"ETL_Route_ID": 192, "HNODE": 19655, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    GROVE/TOWN\u0026COUNTRY", "YR": 2020}, "type": "Feature"}, {"bbox": [-117.08048698068366, 32.661543173550776, -117.08048698068366, 32.661543173550776], "geometry": {"coordinates": [-117.08048698068366, 32.661543173550776], "type": "Point"}, "id": "4643", "properties": {"ETL_Route_ID": 192, "HNODE": 19652, "STOPTYPE": "10: Local", "StopName": "PROSPECT    SWEETWATER", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.07484576976921, 32.660437669091166, -117.07484576976921, 32.660437669091166], "geometry": {"coordinates": [-117.07484576976921, 32.660437669091166], "type": "Point"}, "id": "4644", "properties": {"ETL_Route_ID": 192, "HNODE": 19680, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    OLIVE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.0736180891679, 32.66014354280327, -117.0736180891679, 32.66014354280327], "geometry": {"coordinates": [-117.0736180891679, 32.66014354280327], "type": "Point"}, "id": "4645", "properties": {"ETL_Route_ID": 192, "HNODE": 19688, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    ORANGE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.07018355997273, 32.66047426735046, -117.07018355997273, 32.66047426735046], "geometry": {"coordinates": [-117.07018355997273, 32.66047426735046], "type": "Point"}, "id": "4646", "properties": {"ETL_Route_ID": 192, "HNODE": 19678, "STOPTYPE": "10: Local", "StopName": "VALLEY    SWEETWATER", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.06629049889739, 32.65971128739066, -117.06629049889739, 32.65971128739066], "geometry": {"coordinates": [-117.06629049889739, 32.65971128739066], "type": "Point"}, "id": "4647", "properties": {"ETL_Route_ID": 192, "HNODE": 19700, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    STOCKMAN/PLZ BONITA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.06340877417888, 32.65868205889731, -117.06340877417888, 32.65868205889731], "geometry": {"coordinates": [-117.06340877417888, 32.65868205889731], "type": "Point"}, "id": "4648", "properties": {"ETL_Route_ID": 192, "HNODE": 19723, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    PLAZA BONITA RING", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.06442947012349, 32.65556623337135, -117.06442947012349, 32.65556623337135], "geometry": {"coordinates": [-117.06442947012349, 32.65556623337135], "type": "Point"}, "id": "4649", "properties": {"ETL_Route_ID": 192, "HNODE": 25195, "STOPTYPE": "10: Local", "StopName": "PLAZA BONITA    PLAZA BONITA TC", "YR": 2000}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_b0f467fc70f0625a9d4f4f82888c3523.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_101ddbd4bd1e59d76170040380f1e8e9_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_101ddbd4bd1e59d76170040380f1e8e9_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_101ddbd4bd1e59d76170040380f1e8e9_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_101ddbd4bd1e59d76170040380f1e8e9_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_101ddbd4bd1e59d76170040380f1e8e9_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_101ddbd4bd1e59d76170040380f1e8e9.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_101ddbd4bd1e59d76170040380f1e8e9_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_101ddbd4bd1e59d76170040380f1e8e9 = L.geoJson(null, {
+                onEachFeature: geo_json_101ddbd4bd1e59d76170040380f1e8e9_onEachFeature,
+            
+                style: geo_json_101ddbd4bd1e59d76170040380f1e8e9_styler,
+                pointToLayer: geo_json_101ddbd4bd1e59d76170040380f1e8e9_pointToLayer
+        });
+
+        function geo_json_101ddbd4bd1e59d76170040380f1e8e9_add (data) {
+            geo_json_101ddbd4bd1e59d76170040380f1e8e9
+                .addData(data)
+                .addTo(map_19f0e4d5b2beb912acde6bca0560b0c2);
+        }
+            geo_json_101ddbd4bd1e59d76170040380f1e8e9_add({"bbox": [-117.11279394648724, 32.65548498040746, -117.06340877417888, 32.679296130855064], "features": [{"bbox": [-117.11279394648724, 32.65548498040746, -117.06340877417888, 32.679296130855064], "geometry": {"coordinates": [[[-117.06442947012349, 32.65556623337135, 0.0], [-117.06482996939435, 32.65548498040746, 0.0], [-117.0650954237762, 32.65643422725259, 0.0], [-117.06515924757775, 32.65666245404, 0.0], [-117.06493058409947, 32.65670491783361, 0.0], [-117.06488271737885, 32.65679895759508, 0.0], [-117.06497730964998, 32.65719081602611, 0.0], [-117.06490767539927, 32.65721463838053, 0.0], [-117.06467261820963, 32.65726868792668, 0.0], [-117.06450795489356, 32.657381090224334, 0.0], [-117.06444821083358, 32.657394688962235, 0.0], [-117.06387247564355, 32.657525734248885, 0.0], [-117.06391927440148, 32.658020152813435, 0.0], [-117.06393995674489, 32.65814891986345, 0.0], [-117.06375352421429, 32.65819110355258, 0.0], [-117.06356070164858, 32.65824514632924, 0.0], [-117.06347861042484, 32.65832759325269, 0.0], [-117.06342413454787, 32.65840985703458, 0.0], [-117.06340877417888, 32.65868205889731, 0.0], [-117.06407576199584, 32.65878209913687, 0.0], [-117.06470295726517, 32.65897090018065, 0.0], [-117.06629049889739, 32.65971128739066, 0.0], [-117.06748005583466, 32.66027756482566, 0.0], [-117.06821171846363, 32.660517601608476, 0.0], [-117.06824045710269, 32.66052396829765, 0.0], [-117.06833218490414, 32.66054428785702, 0.0], [-117.06835864723341, 32.660549115038776, 0.0], [-117.06855024775369, 32.66058406761788, 0.0], [-117.0686598396259, 32.66059748730518, 0.0], [-117.0686795403372, 32.660599899385105, 0.0], [-117.06874204262274, 32.66060755307366, 0.0], [-117.06878445465851, 32.66061274585863, 0.0], [-117.06881936403701, 32.66061481976397, 0.0], [-117.0688904893701, 32.660619045433734, 0.0], [-117.06899251586005, 32.66062510643219, 0.0], [-117.06959169790566, 32.66059391430336, 0.0], [-117.07018355997273, 32.66047426735046, 0.0], [-117.07148761773725, 32.65989912242349, 0.0], [-117.07181523398107, 32.65984032026912, 0.0], [-117.07191578707196, 32.65982205990049, 0.0], [-117.07235457599775, 32.659838648508746, 0.0], [-117.0736180891679, 32.66014354280327, 0.0], [-117.0742009607216, 32.660279820552894, 0.0], [-117.07484576976921, 32.660437669091166, 0.0], [-117.0748828435882, 32.66044662415918, 0.0], [-117.07501185305098, 32.66047778516235, 0.0], [-117.07509877767788, 32.6604993284353, 0.0], [-117.07528706749324, 32.660545992706325, 0.0], [-117.07540341273526, 32.66057482683258, 0.0], [-117.07542219867582, 32.66057948206236, 0.0], [-117.07554011282251, 32.66060657152354, 0.0], [-117.07574794769336, 32.66065431976589, 0.0], [-117.07581778545942, 32.660670363675024, 0.0], [-117.07601970652927, 32.66071675248132, 0.0], [-117.07651923373311, 32.660828887277766, 0.0], [-117.0765618344115, 32.66083845043563, 0.0], [-117.07663680166507, 32.660853881484734, 0.0], [-117.07681004031308, 32.660889540399864, 0.0], [-117.077027365575, 32.660934274184946, 0.0], [-117.07728032485181, 32.66098644947236, 0.0], [-117.07728944296507, 32.660988330627795, 0.0], [-117.07738872431858, 32.66100880829745, 0.0], [-117.0777175165276, 32.66107531362686, 0.0], [-117.07782630567743, 32.66109566670216, 0.0], [-117.07791606525225, 32.661112459370386, 0.0], [-117.0785668713597, 32.661215553602936, 0.0], [-117.07929918372056, 32.661347779506514, 0.0], [-117.07971247716081, 32.66141646054351, 0.0], [-117.08009524450047, 32.661479084075765, 0.0], [-117.08048698068366, 32.661543173550776, 0.0], [-117.08100246769185, 32.661594945121884, 0.0], [-117.08150591810703, 32.66157615928478, 0.0], [-117.08335317362686, 32.66124073996853, 0.0], [-117.08449159290757, 32.66102415543228, 0.0], [-117.08520148127403, 32.66084619330582, 0.0], [-117.08621897609808, 32.66055620269704, 0.0], [-117.08724631538782, 32.6602771298424, 0.0], [-117.08742304862166, 32.660754167127216, 0.0], [-117.08758861585535, 32.66125271876955, 0.0], [-117.08780721920853, 32.66186139846539, 0.0], [-117.08841893716168, 32.66331998808872, 0.0], [-117.08860178911432, 32.66375575492105, 0.0], [-117.08897478441926, 32.66470996786324, 0.0], [-117.08905578601627, 32.66485646075022, 0.0], [-117.08918552207093, 32.665002347789816, 0.0], [-117.08931097316362, 32.665210103924714, 0.0], [-117.08932211681639, 32.66535679801112, 0.0], [-117.08929870528733, 32.66545755218315, 0.0], [-117.08958815523977, 32.666338122913686, 0.0], [-117.08975799632081, 32.66677122827069, 0.0], [-117.08992778673583, 32.66719883678279, 0.0], [-117.09026415050596, 32.66805682266997, 0.0], [-117.09060059939095, 32.66892305349958, 0.0], [-117.09127666040209, 32.67064449709713, 0.0], [-117.0914432162882, 32.67107212575774, 0.0], [-117.09161310287472, 32.67150797694488, 0.0], [-117.09194297339275, 32.67236325535472, 0.0], [-117.09230950300781, 32.67331338044993, 0.0], [-117.09236929176438, 32.67344902224083, 0.0], [-117.09240511676087, 32.673627430189484, 0.0], [-117.09245780329856, 32.673870036495295, 0.0], [-117.09285157631165, 32.675289417374564, 0.0], [-117.09287731311576, 32.675432162900464, 0.0], [-117.09287028181049, 32.67554654828763, 0.0], [-117.09278702351719, 32.67567574715658, 0.0], [-117.09265353292207, 32.675819580825944, 0.0], [-117.09256931587029, 32.67584846624391, 0.0], [-117.09234764767022, 32.67594672685928, 0.0], [-117.09206891107928, 32.676194621168975, 0.0], [-117.09193742115296, 32.6767525740289, 0.0], [-117.09193617307058, 32.67675786942373, 0.0], [-117.09191122853348, 32.67686825431633, 0.0], [-117.09333032398617, 32.67709767739195, 0.0], [-117.094111482792, 32.67722426042812, 0.0], [-117.09408812111438, 32.67736797661391, 0.0], [-117.09404703140545, 32.67762076000508, 0.0], [-117.09408773638116, 32.67796899042813, 0.0], [-117.09462528953051, 32.679296130855064, 0.0], [-117.09509039020597, 32.67916513977413, 0.0], [-117.09565907994747, 32.678991934252664, 0.0], [-117.09666383030952, 32.678710190363184, 0.0], [-117.09696847675974, 32.678622895247834, 0.0], [-117.09727912245965, 32.67853529214637, 0.0], [-117.0976977151227, 32.678417244921164, 0.0], [-117.0984672440687, 32.67819991421971, 0.0], [-117.09856630868892, 32.67817193615896, 0.0], [-117.09865643281483, 32.67814648218447, 0.0], [-117.09872512030404, 32.67812708294849, 0.0], [-117.09975582126893, 32.67784238664253, 0.0], [-117.10033894535385, 32.67767885010539, 0.0], [-117.10052982404657, 32.67762531786318, 0.0], [-117.10076054546424, 32.67756061028056, 0.0], [-117.10178465448854, 32.677267696931025, 0.0], [-117.10228376024706, 32.677126823975, 0.0], [-117.10279583712904, 32.67698310989605, 0.0], [-117.10330138666117, 32.6768366912554, 0.0], [-117.10382968134033, 32.67669011305142, 0.0], [-117.10431900639088, 32.67654655104107, 0.0], [-117.10485054716875, 32.676399945050505, 0.0], [-117.10533994889728, 32.67626462391101, 0.0], [-117.10586498723913, 32.67611805952749, 0.0], [-117.10635758199673, 32.67597721428164, 0.0], [-117.10691172907195, 32.675816700813634, 0.0], [-117.10796512314452, 32.67553177783848, 0.0], [-117.10847395877178, 32.67539081200005, 0.0], [-117.10898279277306, 32.675249844062286, 0.0], [-117.10946077518344, 32.67511312791686, 0.0], [-117.10948509938774, 32.675106170113835, 0.0], [-117.1095449901703, 32.675089035383834, 0.0], [-117.10962684476593, 32.67506561661291, 0.0], [-117.10964330435215, 32.675060907526536, 0.0], [-117.10969996822728, 32.67504469605042, 0.0], [-117.10974111238572, 32.675032924691806, 0.0], [-117.10982985893294, 32.67500811414839, 0.0], [-117.10992260229325, 32.67498218637224, 0.0], [-117.11109905415654, 32.67465515091306, 0.0], [-117.11154305148735, 32.674531116041656, 0.0], [-117.11210691499191, 32.674369136971, 0.0], [-117.11268501610854, 32.674205516441184, 0.0], [-117.11279227722787, 32.67417515749725, 0.0], [-117.11279394648724, 32.6741746850306, 0.0]]], "type": "MultiLineString"}, "id": "171", "properties": {"Configuration": 1, "Direction": 1, "ETL_Route_ID": 191, "Mode": "10: Local", "Operator": "MTS", "Route": 195, "RouteID": 195101, "Start": "National City", "Stop": "National City"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_101ddbd4bd1e59d76170040380f1e8e9.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_1f77ae66ae56a876cde8b450b48fc9e8_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_1f77ae66ae56a876cde8b450b48fc9e8_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_1f77ae66ae56a876cde8b450b48fc9e8_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_1f77ae66ae56a876cde8b450b48fc9e8_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_1f77ae66ae56a876cde8b450b48fc9e8_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_1f77ae66ae56a876cde8b450b48fc9e8.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_1f77ae66ae56a876cde8b450b48fc9e8_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_1f77ae66ae56a876cde8b450b48fc9e8 = L.geoJson(null, {
+                onEachFeature: geo_json_1f77ae66ae56a876cde8b450b48fc9e8_onEachFeature,
+            
+                style: geo_json_1f77ae66ae56a876cde8b450b48fc9e8_styler,
+                pointToLayer: geo_json_1f77ae66ae56a876cde8b450b48fc9e8_pointToLayer
+        });
+
+        function geo_json_1f77ae66ae56a876cde8b450b48fc9e8_add (data) {
+            geo_json_1f77ae66ae56a876cde8b450b48fc9e8
+                .addData(data)
+                .addTo(map_19f0e4d5b2beb912acde6bca0560b0c2);
+        }
+            geo_json_1f77ae66ae56a876cde8b450b48fc9e8_add({"bbox": [-117.11279394648724, 32.65556623337135, -117.06340877417888, 32.679296130855064], "features": [{"bbox": [-117.06442947012349, 32.65556623337135, -117.06442947012349, 32.65556623337135], "geometry": {"coordinates": [-117.06442947012349, 32.65556623337135], "type": "Point"}, "id": "4608", "properties": {"ETL_Route_ID": 191, "HNODE": 25195, "STOPTYPE": "10: Local", "StopName": "PLAZA BONITA    PLAZA BONITA TC", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.06340877417888, 32.65868205889731, -117.06340877417888, 32.65868205889731], "geometry": {"coordinates": [-117.06340877417888, 32.65868205889731], "type": "Point"}, "id": "4609", "properties": {"ETL_Route_ID": 191, "HNODE": 19723, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    PLAZA BONITA RING", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.06629049889739, 32.65971128739066, -117.06629049889739, 32.65971128739066], "geometry": {"coordinates": [-117.06629049889739, 32.65971128739066], "type": "Point"}, "id": "4610", "properties": {"ETL_Route_ID": 191, "HNODE": 19700, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    STOCKMAN/PLZ BONITA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.07018355997273, 32.66047426735046, -117.07018355997273, 32.66047426735046], "geometry": {"coordinates": [-117.07018355997273, 32.66047426735046], "type": "Point"}, "id": "4611", "properties": {"ETL_Route_ID": 191, "HNODE": 19678, "STOPTYPE": "10: Local", "StopName": "VALLEY    SWEETWATER", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.0736180891679, 32.66014354280327, -117.0736180891679, 32.66014354280327], "geometry": {"coordinates": [-117.0736180891679, 32.66014354280327], "type": "Point"}, "id": "4612", "properties": {"ETL_Route_ID": 191, "HNODE": 19688, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    ORANGE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.07484576976921, 32.660437669091166, -117.07484576976921, 32.660437669091166], "geometry": {"coordinates": [-117.07484576976921, 32.660437669091166], "type": "Point"}, "id": "4613", "properties": {"ETL_Route_ID": 191, "HNODE": 19680, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    OLIVE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.08048698068366, 32.661543173550776, -117.08048698068366, 32.661543173550776], "geometry": {"coordinates": [-117.08048698068366, 32.661543173550776], "type": "Point"}, "id": "4614", "properties": {"ETL_Route_ID": 191, "HNODE": 19652, "STOPTYPE": "10: Local", "StopName": "PROSPECT    SWEETWATER", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.08335317362686, 32.66124073996853, -117.08335317362686, 32.66124073996853], "geometry": {"coordinates": [-117.08335317362686, 32.66124073996853], "type": "Point"}, "id": "4615", "properties": {"ETL_Route_ID": 191, "HNODE": 19655, "STOPTYPE": "10: Local", "StopName": "SWEETWATER    GROVE/TOWN\u0026COUNTRY", "YR": 2020}, "type": "Feature"}, {"bbox": [-117.08724631538782, 32.6602771298424, -117.08724631538782, 32.6602771298424], "geometry": {"coordinates": [-117.08724631538782, 32.6602771298424], "type": "Point"}, "id": "4616", "properties": {"ETL_Route_ID": 191, "HNODE": 19684, "STOPTYPE": "10: Local", "StopName": "L    30TH", "YR": 2003}, "type": "Feature"}, {"bbox": [-117.08929870528733, 32.66545755218315, -117.08929870528733, 32.66545755218315], "geometry": {"coordinates": [-117.08929870528733, 32.66545755218315], "type": "Point"}, "id": "4617", "properties": {"ETL_Route_ID": 191, "HNODE": 19583, "STOPTYPE": "10: Local", "StopName": "24TH    L", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09026415050596, 32.66805682266997, -117.09026415050596, 32.66805682266997], "geometry": {"coordinates": [-117.09026415050596, 32.66805682266997], "type": "Point"}, "id": "4618", "properties": {"ETL_Route_ID": 191, "HNODE": 19538, "STOPTYPE": "10: Local", "StopName": "L    zone connector", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09127666040209, 32.67064449709713, -117.09127666040209, 32.67064449709713], "geometry": {"coordinates": [-117.09127666040209, 32.67064449709713], "type": "Point"}, "id": "4619", "properties": {"ETL_Route_ID": 191, "HNODE": 19487, "STOPTYPE": "10: Local", "StopName": "L    18TH", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09191122853348, 32.67686825431633, -117.09191122853348, 32.67686825431633], "geometry": {"coordinates": [-117.09191122853348, 32.67686825431633], "type": "Point"}, "id": "4620", "properties": {"ETL_Route_ID": 191, "HNODE": 19353, "STOPTYPE": "10: Local", "StopName": "N    PLAZA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.094111482792, 32.67722426042812, -117.094111482792, 32.67722426042812], "geometry": {"coordinates": [-117.094111482792, 32.67722426042812], "type": "Point"}, "id": "4621", "properties": {"ETL_Route_ID": 191, "HNODE": 19343, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "PLAZA    PLAZA/L", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09462528953051, 32.679296130855064, -117.09462528953051, 32.679296130855064], "geometry": {"coordinates": [-117.09462528953051, 32.679296130855064], "type": "Point"}, "id": "4622", "properties": {"ETL_Route_ID": 191, "HNODE": 19285, "STOPTYPE": "10: Local", "StopName": "08TH    L", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.09872512030404, 32.67812708294849, -117.09872512030404, 32.67812708294849], "geometry": {"coordinates": [-117.09872512030404, 32.67812708294849], "type": "Point"}, "id": "4623", "properties": {"ETL_Route_ID": 191, "HNODE": 19317, "STOPTYPE": "10: Local", "StopName": "HIGHLAND    08TH / HIGHLAND", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10279583712904, 32.67698310989605, -117.10279583712904, 32.67698310989605], "geometry": {"coordinates": [-117.10279583712904, 32.67698310989605], "type": "Point"}, "id": "4624", "properties": {"ETL_Route_ID": 191, "HNODE": 19348, "STOPTYPE": "10: Local", "StopName": "08TH    D / 08TH", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10485054716875, 32.676399945050505, -117.10485054716875, 32.676399945050505], "geometry": {"coordinates": [-117.10485054716875, 32.676399945050505], "type": "Point"}, "id": "4625", "properties": {"ETL_Route_ID": 191, "HNODE": 19364, "STOPTYPE": "10: Local", "StopName": "08TH    B", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10691172907195, 32.675816700813634, -117.10691172907195, 32.675816700813634], "geometry": {"coordinates": [-117.10691172907195, 32.675816700813634], "type": "Point"}, "id": "4626", "properties": {"ETL_Route_ID": 191, "HNODE": 19372, "STOPTYPE": "10: Local", "StopName": "08TH    NATIONAL CITY / 08TH", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.10796512314452, 32.67553177783848, -117.10796512314452, 32.67553177783848], "geometry": {"coordinates": [-117.10796512314452, 32.67553177783848], "type": "Point"}, "id": "4627", "properties": {"ETL_Route_ID": 191, "HNODE": 19379, "STOPTYPE": "10: Local", "StopName": "08TH    ROOSEVELT", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.11279394648724, 32.6741746850306, -117.11279394648724, 32.6741746850306], "geometry": {"coordinates": [-117.11279394648724, 32.6741746850306], "type": "Point"}, "id": "4628", "properties": {"ETL_Route_ID": 191, "HNODE": 19410, "STOPTYPE": "10: Local", "StopName": "TROLLEY STATION    8TH STREET TROLLEY", "YR": 1990}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_1f77ae66ae56a876cde8b450b48fc9e8.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            var layer_control_487a109d9872f0fbf222a43e1df5e9bc = {
+                base_layers : {
+                    "cartodbdark_matter" : tile_layer_34dd969e12496a73f5f6400121767e0b,
+                },
+                overlays :  {
+                    "Route 195 Dir. 2 Config. 1" : geo_json_7e7fdf256b59b42ee0df1729fa3cb476,
+                    "Stops for Route 195 Dir. 2 Config. 1" : geo_json_b0f467fc70f0625a9d4f4f82888c3523,
+                    "Route 195 Dir. 1 Config. 1" : geo_json_101ddbd4bd1e59d76170040380f1e8e9,
+                    "Stops for Route 195 Dir. 1 Config. 1" : geo_json_1f77ae66ae56a876cde8b450b48fc9e8,
+                },
+            };
+            L.control.layers(
+                layer_control_487a109d9872f0fbf222a43e1df5e9bc.base_layers,
+                layer_control_487a109d9872f0fbf222a43e1df5e9bc.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_19f0e4d5b2beb912acde6bca0560b0c2);
+        
+    
+            map_19f0e4d5b2beb912acde6bca0560b0c2.fitBounds(
+                [[32.65548498040746, -117.11279394648724], [32.679296130855064, -117.06340877417888]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
