@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b69147fc4d4ffefc0000c0d7375d3504 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b69147fc4d4ffefc0000c0d7375d3504" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b69147fc4d4ffefc0000c0d7375d3504 = L.map(
+                "map_b69147fc4d4ffefc0000c0d7375d3504",
+                {
+                    center: [0, 0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 1,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8e287214d948cd3de5a641417f5c353b = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b69147fc4d4ffefc0000c0d7375d3504);
+        
+    
+        function geo_json_c6e54364eca2793173e96b3b0108fddf_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_c6e54364eca2793173e96b3b0108fddf_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_c6e54364eca2793173e96b3b0108fddf_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_c6e54364eca2793173e96b3b0108fddf_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_c6e54364eca2793173e96b3b0108fddf_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_c6e54364eca2793173e96b3b0108fddf.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_c6e54364eca2793173e96b3b0108fddf_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_c6e54364eca2793173e96b3b0108fddf = L.geoJson(null, {
+                onEachFeature: geo_json_c6e54364eca2793173e96b3b0108fddf_onEachFeature,
+            
+                style: geo_json_c6e54364eca2793173e96b3b0108fddf_styler,
+                pointToLayer: geo_json_c6e54364eca2793173e96b3b0108fddf_pointToLayer
+        });
+
+        function geo_json_c6e54364eca2793173e96b3b0108fddf_add (data) {
+            geo_json_c6e54364eca2793173e96b3b0108fddf
+                .addData(data)
+                .addTo(map_b69147fc4d4ffefc0000c0d7375d3504);
+        }
+            geo_json_c6e54364eca2793173e96b3b0108fddf_add({"bbox": [-117.25548596356921, 32.79564354754957, -117.1190292302088, 32.83373319141454], "features": [{"bbox": [-117.25548596356921, 32.79564354754957, -117.1190292302088, 32.83373319141454], "geometry": {"coordinates": [[[-117.25520541094872, 32.79564354754957, 0.0], [-117.25534396546175, 32.79609317885079, 0.0], [-117.25548596356921, 32.79655927313197, 0.0], [-117.25366820423238, 32.79696435718647, 0.0], [-117.25183421979399, 32.79737504307533, 0.0], [-117.25000985643676, 32.79777462954388, 0.0], [-117.24997577082836, 32.79778205195775, 0.0], [-117.24919666712103, 32.79795162134051, 0.0], [-117.24818544967853, 32.79817143753851, 0.0], [-117.24636105652573, 32.798570966843826, 0.0], [-117.24452366283526, 32.798973321394364, 0.0], [-117.24326254163539, 32.7992555771589, 0.0], [-117.24314335212371, 32.7992822897531, 0.0], [-117.24271556857985, 32.79937816234883, 0.0], [-117.24085551764887, 32.799794387725896, 0.0], [-117.23898884735351, 32.80020239238583, 0.0], [-117.23724879273902, 32.80058461973395, 0.0], [-117.23716437147361, 32.80060178580526, 0.0], [-117.2353398779765, 32.801001152276626, 0.0], [-117.23350566804342, 32.801406066094735, 0.0], [-117.23168768123529, 32.801808074137796, 0.0], [-117.2298664837813, 32.80221557870816, 0.0], [-117.22804201638095, 32.80262308218484, 0.0], [-117.22697983608475, 32.80284433765235, 0.0], [-117.2265743941462, 32.80292879023062, 0.0], [-117.22610643722226, 32.803284301813555, 0.0], [-117.2255128413804, 32.803756242078606, 0.0], [-117.22469512298454, 32.80441547385198, 0.0], [-117.22418955962456, 32.804756158009084, 0.0], [-117.22384980953316, 32.80493474316041, 0.0], [-117.22320458251511, 32.80515421537982, 0.0], [-117.22291239693735, 32.80521973370612, 0.0], [-117.22160411314978, 32.80551862971468, 0.0], [-117.22107597682351, 32.80563791338495, 0.0], [-117.2210619524569, 32.805641080584124, 0.0], [-117.2205650472532, 32.805735688181066, 0.0], [-117.21894798257708, 32.80607271315202, 0.0], [-117.21761084812852, 32.80636671438914, 0.0], [-117.21721097823078, 32.80645463262171, 0.0], [-117.21598404485204, 32.80672083589047, 0.0], [-117.21591706225618, 32.80673536844137, 0.0], [-117.21583106181437, 32.80675402729483, 0.0], [-117.21577021310591, 32.806767154665636, 0.0], [-117.21569597510998, 32.80678316949624, 0.0], [-117.2156459866949, 32.80679395390814, 0.0], [-117.2151037797473, 32.80691363033579, 0.0], [-117.21499489963423, 32.8069379446099, 0.0], [-117.21492521368444, 32.806953505896, 0.0], [-117.21487789901623, 32.80696372444954, 0.0], [-117.21479374543921, 32.80698189923954, 0.0], [-117.21475593608044, 32.80699006505556, 0.0], [-117.2146911308174, 32.80700406052311, 0.0], [-117.21455306204192, 32.80703387852884, 0.0], [-117.21452908828233, 32.807039056035066, 0.0], [-117.21437524334809, 32.80707281594989, 0.0], [-117.21435478891878, 32.80707730495966, 0.0], [-117.2140615473878, 32.807141653550076, 0.0], [-117.21401564503726, 32.80715185713917, 0.0], [-117.21341058053223, 32.807286359021425, 0.0], [-117.21324006739654, 32.807324291875695, 0.0], [-117.21313785658572, 32.80734702943644, 0.0], [-117.21209388774832, 32.807565978856, 0.0], [-117.21179846757497, 32.807634794541514, 0.0], [-117.21060362306748, 32.807896959149865, 0.0], [-117.20975603040523, 32.80806846041004, 0.0], [-117.20875219620721, 32.80838794048491, 0.0], [-117.20789307729807, 32.80884701438572, 0.0], [-117.20465886183356, 32.81103459555869, 0.0], [-117.20411532457861, 32.81133563670548, 0.0], [-117.20355129541211, 32.81154805603351, 0.0], [-117.2029555100501, 32.81168348432221, 0.0], [-117.20242229698101, 32.811736245824505, 0.0], [-117.20159719524325, 32.8117349107894, 0.0], [-117.20119008412858, 32.81173267535967, 0.0], [-117.20097224058432, 32.81173147915022, 0.0], [-117.1994262890942, 32.81173787670127, 0.0], [-117.19855332007359, 32.811825116829716, 0.0], [-117.19769930605084, 32.81201032676696, 0.0], [-117.19688699724833, 32.81229085987787, 0.0], [-117.1961390660775, 32.812656373411244, 0.0], [-117.19553462702513, 32.81304854403522, 0.0], [-117.19491828385387, 32.81354524629053, 0.0], [-117.19383848647459, 32.814531976065574, 0.0], [-117.19293352504874, 32.81528208851685, 0.0], [-117.19252935360953, 32.81553364003332, 0.0], [-117.1920905002619, 32.81573817997054, 0.0], [-117.18945951133321, 32.816558864491874, 0.0], [-117.18835386712472, 32.816961957315634, 0.0], [-117.18542273851085, 32.81803165221921, 0.0], [-117.18370102373957, 32.81866309624996, 0.0], [-117.18188850030062, 32.81932818342663, 0.0], [-117.18048105295317, 32.81982473293766, 0.0], [-117.18001066056065, 32.81997559618643, 0.0], [-117.17896955209501, 32.82017885046543, 0.0], [-117.17778087115012, 32.820278761145346, 0.0], [-117.17612094730242, 32.820295067549004, 0.0], [-117.1734387338781, 32.82029316147968, 0.0], [-117.17151170020928, 32.820291063004234, 0.0], [-117.16852367544078, 32.82030507488918, 0.0], [-117.16779691044498, 32.82037671676605, 0.0], [-117.16708387239323, 32.82051641597793, 0.0], [-117.1663992458039, 32.820727635597926, 0.0], [-117.16433646533409, 32.82144654297175, 0.0], [-117.1633846671036, 32.82163498672981, 0.0], [-117.16311479710473, 32.82166446720846, 0.0], [-117.16278953588937, 32.821688859447264, 0.0], [-117.16259602374531, 32.82169539685515, 0.0], [-117.16258128043386, 32.821695895339694, 0.0], [-117.16242207323683, 32.821699760536916, 0.0], [-117.16241856374941, 32.82169984597725, 0.0], [-117.16229162334876, 32.821700783648026, 0.0], [-117.1622907637096, 32.821700789997465, 0.0], [-117.16219637212787, 32.821701487154584, 0.0], [-117.16204555404312, 32.82170260091669, 0.0], [-117.16202797789259, 32.82170273070113, 0.0], [-117.1618001350631, 32.82170441289409, 0.0], [-117.16125008729044, 32.821711220741726, 0.0], [-117.16010444869224, 32.82172763905339, 0.0], [-117.15931197988569, 32.82174282053541, 0.0], [-117.15905993931216, 32.821744204203476, 0.0], [-117.1585779870781, 32.8217468477938, 0.0], [-117.158522574633, 32.82173955904259, 0.0], [-117.15685278711129, 32.82174908163315, 0.0], [-117.15680643949167, 32.821749349775665, 0.0], [-117.15508209775649, 32.82175932107096, 0.0], [-117.15340142719292, 32.82177162523952, 0.0], [-117.15241774533048, 32.8217788161487, 0.0], [-117.15194926253818, 32.82178223809561, 0.0], [-117.14891729921227, 32.82180159303319, 0.0], [-117.14702606495246, 32.82180160017397, 0.0], [-117.14702301475505, 32.821801588961726, 0.0], [-117.14677540936256, 32.821800671813726, 0.0], [-117.14667436467623, 32.821801405409005, 0.0], [-117.14660290019022, 32.821801924198944, 0.0], [-117.14652005224588, 32.82180106836232, 0.0], [-117.14644663748462, 32.82180030992602, 0.0], [-117.1462578527896, 32.821801679953474, 0.0], [-117.14606581426628, 32.82180307329809, 0.0], [-117.1450078218547, 32.82179590251859, 0.0], [-117.14434271775178, 32.82169187929732, 0.0], [-117.14419340982668, 32.822054664422666, 0.0], [-117.14411764984276, 32.82244769966535, 0.0], [-117.14419682939949, 32.82335303509781, 0.0], [-117.14435200942788, 32.82468988527585, 0.0], [-117.14427219888613, 32.82516513089142, 0.0], [-117.14409091881416, 32.825585590850906, 0.0], [-117.14316824841977, 32.8271627794542, 0.0], [-117.14311662357929, 32.827251023672446, 0.0], [-117.14306378295322, 32.82734134705303, 0.0], [-117.14204465492718, 32.82908824191397, 0.0], [-117.14156788906294, 32.8299068918514, 0.0], [-117.14133781940313, 32.83017295851002, 0.0], [-117.1410096487435, 32.83039603137899, 0.0], [-117.14020262667235, 32.83075063556667, 0.0], [-117.13929487624877, 32.83112492412477, 0.0], [-117.13873608964165, 32.83123943581962, 0.0], [-117.13847036518793, 32.83136090716438, 0.0], [-117.13833932642213, 32.83160234440078, 0.0], [-117.13781698808589, 32.83145768056942, 0.0], [-117.13738186551909, 32.831406661282124, 0.0], [-117.13465870127983, 32.831411901081346, 0.0], [-117.13250035661234, 32.831416345518626, 0.0], [-117.1310157092709, 32.8314019316319, 0.0], [-117.130717592508, 32.831410377772656, 0.0], [-117.13062678944367, 32.83141295035339, 0.0], [-117.12878919643379, 32.83142603687533, 0.0], [-117.1266504920931, 32.8314412333437, 0.0], [-117.1249673213714, 32.831432828278345, 0.0], [-117.1243072491767, 32.83151253647398, 0.0], [-117.12355284063955, 32.831763864363644, 0.0], [-117.12262862595604, 32.83229151305182, 0.0], [-117.12197825398111, 32.832694089671165, 0.0], [-117.12120076542527, 32.833082166712906, 0.0], [-117.12044828935973, 32.83336644473451, 0.0], [-117.11966600983853, 32.83360035487929, 0.0], [-117.11930318865478, 32.833676042299054, 0.0], [-117.11919901690959, 32.83369777319839, 0.0], [-117.11918145828827, 32.83370143606661, 0.0], [-117.11909145980557, 32.833720210442685, 0.0], [-117.1190292302088, 32.83373319141454, 0.0]]], "type": "MultiLineString"}, "id": "129", "properties": {"Configuration": 19, "Direction": 1, "ETL_Route_ID": 159, "Mode": "10: Local", "Operator": "MTS", "Route": 27, "RouteID": 27119, "Start": "Pacific Beach", "Stop": "Tierrasanta"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_c6e54364eca2793173e96b3b0108fddf.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_86ecfab74b3bbfec47785e1c57d6af4a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_86ecfab74b3bbfec47785e1c57d6af4a_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_86ecfab74b3bbfec47785e1c57d6af4a_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_86ecfab74b3bbfec47785e1c57d6af4a_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_86ecfab74b3bbfec47785e1c57d6af4a_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_86ecfab74b3bbfec47785e1c57d6af4a.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_86ecfab74b3bbfec47785e1c57d6af4a_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_86ecfab74b3bbfec47785e1c57d6af4a = L.geoJson(null, {
+                onEachFeature: geo_json_86ecfab74b3bbfec47785e1c57d6af4a_onEachFeature,
+            
+                style: geo_json_86ecfab74b3bbfec47785e1c57d6af4a_styler,
+                pointToLayer: geo_json_86ecfab74b3bbfec47785e1c57d6af4a_pointToLayer
+        });
+
+        function geo_json_86ecfab74b3bbfec47785e1c57d6af4a_add (data) {
+            geo_json_86ecfab74b3bbfec47785e1c57d6af4a
+                .addData(data)
+                .addTo(map_b69147fc4d4ffefc0000c0d7375d3504);
+        }
+            geo_json_86ecfab74b3bbfec47785e1c57d6af4a_add({"bbox": [-117.25520541094872, 32.79564354754957, -117.1190292302088, 32.83373319141454], "features": [{"bbox": [-117.25520541094872, 32.79564354754957, -117.25520541094872, 32.79564354754957], "geometry": {"coordinates": [-117.25520541094872, 32.79564354754957], "type": "Point"}, "id": "3410", "properties": {"ETL_Route_ID": 159, "HNODE": 13633, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "MISSION    HORNBLEND", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.25366820423238, 32.79696435718647, -117.25366820423238, 32.79696435718647], "geometry": {"coordinates": [-117.25366820423238, 32.79696435718647], "type": "Point"}, "id": "3411", "properties": {"ETL_Route_ID": 159, "HNODE": 13587, "STOPTYPE": "10: Local", "StopName": "BAYARD    GARNET", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.25183421979399, 32.79737504307533, -117.25183421979399, 32.79737504307533], "geometry": {"coordinates": [-117.25183421979399, 32.79737504307533], "type": "Point"}, "id": "3412", "properties": {"ETL_Route_ID": 159, "HNODE": 13571, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "CASS    GARNET/CASS", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.24818544967853, 32.79817143753851, -117.24818544967853, 32.79817143753851], "geometry": {"coordinates": [-117.24818544967853, 32.79817143753851], "type": "Point"}, "id": "3413", "properties": {"ETL_Route_ID": 159, "HNODE": 13533, "STOPTYPE": "10: Local", "StopName": "GARNET    EVERTS", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.24636105652573, 32.798570966843826, -117.24636105652573, 32.798570966843826], "geometry": {"coordinates": [-117.24636105652573, 32.798570966843826], "type": "Point"}, "id": "3414", "properties": {"ETL_Route_ID": 159, "HNODE": 13521, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "FANUEL    GARNET/FANUEL", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.24271556857985, 32.79937816234883, -117.24271556857985, 32.79937816234883], "geometry": {"coordinates": [-117.24271556857985, 32.79937816234883], "type": "Point"}, "id": "3415", "properties": {"ETL_Route_ID": 159, "HNODE": 13494, "STOPTYPE": "10: Local", "StopName": "GARNET    HAINES", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.24085551764887, 32.799794387725896, -117.24085551764887, 32.799794387725896], "geometry": {"coordinates": [-117.24085551764887, 32.799794387725896], "type": "Point"}, "id": "3416", "properties": {"ETL_Route_ID": 159, "HNODE": 13478, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "INGRAHAM    GARNET/INGRAHAM", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.23898884735351, 32.80020239238583, -117.23898884735351, 32.80020239238583], "geometry": {"coordinates": [-117.23898884735351, 32.80020239238583], "type": "Point"}, "id": "3417", "properties": {"ETL_Route_ID": 159, "HNODE": 13463, "STOPTYPE": "10: Local", "StopName": "JEWELL    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2353398779765, 32.801001152276626, -117.2353398779765, 32.801001152276626], "geometry": {"coordinates": [-117.2353398779765, 32.801001152276626], "type": "Point"}, "id": "3418", "properties": {"ETL_Route_ID": 159, "HNODE": 13402, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "LAMONT    GARNET/LAMONT", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.23168768123529, 32.801808074137796, -117.23168768123529, 32.801808074137796], "geometry": {"coordinates": [-117.23168768123529, 32.801808074137796], "type": "Point"}, "id": "3419", "properties": {"ETL_Route_ID": 159, "HNODE": 13337, "STOPTYPE": "10: Local", "StopName": "NOYES    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2298664837813, 32.80221557870816, -117.2298664837813, 32.80221557870816], "geometry": {"coordinates": [-117.2298664837813, 32.80221557870816], "type": "Point"}, "id": "3420", "properties": {"ETL_Route_ID": 159, "HNODE": 13309, "STOPTYPE": "10: Local", "StopName": "OLNEY    GARNET/OLNEY", "YR": 2004}, "type": "Feature"}, {"bbox": [-117.2265743941462, 32.80292879023062, -117.2265743941462, 32.80292879023062], "geometry": {"coordinates": [-117.2265743941462, 32.80292879023062], "type": "Point"}, "id": "3421", "properties": {"ETL_Route_ID": 159, "HNODE": 13285, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.22384980953316, 32.80493474316041, -117.22384980953316, 32.80493474316041], "geometry": {"coordinates": [-117.22384980953316, 32.80493474316041], "type": "Point"}, "id": "3422", "properties": {"ETL_Route_ID": 159, "HNODE": 13215, "STOPTYPE": "10: Local", "StopName": "SOLEDAD MTN    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2210619524569, 32.805641080584124, -117.2210619524569, 32.805641080584124], "geometry": {"coordinates": [-117.2210619524569, 32.805641080584124], "type": "Point"}, "id": "3423", "properties": {"ETL_Route_ID": 159, "HNODE": 13184, "STOPTYPE": "10: Local", "StopName": "GARNET    BOND", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.21894798257708, 32.80607271315202, -117.21894798257708, 32.80607271315202], "geometry": {"coordinates": [-117.21894798257708, 32.80607271315202], "type": "Point"}, "id": "3424", "properties": {"ETL_Route_ID": 159, "HNODE": 13147, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "GARNET    MISSION BAY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.21452908828233, 32.807039056035066, -117.21452908828233, 32.807039056035066], "geometry": {"coordinates": [-117.21452908828233, 32.807039056035066], "type": "Point"}, "id": "3425", "properties": {"ETL_Route_ID": 159, "HNODE": 13112, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "ramp    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.21060362306748, 32.807896959149865, -117.21060362306748, 32.807896959149865], "geometry": {"coordinates": [-117.21060362306748, 32.807896959149865], "type": "Point"}, "id": "3426", "properties": {"ETL_Route_ID": 159, "HNODE": 13080, "STOPTYPE": "10: Local", "StopName": "BALBOA    MORAGA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.20097224058432, 32.81173147915022, -117.20097224058432, 32.81173147915022], "geometry": {"coordinates": [-117.20097224058432, 32.81173147915022], "type": "Point"}, "id": "3427", "properties": {"ETL_Route_ID": 159, "HNODE": 12947, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "CLAIREMONT    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.18542273851085, 32.81803165221921, -117.18542273851085, 32.81803165221921], "geometry": {"coordinates": [-117.18542273851085, 32.81803165221921], "type": "Point"}, "id": "3428", "properties": {"ETL_Route_ID": 159, "HNODE": 12777, "STOPTYPE": "10: Local", "StopName": "BALBOA    MT EVEREST", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.18188850030062, 32.81932818342663, -117.18188850030062, 32.81932818342663], "geometry": {"coordinates": [-117.18188850030062, 32.81932818342663], "type": "Point"}, "id": "3429", "properties": {"ETL_Route_ID": 159, "HNODE": 12748, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    GENESEE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.18001066056065, 32.81997559618643, -117.18001066056065, 32.81997559618643], "geometry": {"coordinates": [-117.18001066056065, 32.81997559618643], "type": "Point"}, "id": "3430", "properties": {"ETL_Route_ID": 159, "HNODE": 12720, "STOPTYPE": "10: Local", "StopName": "DRIVEWAY    BALBOA", "YR": 2009}, "type": "Feature"}, {"bbox": [-117.17612094730242, 32.820295067549004, -117.17612094730242, 32.820295067549004], "geometry": {"coordinates": [-117.17612094730242, 32.820295067549004], "type": "Point"}, "id": "3431", "properties": {"ETL_Route_ID": 159, "HNODE": 12716, "STOPTYPE": "10: Local", "StopName": "MT ABERNATHY    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.17151170020928, 32.820291063004234, -117.17151170020928, 32.820291063004234], "geometry": {"coordinates": [-117.17151170020928, 32.820291063004234], "type": "Point"}, "id": "3432", "properties": {"ETL_Route_ID": 159, "HNODE": 12718, "STOPTYPE": "10: Local", "StopName": "BALBOA    MT ALBERTINE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.16708387239323, 32.82051641597793, -117.16708387239323, 32.82051641597793], "geometry": {"coordinates": [-117.16708387239323, 32.82051641597793], "type": "Point"}, "id": "3433", "properties": {"ETL_Route_ID": 159, "HNODE": 12715, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "CHARGER    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1585779870781, 32.8217468477938, -117.1585779870781, 32.8217468477938], "geometry": {"coordinates": [-117.1585779870781, 32.8217468477938], "type": "Point"}, "id": "3434", "properties": {"ETL_Route_ID": 159, "HNODE": 12670, "STOPTYPE": "10: Local", "StopName": "TERRY BENNETT    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.15508209775649, 32.82175932107096, -117.15508209775649, 32.82175932107096], "geometry": {"coordinates": [-117.15508209775649, 32.82175932107096], "type": "Point"}, "id": "3435", "properties": {"ETL_Route_ID": 159, "HNODE": 12673, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    CONVOY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14891729921227, 32.82180159303319, -117.14891729921227, 32.82180159303319], "geometry": {"coordinates": [-117.14891729921227, 32.82180159303319], "type": "Point"}, "id": "3436", "properties": {"ETL_Route_ID": 159, "HNODE": 12676, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    MERCURY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14434271775178, 32.82169187929732, -117.14434271775178, 32.82169187929732], "geometry": {"coordinates": [-117.14434271775178, 32.82169187929732], "type": "Point"}, "id": "3437", "properties": {"ETL_Route_ID": 159, "HNODE": 12684, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "BALBOA    KEARNY VILLA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14419682939949, 32.82335303509781, -117.14419682939949, 32.82335303509781], "geometry": {"coordinates": [-117.14419682939949, 32.82335303509781], "type": "Point"}, "id": "3438", "properties": {"ETL_Route_ID": 159, "HNODE": 12618, "STOPTYPE": "10: Local", "StopName": "KEARNY VILLA    4500", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14409091881416, 32.825585590850906, -117.14409091881416, 32.825585590850906], "geometry": {"coordinates": [-117.14409091881416, 32.825585590850906], "type": "Point"}, "id": "3439", "properties": {"ETL_Route_ID": 159, "HNODE": 12565, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "KEARNY VILLA    ELECTRONICS", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.14020262667235, 32.83075063556667, -117.14020262667235, 32.83075063556667], "geometry": {"coordinates": [-117.14020262667235, 32.83075063556667], "type": "Point"}, "id": "3440", "properties": {"ETL_Route_ID": 159, "HNODE": 12390, "STOPTYPE": "10: Local", "StopName": "KEARNY VILLA WAY    KEARNY VILLA", "YR": 1995}, "type": "Feature"}, {"bbox": [-117.13465870127983, 32.831411901081346, -117.13465870127983, 32.831411901081346], "geometry": {"coordinates": [-117.13465870127983, 32.831411901081346], "type": "Point"}, "id": "3441", "properties": {"ETL_Route_ID": 159, "HNODE": 12357, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "COMPLEX    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1310157092709, 32.8314019316319, -117.1310157092709, 32.8314019316319], "geometry": {"coordinates": [-117.1310157092709, 32.8314019316319], "type": "Point"}, "id": "3442", "properties": {"ETL_Route_ID": 159, "HNODE": 32918, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "OVERLAND    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.12878919643379, 32.83142603687533, -117.12878919643379, 32.83142603687533], "geometry": {"coordinates": [-117.12878919643379, 32.83142603687533], "type": "Point"}, "id": "3443", "properties": {"ETL_Route_ID": 159, "HNODE": 12360, "STOPTYPE": "10: Local", "StopName": "CLAIREMONT MESA    9332", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1266504920931, 32.8314412333437, -117.1266504920931, 32.8314412333437], "geometry": {"coordinates": [-117.1266504920931, 32.8314412333437], "type": "Point"}, "id": "3444", "properties": {"ETL_Route_ID": 159, "HNODE": 32917, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "RUFFIN    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.12262862595604, 32.83229151305182, -117.12262862595604, 32.83229151305182], "geometry": {"coordinates": [-117.12262862595604, 32.83229151305182], "type": "Point"}, "id": "3445", "properties": {"ETL_Route_ID": 159, "HNODE": 12320, "STOPTYPE": "10: Local", "StopName": "CHESAPEAKE    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.12120076542527, 32.833082166712906, -117.12120076542527, 32.833082166712906], "geometry": {"coordinates": [-117.12120076542527, 32.833082166712906], "type": "Point"}, "id": "3446", "properties": {"ETL_Route_ID": 159, "HNODE": 12275, "STOPTYPE": "10: Local", "StopName": "MURPHY CANYON    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1190292302088, 32.83373319141454, -117.1190292302088, 32.83373319141454], "geometry": {"coordinates": [-117.1190292302088, 32.83373319141454], "type": "Point"}, "id": "3447", "properties": {"ETL_Route_ID": 159, "HNODE": 24128, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "I-15    CLAIREMONT MESA DR", "YR": 2029}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_86ecfab74b3bbfec47785e1c57d6af4a.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_a18a0d111bee8c3dbd81d8cbe625eb87.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_a18a0d111bee8c3dbd81d8cbe625eb87 = L.geoJson(null, {
+                onEachFeature: geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_onEachFeature,
+            
+                style: geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_styler,
+                pointToLayer: geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_pointToLayer
+        });
+
+        function geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_add (data) {
+            geo_json_a18a0d111bee8c3dbd81d8cbe625eb87
+                .addData(data)
+                .addTo(map_b69147fc4d4ffefc0000c0d7375d3504);
+        }
+            geo_json_a18a0d111bee8c3dbd81d8cbe625eb87_add({"bbox": [-117.25548596356921, 32.79564354754957, -117.1190292302088, 32.83373319141454], "features": [{"bbox": [-117.25548596356921, 32.79564354754957, -117.1190292302088, 32.83373319141454], "geometry": {"coordinates": [[[-117.1190292302088, 32.83373319141454, 0.0], [-117.11909145980557, 32.833720210442685, 0.0], [-117.11918145828827, 32.83370143606661, 0.0], [-117.11919901690959, 32.83369777319839, 0.0], [-117.11930318865478, 32.833676042299054, 0.0], [-117.11966600983853, 32.83360035487929, 0.0], [-117.12044828935973, 32.83336644473451, 0.0], [-117.12120076542527, 32.833082166712906, 0.0], [-117.12197825398111, 32.832694089671165, 0.0], [-117.12262862595604, 32.83229151305182, 0.0], [-117.12355284063955, 32.831763864363644, 0.0], [-117.1243072491767, 32.83151253647398, 0.0], [-117.1249673213714, 32.831432828278345, 0.0], [-117.1266504920931, 32.8314412333437, 0.0], [-117.12878919643379, 32.83142603687533, 0.0], [-117.13062678944367, 32.83141295035339, 0.0], [-117.130717592508, 32.831410377772656, 0.0], [-117.1310157092709, 32.8314019316319, 0.0], [-117.13250035661234, 32.831416345518626, 0.0], [-117.13465870127983, 32.831411901081346, 0.0], [-117.13738186551909, 32.831406661282124, 0.0], [-117.13781698808589, 32.83145768056942, 0.0], [-117.13833932642213, 32.83160234440078, 0.0], [-117.13847036518793, 32.83136090716438, 0.0], [-117.13873608964165, 32.83123943581962, 0.0], [-117.13929487624877, 32.83112492412477, 0.0], [-117.14020262667235, 32.83075063556667, 0.0], [-117.1410096487435, 32.83039603137899, 0.0], [-117.14133781940313, 32.83017295851002, 0.0], [-117.14156788906294, 32.8299068918514, 0.0], [-117.14204465492718, 32.82908824191397, 0.0], [-117.14306378295322, 32.82734134705303, 0.0], [-117.14311662357929, 32.827251023672446, 0.0], [-117.14316824841977, 32.8271627794542, 0.0], [-117.14409091881416, 32.825585590850906, 0.0], [-117.14427219888613, 32.82516513089142, 0.0], [-117.14435200942788, 32.82468988527585, 0.0], [-117.14419682939949, 32.82335303509781, 0.0], [-117.14411764984276, 32.82244769966535, 0.0], [-117.14419340982668, 32.822054664422666, 0.0], [-117.14434271775178, 32.82169187929732, 0.0], [-117.1450078218547, 32.82179590251859, 0.0], [-117.14606581426628, 32.82180307329809, 0.0], [-117.1462578527896, 32.821801679953474, 0.0], [-117.14644663748462, 32.82180030992602, 0.0], [-117.14652005224588, 32.82180106836232, 0.0], [-117.14660290019022, 32.821801924198944, 0.0], [-117.14667436467623, 32.821801405409005, 0.0], [-117.14677540936256, 32.821800671813726, 0.0], [-117.14702301475505, 32.821801588961726, 0.0], [-117.14702606495246, 32.82180160017397, 0.0], [-117.14891729921227, 32.82180159303319, 0.0], [-117.15194926253818, 32.82178223809561, 0.0], [-117.15241774533048, 32.8217788161487, 0.0], [-117.15340142719292, 32.82177162523952, 0.0], [-117.15508209775649, 32.82175932107096, 0.0], [-117.15680643949167, 32.821749349775665, 0.0], [-117.15685278711129, 32.82174908163315, 0.0], [-117.158522574633, 32.82173955904259, 0.0], [-117.1585779870781, 32.8217468477938, 0.0], [-117.15905993931216, 32.821744204203476, 0.0], [-117.15931197988569, 32.82174282053541, 0.0], [-117.16010444869224, 32.82172763905339, 0.0], [-117.16125008729044, 32.821711220741726, 0.0], [-117.1618001350631, 32.82170441289409, 0.0], [-117.16202797789259, 32.82170273070113, 0.0], [-117.16204555404312, 32.82170260091669, 0.0], [-117.16219637212787, 32.821701487154584, 0.0], [-117.1622907637096, 32.821700789997465, 0.0], [-117.16229162334876, 32.821700783648026, 0.0], [-117.16241856374941, 32.82169984597725, 0.0], [-117.16242207323683, 32.821699760536916, 0.0], [-117.16258128043386, 32.821695895339694, 0.0], [-117.16259602374531, 32.82169539685515, 0.0], [-117.16278953588937, 32.821688859447264, 0.0], [-117.16311479710473, 32.82166446720846, 0.0], [-117.1633846671036, 32.82163498672981, 0.0], [-117.16433646533409, 32.82144654297175, 0.0], [-117.1663992458039, 32.820727635597926, 0.0], [-117.16708387239323, 32.82051641597793, 0.0], [-117.16779691044498, 32.82037671676605, 0.0], [-117.16852367544078, 32.82030507488918, 0.0], [-117.17151170020928, 32.820291063004234, 0.0], [-117.1734387338781, 32.82029316147968, 0.0], [-117.17612094730242, 32.820295067549004, 0.0], [-117.17778087115012, 32.820278761145346, 0.0], [-117.17896955209501, 32.82017885046543, 0.0], [-117.18001066056065, 32.81997559618643, 0.0], [-117.18048105295317, 32.81982473293766, 0.0], [-117.18188850030062, 32.81932818342663, 0.0], [-117.18370102373957, 32.81866309624996, 0.0], [-117.18542273851085, 32.81803165221921, 0.0], [-117.18835386712472, 32.816961957315634, 0.0], [-117.18945951133321, 32.816558864491874, 0.0], [-117.1920905002619, 32.81573817997054, 0.0], [-117.19252935360953, 32.81553364003332, 0.0], [-117.19293352504874, 32.81528208851685, 0.0], [-117.19383848647459, 32.814531976065574, 0.0], [-117.19491828385387, 32.81354524629053, 0.0], [-117.19553462702513, 32.81304854403522, 0.0], [-117.1961390660775, 32.812656373411244, 0.0], [-117.19688699724833, 32.81229085987787, 0.0], [-117.19769930605084, 32.81201032676696, 0.0], [-117.19855332007359, 32.811825116829716, 0.0], [-117.1994262890942, 32.81173787670127, 0.0], [-117.20097224058432, 32.81173147915022, 0.0], [-117.20119008412858, 32.81173267535967, 0.0], [-117.20159719524325, 32.8117349107894, 0.0], [-117.20242229698101, 32.811736245824505, 0.0], [-117.2029555100501, 32.81168348432221, 0.0], [-117.20355129541211, 32.81154805603351, 0.0], [-117.20411532457861, 32.81133563670548, 0.0], [-117.20465886183356, 32.81103459555869, 0.0], [-117.20789307729807, 32.80884701438572, 0.0], [-117.20875219620721, 32.80838794048491, 0.0], [-117.20975603040523, 32.80806846041004, 0.0], [-117.21060362306748, 32.807896959149865, 0.0], [-117.21179846757497, 32.807634794541514, 0.0], [-117.21209388774832, 32.807565978856, 0.0], [-117.21313785658572, 32.80734702943644, 0.0], [-117.21324006739654, 32.807324291875695, 0.0], [-117.21341058053223, 32.807286359021425, 0.0], [-117.21401564503726, 32.80715185713917, 0.0], [-117.2140615473878, 32.807141653550076, 0.0], [-117.21435478891878, 32.80707730495966, 0.0], [-117.21437524334809, 32.80707281594989, 0.0], [-117.21452908828233, 32.807039056035066, 0.0], [-117.21455306204192, 32.80703387852884, 0.0], [-117.2146911308174, 32.80700406052311, 0.0], [-117.21475593608044, 32.80699006505556, 0.0], [-117.21479374543921, 32.80698189923954, 0.0], [-117.21487789901623, 32.80696372444954, 0.0], [-117.21492521368444, 32.806953505896, 0.0], [-117.21499489963423, 32.8069379446099, 0.0], [-117.2151037797473, 32.80691363033579, 0.0], [-117.2156459866949, 32.80679395390814, 0.0], [-117.21569597510998, 32.80678316949624, 0.0], [-117.21577021310591, 32.806767154665636, 0.0], [-117.21583106181437, 32.80675402729483, 0.0], [-117.21591706225618, 32.80673536844137, 0.0], [-117.21598404485204, 32.80672083589047, 0.0], [-117.21721097823078, 32.80645463262171, 0.0], [-117.21761084812852, 32.80636671438914, 0.0], [-117.21894798257708, 32.80607271315202, 0.0], [-117.2205650472532, 32.805735688181066, 0.0], [-117.2210619524569, 32.805641080584124, 0.0], [-117.22107597682351, 32.80563791338495, 0.0], [-117.22160411314978, 32.80551862971468, 0.0], [-117.22291239693735, 32.80521973370612, 0.0], [-117.22320458251511, 32.80515421537982, 0.0], [-117.22384980953316, 32.80493474316041, 0.0], [-117.22418955962456, 32.804756158009084, 0.0], [-117.22469512298454, 32.80441547385198, 0.0], [-117.2255128413804, 32.803756242078606, 0.0], [-117.22610643722226, 32.803284301813555, 0.0], [-117.2265743941462, 32.80292879023062, 0.0], [-117.22697983608475, 32.80284433765235, 0.0], [-117.22804201638095, 32.80262308218484, 0.0], [-117.2298664837813, 32.80221557870816, 0.0], [-117.23168768123529, 32.801808074137796, 0.0], [-117.23350566804342, 32.801406066094735, 0.0], [-117.2353398779765, 32.801001152276626, 0.0], [-117.23716437147361, 32.80060178580526, 0.0], [-117.23724879273902, 32.80058461973395, 0.0], [-117.23898884735351, 32.80020239238583, 0.0], [-117.24085551764887, 32.799794387725896, 0.0], [-117.24271556857985, 32.79937816234883, 0.0], [-117.24314335212371, 32.7992822897531, 0.0], [-117.24326254163539, 32.7992555771589, 0.0], [-117.24452366283526, 32.798973321394364, 0.0], [-117.24636105652573, 32.798570966843826, 0.0], [-117.24818544967853, 32.79817143753851, 0.0], [-117.24919666712103, 32.79795162134051, 0.0], [-117.24997577082836, 32.79778205195775, 0.0], [-117.25000985643676, 32.79777462954388, 0.0], [-117.25183421979399, 32.79737504307533, 0.0], [-117.25366820423238, 32.79696435718647, 0.0], [-117.25548596356921, 32.79655927313197, 0.0], [-117.25534396546175, 32.79609317885079, 0.0], [-117.25520541094872, 32.79564354754957, 0.0]]], "type": "MultiLineString"}, "id": "253", "properties": {"Configuration": 19, "Direction": 2, "ETL_Route_ID": 160, "Mode": "10: Local", "Operator": "MTS", "Route": 27, "RouteID": 27219, "Start": "Tierrasanta", "Stop": "Pacific Beach"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a18a0d111bee8c3dbd81d8cbe625eb87.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let aliases = ["Route", "Direction", "Configuration", "RouteID", "Operator", "Mode", "Start", "Stop", "ETL_Route_ID"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+        function geo_json_eff4b8f5a27a33319cb5d7304e5717fc_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "fillOpacity": 0.5, "weight": 4};
+            }
+        }
+        function geo_json_eff4b8f5a27a33319cb5d7304e5717fc_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_eff4b8f5a27a33319cb5d7304e5717fc_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_eff4b8f5a27a33319cb5d7304e5717fc_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_eff4b8f5a27a33319cb5d7304e5717fc_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_eff4b8f5a27a33319cb5d7304e5717fc.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_eff4b8f5a27a33319cb5d7304e5717fc_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_eff4b8f5a27a33319cb5d7304e5717fc = L.geoJson(null, {
+                onEachFeature: geo_json_eff4b8f5a27a33319cb5d7304e5717fc_onEachFeature,
+            
+                style: geo_json_eff4b8f5a27a33319cb5d7304e5717fc_styler,
+                pointToLayer: geo_json_eff4b8f5a27a33319cb5d7304e5717fc_pointToLayer
+        });
+
+        function geo_json_eff4b8f5a27a33319cb5d7304e5717fc_add (data) {
+            geo_json_eff4b8f5a27a33319cb5d7304e5717fc
+                .addData(data)
+                .addTo(map_b69147fc4d4ffefc0000c0d7375d3504);
+        }
+            geo_json_eff4b8f5a27a33319cb5d7304e5717fc_add({"bbox": [-117.25520541094872, 32.79564354754957, -117.1190292302088, 32.83373319141454], "features": [{"bbox": [-117.1190292302088, 32.83373319141454, -117.1190292302088, 32.83373319141454], "geometry": {"coordinates": [-117.1190292302088, 32.83373319141454], "type": "Point"}, "id": "3448", "properties": {"ETL_Route_ID": 160, "HNODE": 24128, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "I-15    CLAIREMONT MESA DR", "YR": 2029}, "type": "Feature"}, {"bbox": [-117.12120076542527, 32.833082166712906, -117.12120076542527, 32.833082166712906], "geometry": {"coordinates": [-117.12120076542527, 32.833082166712906], "type": "Point"}, "id": "3449", "properties": {"ETL_Route_ID": 160, "HNODE": 12275, "STOPTYPE": "10: Local", "StopName": "MURPHY CANYON    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.12262862595604, 32.83229151305182, -117.12262862595604, 32.83229151305182], "geometry": {"coordinates": [-117.12262862595604, 32.83229151305182], "type": "Point"}, "id": "3450", "properties": {"ETL_Route_ID": 160, "HNODE": 12320, "STOPTYPE": "10: Local", "StopName": "CHESAPEAKE    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1266504920931, 32.8314412333437, -117.1266504920931, 32.8314412333437], "geometry": {"coordinates": [-117.1266504920931, 32.8314412333437], "type": "Point"}, "id": "3451", "properties": {"ETL_Route_ID": 160, "HNODE": 32917, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "RUFFIN    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.12878919643379, 32.83142603687533, -117.12878919643379, 32.83142603687533], "geometry": {"coordinates": [-117.12878919643379, 32.83142603687533], "type": "Point"}, "id": "3452", "properties": {"ETL_Route_ID": 160, "HNODE": 12360, "STOPTYPE": "10: Local", "StopName": "CLAIREMONT MESA    9332", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1310157092709, 32.8314019316319, -117.1310157092709, 32.8314019316319], "geometry": {"coordinates": [-117.1310157092709, 32.8314019316319], "type": "Point"}, "id": "3453", "properties": {"ETL_Route_ID": 160, "HNODE": 32918, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "OVERLAND    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.13465870127983, 32.831411901081346, -117.13465870127983, 32.831411901081346], "geometry": {"coordinates": [-117.13465870127983, 32.831411901081346], "type": "Point"}, "id": "3454", "properties": {"ETL_Route_ID": 160, "HNODE": 12357, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "COMPLEX    CLAIREMONT MESA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14020262667235, 32.83075063556667, -117.14020262667235, 32.83075063556667], "geometry": {"coordinates": [-117.14020262667235, 32.83075063556667], "type": "Point"}, "id": "3455", "properties": {"ETL_Route_ID": 160, "HNODE": 12390, "STOPTYPE": "10: Local", "StopName": "KEARNY VILLA WAY    KEARNY VILLA", "YR": 1995}, "type": "Feature"}, {"bbox": [-117.14409091881416, 32.825585590850906, -117.14409091881416, 32.825585590850906], "geometry": {"coordinates": [-117.14409091881416, 32.825585590850906], "type": "Point"}, "id": "3456", "properties": {"ETL_Route_ID": 160, "HNODE": 12565, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "KEARNY VILLA    ELECTRONICS", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.14419682939949, 32.82335303509781, -117.14419682939949, 32.82335303509781], "geometry": {"coordinates": [-117.14419682939949, 32.82335303509781], "type": "Point"}, "id": "3457", "properties": {"ETL_Route_ID": 160, "HNODE": 12618, "STOPTYPE": "10: Local", "StopName": "KEARNY VILLA    4500", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14434271775178, 32.82169187929732, -117.14434271775178, 32.82169187929732], "geometry": {"coordinates": [-117.14434271775178, 32.82169187929732], "type": "Point"}, "id": "3458", "properties": {"ETL_Route_ID": 160, "HNODE": 12684, "STOPTYPE": "6: Rapid (Freeway)", "StopName": "BALBOA    KEARNY VILLA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.14891729921227, 32.82180159303319, -117.14891729921227, 32.82180159303319], "geometry": {"coordinates": [-117.14891729921227, 32.82180159303319], "type": "Point"}, "id": "3459", "properties": {"ETL_Route_ID": 160, "HNODE": 12676, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    MERCURY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.15508209775649, 32.82175932107096, -117.15508209775649, 32.82175932107096], "geometry": {"coordinates": [-117.15508209775649, 32.82175932107096], "type": "Point"}, "id": "3460", "properties": {"ETL_Route_ID": 160, "HNODE": 12673, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    CONVOY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.1585779870781, 32.8217468477938, -117.1585779870781, 32.8217468477938], "geometry": {"coordinates": [-117.1585779870781, 32.8217468477938], "type": "Point"}, "id": "3461", "properties": {"ETL_Route_ID": 160, "HNODE": 12670, "STOPTYPE": "10: Local", "StopName": "TERRY BENNETT    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.16708387239323, 32.82051641597793, -117.16708387239323, 32.82051641597793], "geometry": {"coordinates": [-117.16708387239323, 32.82051641597793], "type": "Point"}, "id": "3462", "properties": {"ETL_Route_ID": 160, "HNODE": 12715, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "CHARGER    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.17151170020928, 32.820291063004234, -117.17151170020928, 32.820291063004234], "geometry": {"coordinates": [-117.17151170020928, 32.820291063004234], "type": "Point"}, "id": "3463", "properties": {"ETL_Route_ID": 160, "HNODE": 12718, "STOPTYPE": "10: Local", "StopName": "BALBOA    MT ALBERTINE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.17612094730242, 32.820295067549004, -117.17612094730242, 32.820295067549004], "geometry": {"coordinates": [-117.17612094730242, 32.820295067549004], "type": "Point"}, "id": "3464", "properties": {"ETL_Route_ID": 160, "HNODE": 12716, "STOPTYPE": "10: Local", "StopName": "MT ABERNATHY    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.18001066056065, 32.81997559618643, -117.18001066056065, 32.81997559618643], "geometry": {"coordinates": [-117.18001066056065, 32.81997559618643], "type": "Point"}, "id": "3465", "properties": {"ETL_Route_ID": 160, "HNODE": 12720, "STOPTYPE": "10: Local", "StopName": "DRIVEWAY    BALBOA", "YR": 2009}, "type": "Feature"}, {"bbox": [-117.18188850030062, 32.81932818342663, -117.18188850030062, 32.81932818342663], "geometry": {"coordinates": [-117.18188850030062, 32.81932818342663], "type": "Point"}, "id": "3466", "properties": {"ETL_Route_ID": 160, "HNODE": 12748, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    GENESEE", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.18542273851085, 32.81803165221921, -117.18542273851085, 32.81803165221921], "geometry": {"coordinates": [-117.18542273851085, 32.81803165221921], "type": "Point"}, "id": "3467", "properties": {"ETL_Route_ID": 160, "HNODE": 12777, "STOPTYPE": "10: Local", "StopName": "BALBOA    MT EVEREST", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.20097224058432, 32.81173147915022, -117.20097224058432, 32.81173147915022], "geometry": {"coordinates": [-117.20097224058432, 32.81173147915022], "type": "Point"}, "id": "3468", "properties": {"ETL_Route_ID": 160, "HNODE": 12947, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "CLAIREMONT    BALBOA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.21060362306748, 32.807896959149865, -117.21060362306748, 32.807896959149865], "geometry": {"coordinates": [-117.21060362306748, 32.807896959149865], "type": "Point"}, "id": "3469", "properties": {"ETL_Route_ID": 160, "HNODE": 13080, "STOPTYPE": "10: Local", "StopName": "BALBOA    MORAGA", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.21452908828233, 32.807039056035066, -117.21452908828233, 32.807039056035066], "geometry": {"coordinates": [-117.21452908828233, 32.807039056035066], "type": "Point"}, "id": "3470", "properties": {"ETL_Route_ID": 160, "HNODE": 13112, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "ramp    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.21894798257708, 32.80607271315202, -117.21894798257708, 32.80607271315202], "geometry": {"coordinates": [-117.21894798257708, 32.80607271315202], "type": "Point"}, "id": "3471", "properties": {"ETL_Route_ID": 160, "HNODE": 13147, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "GARNET    MISSION BAY", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2210619524569, 32.805641080584124, -117.2210619524569, 32.805641080584124], "geometry": {"coordinates": [-117.2210619524569, 32.805641080584124], "type": "Point"}, "id": "3472", "properties": {"ETL_Route_ID": 160, "HNODE": 13184, "STOPTYPE": "10: Local", "StopName": "GARNET    BOND", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.22384980953316, 32.80493474316041, -117.22384980953316, 32.80493474316041], "geometry": {"coordinates": [-117.22384980953316, 32.80493474316041], "type": "Point"}, "id": "3473", "properties": {"ETL_Route_ID": 160, "HNODE": 13215, "STOPTYPE": "10: Local", "StopName": "SOLEDAD MTN    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2265743941462, 32.80292879023062, -117.2265743941462, 32.80292879023062], "geometry": {"coordinates": [-117.2265743941462, 32.80292879023062], "type": "Point"}, "id": "3474", "properties": {"ETL_Route_ID": 160, "HNODE": 13285, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "BALBOA    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2298664837813, 32.80221557870816, -117.2298664837813, 32.80221557870816], "geometry": {"coordinates": [-117.2298664837813, 32.80221557870816], "type": "Point"}, "id": "3475", "properties": {"ETL_Route_ID": 160, "HNODE": 13309, "STOPTYPE": "10: Local", "StopName": "OLNEY    GARNET/OLNEY", "YR": 2004}, "type": "Feature"}, {"bbox": [-117.23168768123529, 32.801808074137796, -117.23168768123529, 32.801808074137796], "geometry": {"coordinates": [-117.23168768123529, 32.801808074137796], "type": "Point"}, "id": "3476", "properties": {"ETL_Route_ID": 160, "HNODE": 13337, "STOPTYPE": "10: Local", "StopName": "NOYES    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.2353398779765, 32.801001152276626, -117.2353398779765, 32.801001152276626], "geometry": {"coordinates": [-117.2353398779765, 32.801001152276626], "type": "Point"}, "id": "3477", "properties": {"ETL_Route_ID": 160, "HNODE": 13402, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "LAMONT    GARNET/LAMONT", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.23898884735351, 32.80020239238583, -117.23898884735351, 32.80020239238583], "geometry": {"coordinates": [-117.23898884735351, 32.80020239238583], "type": "Point"}, "id": "3478", "properties": {"ETL_Route_ID": 160, "HNODE": 13463, "STOPTYPE": "10: Local", "StopName": "JEWELL    GARNET", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.24085551764887, 32.799794387725896, -117.24085551764887, 32.799794387725896], "geometry": {"coordinates": [-117.24085551764887, 32.799794387725896], "type": "Point"}, "id": "3479", "properties": {"ETL_Route_ID": 160, "HNODE": 13478, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "INGRAHAM    GARNET/INGRAHAM", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.24271556857985, 32.79937816234883, -117.24271556857985, 32.79937816234883], "geometry": {"coordinates": [-117.24271556857985, 32.79937816234883], "type": "Point"}, "id": "3480", "properties": {"ETL_Route_ID": 160, "HNODE": 13494, "STOPTYPE": "10: Local", "StopName": "GARNET    HAINES", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.24636105652573, 32.798570966843826, -117.24636105652573, 32.798570966843826], "geometry": {"coordinates": [-117.24636105652573, 32.798570966843826], "type": "Point"}, "id": "3481", "properties": {"ETL_Route_ID": 160, "HNODE": 13521, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "FANUEL    GARNET/FANUEL", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.24818544967853, 32.79817143753851, -117.24818544967853, 32.79817143753851], "geometry": {"coordinates": [-117.24818544967853, 32.79817143753851], "type": "Point"}, "id": "3482", "properties": {"ETL_Route_ID": 160, "HNODE": 13533, "STOPTYPE": "10: Local", "StopName": "GARNET    EVERTS", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.25183421979399, 32.79737504307533, -117.25183421979399, 32.79737504307533], "geometry": {"coordinates": [-117.25183421979399, 32.79737504307533], "type": "Point"}, "id": "3483", "properties": {"ETL_Route_ID": 160, "HNODE": 13571, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "CASS    GARNET/CASS", "YR": 1990}, "type": "Feature"}, {"bbox": [-117.25366820423238, 32.79696435718647, -117.25366820423238, 32.79696435718647], "geometry": {"coordinates": [-117.25366820423238, 32.79696435718647], "type": "Point"}, "id": "3484", "properties": {"ETL_Route_ID": 160, "HNODE": 13587, "STOPTYPE": "10: Local", "StopName": "BAYARD    GARNET", "YR": 2000}, "type": "Feature"}, {"bbox": [-117.25520541094872, 32.79564354754957, -117.25520541094872, 32.79564354754957], "geometry": {"coordinates": [-117.25520541094872, 32.79564354754957], "type": "Point"}, "id": "3485", "properties": {"ETL_Route_ID": 160, "HNODE": 13633, "STOPTYPE": "7: Rapid (Arterial)", "StopName": "MISSION    HORNBLEND", "YR": 1990}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_eff4b8f5a27a33319cb5d7304e5717fc.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let aliases = ["ETL_Route_ID", "HNODE", "StopName", "STOPTYPE", "YR"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            var layer_control_48848ab7e29659381e192539880cdca6 = {
+                base_layers : {
+                    "cartodbdark_matter" : tile_layer_8e287214d948cd3de5a641417f5c353b,
+                },
+                overlays :  {
+                    "Route 27 Dir. 1 Config. 19" : geo_json_c6e54364eca2793173e96b3b0108fddf,
+                    "Stops for Route 27 Dir. 1 Config. 19" : geo_json_86ecfab74b3bbfec47785e1c57d6af4a,
+                    "Route 27 Dir. 2 Config. 19" : geo_json_a18a0d111bee8c3dbd81d8cbe625eb87,
+                    "Stops for Route 27 Dir. 2 Config. 19" : geo_json_eff4b8f5a27a33319cb5d7304e5717fc,
+                },
+            };
+            L.control.layers(
+                layer_control_48848ab7e29659381e192539880cdca6.base_layers,
+                layer_control_48848ab7e29659381e192539880cdca6.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_b69147fc4d4ffefc0000c0d7375d3504);
+        
+    
+            map_b69147fc4d4ffefc0000c0d7375d3504.fitBounds(
+                [[32.79564354754957, -117.25548596356921], [32.83373319141454, -117.1190292302088]],
+                {"padding": [30, 30]}
+            );
+        
+</script>
+</html>
